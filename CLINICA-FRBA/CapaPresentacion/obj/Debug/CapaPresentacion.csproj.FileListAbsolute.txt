@@ -1,0 +1,7 @@
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb

@@ -1,0 +1,5 @@
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.pdb
