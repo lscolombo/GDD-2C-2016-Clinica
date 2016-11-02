@@ -5,3 +5,14 @@ C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaN
 C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
 C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegLlegada.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.dll
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
