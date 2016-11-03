@@ -48,6 +48,18 @@
     <Compile Include="frmRegLlegada.Designer.cs">
       <DependentUpon>frmRegLlegada.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegLlegadaTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegLlegadaTurnos.Designer.cs">
+      <DependentUpon>frmRegLlegadaTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegLlegadaTurnosBonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegLlegadaTurnosBonos.Designer.cs">
+      <DependentUpon>frmRegLlegadaTurnosBonos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +71,12 @@
   <ItemGroup>
     <EmbeddedResource Include="frmRegLlegada.resx">
       <DependentUpon>frmRegLlegada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegLlegadaTurnos.resx">
+      <DependentUpon>frmRegLlegadaTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegLlegadaTurnosBonos.resx">
+      <DependentUpon>frmRegLlegadaTurnosBonos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
