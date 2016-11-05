@@ -40,6 +40,8 @@
             this.lblDateTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblDateTimeHora = new System.Windows.Forms.Label();
+            this.txtElAfiliado = new System.Windows.Forms.TextBox();
+            this.txtTurno = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -96,6 +98,7 @@
             this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListado.Size = new System.Drawing.Size(524, 197);
             this.dgvListado.TabIndex = 7;
+            this.dgvListado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListado_CellClick);
             // 
             // txtMatricula
             // 
@@ -145,11 +148,27 @@
             this.lblDateTimeHora.TabIndex = 13;
             this.lblDateTimeHora.Text = "Hora";
             // 
+            // txtElAfiliado
+            // 
+            this.txtElAfiliado.Location = new System.Drawing.Point(411, 122);
+            this.txtElAfiliado.Name = "txtElAfiliado";
+            this.txtElAfiliado.Size = new System.Drawing.Size(100, 20);
+            this.txtElAfiliado.TabIndex = 14;
+            // 
+            // txtTurno
+            // 
+            this.txtTurno.Location = new System.Drawing.Point(411, 96);
+            this.txtTurno.Name = "txtTurno";
+            this.txtTurno.Size = new System.Drawing.Size(100, 20);
+            this.txtTurno.TabIndex = 15;
+            // 
             // frmRegLlegadaTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 406);
+            this.Controls.Add(this.txtTurno);
+            this.Controls.Add(this.txtElAfiliado);
             this.Controls.Add(this.lblDateTimeHora);
             this.Controls.Add(this.lblDateTime);
             this.Controls.Add(this.groupBox1);
@@ -186,5 +205,7 @@
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblDateTimeHora;
+        private System.Windows.Forms.TextBox txtElAfiliado;
+        private System.Windows.Forms.TextBox txtTurno;
     }
 }

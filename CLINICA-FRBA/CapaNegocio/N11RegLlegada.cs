@@ -29,10 +29,21 @@ namespace CapaNegocio
             return Obj.BuscarPorApellEspec(unApellido,unaEspecialidad);
         }
 
-        public static DataTable BuscarTurnosDisponibles(int unaMatricula, DateTime unaFecha)
+        public static DataTable BuscarTurnosDisponibles(int unaMatricula)/*, DateTime unaFecha)*/
         {
             D11RegLlegada Obj = new D11RegLlegada();
-            return Obj.BuscarTurnosDisponibles(unaMatricula,unaFecha);
+            return Obj.BuscarTurnosDisponibles(unaMatricula);
+        }
+        public static DataTable BuscarBonosDisponibles(int unAfiliado)
+        {
+            D11RegLlegada obj = new D11RegLlegada();
+            return obj.BuscarBonosDisponibles(unAfiliado);
+        }
+
+        public static DataTable InsertarConsulta(int unTurno, int unBono)/*, DateTime unaFecha)*/
+        {
+            D11RegLlegada obj = new D11RegLlegada();
+            return obj.insertarConsulta(unTurno,unBono);/*,unaFecha);*/
         }
     }
 }

@@ -146,7 +146,7 @@ namespace CapaDatos
             return DtResultado;
         }
 
-        public DataTable BuscarTurnosDisponibles(int unaMatricula, DateTime unaFecha)
+        public DataTable BuscarTurnosDisponibles(int unaMatricula)/*, DateTime unaFecha)*/
         {
             DataTable DtResultado = new DataTable();
             SqlConnection SqlCon = new SqlConnection();
@@ -169,14 +169,100 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(ParMatricula);
 
                 /*2º Parametro*/
-                SqlParameter ParFecha = new SqlParameter();
+                /*SqlParameter ParFecha = new SqlParameter();
 
                 ParFecha.ParameterName = "@fecha";
                 ParFecha.SqlDbType = SqlDbType.DateTime;
                 ParFecha.Size = 50;
                 ParFecha.Value = unaFecha;
 
-                SqlCmd.Parameters.Add(ParFecha);
+                SqlCmd.Parameters.Add(ParFecha);*/
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+
+            return DtResultado;
+        }
+
+        public DataTable BuscarBonosDisponibles(int unAfiliado)
+        {
+            DataTable DtResultado = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "p11BonosDisponibles";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                /*1º Parametro*/
+                SqlParameter ParAfiliado = new SqlParameter();
+
+                ParAfiliado.ParameterName = "@afiliado";
+                ParAfiliado.SqlDbType = SqlDbType.Int;
+                ParAfiliado.Size = 50;
+                ParAfiliado.Value = unAfiliado;
+                SqlCmd.Parameters.Add(ParAfiliado);
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+
+            return DtResultado;
+        }
+
+        public DataTable insertarConsulta(int unTurno, int unBono)/*, DateTime unaFecha)*/
+        {
+            DataTable DtResultado = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "p11InsertarConsulta";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                /*1º Parametro*/
+                SqlParameter ParTurno = new SqlParameter();
+
+                ParTurno.ParameterName = "@turno";
+                ParTurno.SqlDbType = SqlDbType.Int;
+                /*ParTurno.Size = 50;*/
+                ParTurno.Value = unTurno;
+                SqlCmd.Parameters.Add(ParTurno);
+
+                /*2º Parametro*/
+                SqlParameter ParBono = new SqlParameter();
+
+                ParBono.ParameterName = "@bono";
+                ParBono.SqlDbType = SqlDbType.Int;
+                /*ParBono.Size = 50;*/
+                ParBono.Value = unBono;
+                SqlCmd.Parameters.Add(ParBono);
+
+                /*3º Parametro*/
+                /*SqlParameter ParFecha = new SqlParameter();
+
+                ParFecha.ParameterName = "@fecha";
+                ParFecha.SqlDbType = SqlDbType.Int; */
+                /*ParFecha.Size = 50;*/
+                /*ParFecha.Value = unBono;
+                SqlCmd.Parameters.Add(ParFecha);*/
+
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);

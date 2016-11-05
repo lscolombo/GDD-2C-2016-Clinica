@@ -87,7 +87,7 @@ namespace CapaPresentacion
         {
             if (txtProfesional.Text == "")
             {
-                MessageBox.Show("Debe tener selecionado un profesional");
+                MessageBox.Show("Debe tener seleccionado un profesional", "Seleccion de profesional", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
