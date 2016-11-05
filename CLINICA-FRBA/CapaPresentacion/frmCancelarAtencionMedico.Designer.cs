@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class CancelarAtencionMedico
+    partial class frmCancelarAtencionMedico
     {
         /// <summary>
         /// Required designer variable.

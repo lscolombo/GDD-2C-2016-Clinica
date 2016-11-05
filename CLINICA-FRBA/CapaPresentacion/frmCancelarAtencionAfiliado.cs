@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class CancelarAtencionAfiliado : Form
+    public partial class frmCancelarAtencionAfiliado : Form
     {
-        public CancelarAtencionAfiliado()
+        public frmCancelarAtencionAfiliado()
         {
             InitializeComponent();
         }
