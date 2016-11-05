@@ -28,3 +28,6 @@ C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FR
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.exe.config
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.exe
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.pdb
+C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.exe.config
+C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.exe
+C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.pdb
