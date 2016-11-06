@@ -43,6 +43,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="D11RegLlegada.cs" />
     <Compile Include="D12RegResultados.cs" />
+    <Compile Include="D3Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -42,6 +42,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="N11RegLlegada.cs" />
     <Compile Include="N12RegResultados.cs" />
+    <Compile Include="N3Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
