@@ -9,6 +9,6 @@ namespace CapaDatos
     class Conexion
     {
         /*Cn: GUARDA LA RUTA DE CONEXION HACIA SQL*/
-        public static string Cn = "Data Source=localhost\\SQLSERVER2012;Initial Catalog=GD2C2016;Integrated Security=True";
+        public static string Cn = "Data Source=localhost\\SQLSERVER2012;Initial Catalog=Prueba;Integrated Security=True";
     }
 }

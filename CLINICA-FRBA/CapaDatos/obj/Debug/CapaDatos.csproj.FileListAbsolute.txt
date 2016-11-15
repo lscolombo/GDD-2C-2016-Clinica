@@ -17,3 +17,8 @@ C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\bin\D
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.pdb
