@@ -42,6 +42,9 @@
             this.lblDateTimeHora = new System.Windows.Forms.Label();
             this.txtElAfiliado = new System.Windows.Forms.TextBox();
             this.txtTurno = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -129,7 +132,7 @@
             // lblDateTime
             // 
             this.lblDateTime.AutoSize = true;
-            this.lblDateTime.Location = new System.Drawing.Point(293, 61);
+            this.lblDateTime.Location = new System.Drawing.Point(302, 60);
             this.lblDateTime.Name = "lblDateTime";
             this.lblDateTime.Size = new System.Drawing.Size(37, 13);
             this.lblDateTime.TabIndex = 12;
@@ -143,7 +146,7 @@
             // lblDateTimeHora
             // 
             this.lblDateTimeHora.AutoSize = true;
-            this.lblDateTimeHora.Location = new System.Drawing.Point(327, 96);
+            this.lblDateTimeHora.Location = new System.Drawing.Point(302, 99);
             this.lblDateTimeHora.Name = "lblDateTimeHora";
             this.lblDateTimeHora.Size = new System.Drawing.Size(30, 13);
             this.lblDateTimeHora.TabIndex = 13;
@@ -151,7 +154,7 @@
             // 
             // txtElAfiliado
             // 
-            this.txtElAfiliado.Location = new System.Drawing.Point(411, 122);
+            this.txtElAfiliado.Location = new System.Drawing.Point(411, 115);
             this.txtElAfiliado.Name = "txtElAfiliado";
             this.txtElAfiliado.Size = new System.Drawing.Size(100, 20);
             this.txtElAfiliado.TabIndex = 14;
@@ -159,17 +162,47 @@
             // 
             // txtTurno
             // 
-            this.txtTurno.Location = new System.Drawing.Point(411, 96);
+            this.txtTurno.Location = new System.Drawing.Point(411, 76);
             this.txtTurno.Name = "txtTurno";
             this.txtTurno.Size = new System.Drawing.Size(100, 20);
             this.txtTurno.TabIndex = 15;
             this.txtTurno.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(411, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Turno";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(411, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Afiliado";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(411, 138);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Matricula";
             // 
             // frmRegLlegadaTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 406);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTurno);
             this.Controls.Add(this.txtElAfiliado);
             this.Controls.Add(this.lblDateTimeHora);
@@ -210,5 +243,8 @@
         private System.Windows.Forms.Label lblDateTimeHora;
         private System.Windows.Forms.TextBox txtElAfiliado;
         private System.Windows.Forms.TextBox txtTurno;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
