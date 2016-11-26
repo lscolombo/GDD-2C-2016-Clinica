@@ -48,6 +48,12 @@
     <Compile Include="frmALTAafiliado.Designer.cs">
       <DependentUpon>frmALTAafiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCancTurnoAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCancTurnoAfiliado.Designer.cs">
+      <DependentUpon>frmCancTurnoAfiliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmALTAafiliado.resx">
       <DependentUpon>frmALTAafiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCancTurnoAfiliado.resx">
+      <DependentUpon>frmCancTurnoAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -102,6 +102,7 @@
             this.dgvListado.Size = new System.Drawing.Size(524, 197);
             this.dgvListado.TabIndex = 7;
             this.dgvListado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListado_CellClick);
+            this.dgvListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListado_CellContentClick);
             // 
             // txtMatricula
             // 
