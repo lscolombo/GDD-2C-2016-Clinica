@@ -175,6 +175,7 @@
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 26;
             this.label1.Text = "Consulta";
+            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -184,6 +185,7 @@
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 27;
             this.label2.Text = "Matricula";
+            this.label2.Visible = false;
             // 
             // frmRegResultados
             // 

@@ -22,8 +22,10 @@ namespace CLINICA___FRBA
 
             /*ACA ESPECIFICO CON QUE FORM ARANQUE AL EJECUTAR*/
             //Application.Run(new frmRegLlegada());
-            Application.Run(new frmLogin());
-            //Application.Run(new frmRegResultados());  /*ASD*/
+            //Application.Run(new frmLogin());
+            //Application.Run(new frmRegResultados()); 
+            Application.Run(new frmALTAafiliado()); 
+
         }
     }
 }

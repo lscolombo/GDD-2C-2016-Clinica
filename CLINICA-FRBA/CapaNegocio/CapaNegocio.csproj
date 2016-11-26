@@ -43,6 +43,7 @@
     <Compile Include="N11RegLlegada.cs" />
     <Compile Include="N12RegResultados.cs" />
     <Compile Include="N2Login.cs" />
+    <Compile Include="N4abmAfiliado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
