@@ -26,5 +26,17 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void dgvTurnosDisponibles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnCancelarTurno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -66,3 +66,4 @@ C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresenta
 C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmALTAafiliado.resources
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmALTAafiliado.resources
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmCancTurnoAfiliado.resources
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources

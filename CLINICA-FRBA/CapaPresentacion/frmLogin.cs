@@ -37,18 +37,17 @@ namespace CapaPresentacion
             }
             else
             {
-                /*
                 frmPrincipal frm = new frmPrincipal();
+                /*
                 frm.Idtrabajador = Datos.Rows[0][0].ToString();
                 frm.Apellidos = Datos.Rows[0][1].ToString();
                 frm.Nombre = Datos.Rows[0][2].ToString();
                 frm.Acceso = Datos.Rows[0][3].ToString();
-
+                */
                 frm.Show();
                 this.Hide();
-                */
 
-                MessageBox.Show("SI Tiene Acceso al Sistema", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("SI Tiene Acceso al Sistema", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

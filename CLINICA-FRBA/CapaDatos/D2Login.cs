@@ -13,7 +13,7 @@ namespace CapaDatos
     {
         public DataTable Login(D3Usuario Usuario)
         {
-            DataTable DtResultado = new DataTable("UsuarioSimple");
+            DataTable DtResultado = new DataTable("UsuarioSimple2");
             SqlConnection SqlCon = new SqlConnection();
             try
             {
