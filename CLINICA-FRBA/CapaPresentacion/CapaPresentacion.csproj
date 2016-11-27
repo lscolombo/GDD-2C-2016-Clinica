@@ -42,11 +42,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="frmABMRolInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMRolInicio.Designer.cs">
+      <DependentUpon>frmABMRolInicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmALTAafiliado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmALTAafiliado.Designer.cs">
       <DependentUpon>frmALTAafiliado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAltaRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaRol.Designer.cs">
+      <DependentUpon>frmAltaRol.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCancTurnoAfiliado.cs">
       <SubType>Form</SubType>
@@ -54,11 +66,23 @@
     <Compile Include="frmCancTurnoAfiliado.Designer.cs">
       <DependentUpon>frmCancTurnoAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEliminarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEliminarRol.Designer.cs">
+      <DependentUpon>frmEliminarRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarRol.Designer.cs">
+      <DependentUpon>frmModificarRol.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -99,14 +123,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmABMRolInicio.resx">
+      <DependentUpon>frmABMRolInicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmALTAafiliado.resx">
       <DependentUpon>frmALTAafiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaRol.resx">
+      <DependentUpon>frmAltaRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCancTurnoAfiliado.resx">
       <DependentUpon>frmCancTurnoAfiliado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEliminarRol.resx">
+      <DependentUpon>frmEliminarRol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarRol.resx">
+      <DependentUpon>frmModificarRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
