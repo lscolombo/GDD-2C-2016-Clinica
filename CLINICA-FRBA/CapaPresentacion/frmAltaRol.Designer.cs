@@ -75,14 +75,17 @@
             // funcionalidades
             // 
             this.funcionalidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.funcionalidades.Enabled = false;
             this.funcionalidades.FormattingEnabled = true;
             this.funcionalidades.Location = new System.Drawing.Point(16, 177);
             this.funcionalidades.Name = "funcionalidades";
             this.funcionalidades.Size = new System.Drawing.Size(288, 21);
             this.funcionalidades.TabIndex = 4;
+            this.funcionalidades.SelectedIndexChanged += new System.EventHandler(this.funcionalidades_SelectedIndexChanged);
             // 
             // btnAgregarFuncionalidad
             // 
+            this.btnAgregarFuncionalidad.Enabled = false;
             this.btnAgregarFuncionalidad.Location = new System.Drawing.Point(16, 229);
             this.btnAgregarFuncionalidad.Name = "btnAgregarFuncionalidad";
             this.btnAgregarFuncionalidad.Size = new System.Drawing.Size(140, 23);

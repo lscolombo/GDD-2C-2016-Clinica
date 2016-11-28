@@ -99,5 +99,10 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void funcionalidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
