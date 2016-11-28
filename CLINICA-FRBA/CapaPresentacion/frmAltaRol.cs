@@ -50,16 +50,6 @@ namespace CapaPresentacion
                     }
                 }
             }
-
-        }
-
-        private void funcionalidades_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmAltaRol_Load(object sender, EventArgs e)
-        {
         }
 
         private void btnAgregarFuncionalidad_Click(object sender, EventArgs e)
