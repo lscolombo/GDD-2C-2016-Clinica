@@ -22,11 +22,11 @@ namespace CLINICA___FRBA
 
             /*ACA ESPECIFICO CON QUE FORM ARANQUE AL EJECUTAR*/
             //Application.Run(new frmRegLlegada());
-            //Application.Run(new frmLogin());
+            Application.Run(new frmLogin());
             //Application.Run(new frmRegResultados()); 
             //Application.Run(new frmALTAafiliado()); 
             //Application.Run(new frmCancTurnoAfiliado()); 
-            Application.Run(new frmABMRolInicio());
+            //Application.Run(new frmABMRolInicio());
         }
     }
 }

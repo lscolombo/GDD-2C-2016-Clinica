@@ -12,6 +12,8 @@ namespace CapaPresentacion
 {
     public partial class frmLogin : Form
     {
+        public static String passingText;
+
         public frmLogin()
         {
             InitializeComponent();
@@ -37,13 +39,22 @@ namespace CapaPresentacion
             }
             else
             {
-                frmPrincipal frm = new frmPrincipal();
                 /*
                 frm.Idtrabajador = Datos.Rows[0][0].ToString();
                 frm.Apellidos = Datos.Rows[0][1].ToString();
                 frm.Nombre = Datos.Rows[0][2].ToString();
                 frm.Acceso = Datos.Rows[0][3].ToString();
                 */
+
+                /*
+                frmPrincipal frm = new frmPrincipal();
+                frm.Show();
+                this.Hide();
+                */
+
+                passingText = TxtUsuario.Text;
+
+                frmRoles frm = new frmRoles();
                 frm.Show();
                 this.Hide();
 

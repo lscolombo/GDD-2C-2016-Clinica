@@ -18,5 +18,11 @@ namespace CapaNegocio
             Obj.User_password = user_password;
             return new D2Login().Login(Obj);
         }
+
+        public static DataTable Mostrar(string user_username)
+        {
+            return new D2Login().Mostrar(user_username);
+        }
+
     }
 }
