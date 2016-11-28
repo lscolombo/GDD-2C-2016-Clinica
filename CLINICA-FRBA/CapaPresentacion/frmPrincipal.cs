@@ -111,7 +111,30 @@ namespace CapaPresentacion
 
         private void llegadaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmRegLlegada frm = new frmRegLlegada();
+            frm.MdiParent = this;
+            frm.Show();
+        }
 
+        private void altaDeAfiliadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmALTAafiliado frm = new frmALTAafiliado();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void altaDeRolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAltaRol frm = new frmAltaRol();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void resultadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegResultados frm = new frmRegResultados();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }
