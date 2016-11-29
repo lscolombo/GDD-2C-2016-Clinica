@@ -103,3 +103,10 @@ D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentac
 D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
 D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmABMRolInicio.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmAltaRol.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmCancTurnoAfiliado.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmEliminarRol.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmModificarRol.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRoles.resources

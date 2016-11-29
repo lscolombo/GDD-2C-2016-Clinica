@@ -64,11 +64,14 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtPrincipal = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpAsociar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +95,7 @@
             this.txtApellido.Location = new System.Drawing.Point(91, 43);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(145, 20);
-            this.txtApellido.TabIndex = 3;
+            this.txtApellido.TabIndex = 2;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
             // label2
@@ -138,12 +141,13 @@
             this.txtNumDni.MaxLength = 8;
             this.txtNumDni.Name = "txtNumDni";
             this.txtNumDni.Size = new System.Drawing.Size(100, 20);
-            this.txtNumDni.TabIndex = 7;
+            this.txtNumDni.TabIndex = 4;
             this.txtNumDni.TextChanged += new System.EventHandler(this.txtNumDni_TextChanged);
             this.txtNumDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumDni_KeyPress);
             // 
             // cbbTipoDni
             // 
+            this.cbbTipoDni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTipoDni.FormattingEnabled = true;
             this.cbbTipoDni.Items.AddRange(new object[] {
             "DNI",
@@ -151,14 +155,15 @@
             this.cbbTipoDni.Location = new System.Drawing.Point(6, 19);
             this.cbbTipoDni.Name = "cbbTipoDni";
             this.cbbTipoDni.Size = new System.Drawing.Size(53, 21);
-            this.cbbTipoDni.TabIndex = 7;
+            this.cbbTipoDni.TabIndex = 3;
+            this.cbbTipoDni.SelectedIndexChanged += new System.EventHandler(this.cbbTipoDni_SelectedIndexChanged);
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(90, 151);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.TabIndex = 6;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label4
@@ -175,7 +180,7 @@
             this.txtMail.Location = new System.Drawing.Point(91, 177);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(145, 20);
-            this.txtMail.TabIndex = 10;
+            this.txtMail.TabIndex = 7;
             // 
             // label5
             // 
@@ -197,6 +202,7 @@
             // 
             // cbbSexo
             // 
+            this.cbbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSexo.FormattingEnabled = true;
             this.cbbSexo.Items.AddRange(new object[] {
             "Hombre",
@@ -204,7 +210,7 @@
             this.cbbSexo.Location = new System.Drawing.Point(90, 229);
             this.cbbSexo.Name = "cbbSexo";
             this.cbbSexo.Size = new System.Drawing.Size(121, 21);
-            this.cbbSexo.TabIndex = 12;
+            this.cbbSexo.TabIndex = 9;
             this.cbbSexo.SelectedIndexChanged += new System.EventHandler(this.cbbSexo_SelectedIndexChanged);
             // 
             // label7
@@ -222,8 +228,9 @@
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(141, 203);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(98, 20);
-            this.dtpFechaNacimiento.TabIndex = 14;
+            this.dtpFechaNacimiento.TabIndex = 8;
             this.dtpFechaNacimiento.Value = new System.DateTime(2016, 11, 22, 0, 0, 0, 0);
+            this.dtpFechaNacimiento.ValueChanged += new System.EventHandler(this.dtpFechaNacimiento_ValueChanged);
             // 
             // label8
             // 
@@ -236,17 +243,18 @@
             // 
             // cbbEstadoCivil
             // 
+            this.cbbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbEstadoCivil.FormattingEnabled = true;
             this.cbbEstadoCivil.Items.AddRange(new object[] {
-            "Soltero/a",
-            "Casado/a",
-            "Viudo/a",
+            "Soltero",
+            "Casado",
+            "Viudo",
             "Concubinato",
-            "Divorciado/a"});
+            "Divorciado"});
             this.cbbEstadoCivil.Location = new System.Drawing.Point(91, 256);
             this.cbbEstadoCivil.Name = "cbbEstadoCivil";
             this.cbbEstadoCivil.Size = new System.Drawing.Size(121, 21);
-            this.cbbEstadoCivil.TabIndex = 15;
+            this.cbbEstadoCivil.TabIndex = 10;
             this.cbbEstadoCivil.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // txtCantHijos
@@ -255,7 +263,7 @@
             this.txtCantHijos.MaxLength = 3;
             this.txtCantHijos.Name = "txtCantHijos";
             this.txtCantHijos.Size = new System.Drawing.Size(48, 20);
-            this.txtCantHijos.TabIndex = 18;
+            this.txtCantHijos.TabIndex = 11;
             this.txtCantHijos.TextChanged += new System.EventHandler(this.txtCantHijos_TextChanged);
             this.txtCantHijos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantHijos_KeyPress);
             // 
@@ -292,7 +300,8 @@
             this.txtNumAfiliado.Name = "txtNumAfiliado";
             this.txtNumAfiliado.ReadOnly = true;
             this.txtNumAfiliado.Size = new System.Drawing.Size(100, 20);
-            this.txtNumAfiliado.TabIndex = 21;
+            this.txtNumAfiliado.TabIndex = 15;
+            this.txtNumAfiliado.TabStop = false;
             // 
             // groupBox2
             // 
@@ -303,6 +312,7 @@
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nº Raiz";
+            this.groupBox2.Visible = false;
             // 
             // txtNroRaiz
             // 
@@ -310,10 +320,11 @@
             this.txtNroRaiz.MaxLength = 8;
             this.txtNroRaiz.Name = "txtNroRaiz";
             this.txtNroRaiz.Size = new System.Drawing.Size(100, 20);
-            this.txtNroRaiz.TabIndex = 7;
+            this.txtNroRaiz.TabIndex = 15;
             // 
             // cbbPlanMedico
             // 
+            this.cbbPlanMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPlanMedico.FormattingEnabled = true;
             this.cbbPlanMedico.Items.AddRange(new object[] {
             "Plan Medico 110",
@@ -324,7 +335,7 @@
             this.cbbPlanMedico.Location = new System.Drawing.Point(91, 313);
             this.cbbPlanMedico.Name = "cbbPlanMedico";
             this.cbbPlanMedico.Size = new System.Drawing.Size(121, 21);
-            this.cbbPlanMedico.TabIndex = 23;
+            this.cbbPlanMedico.TabIndex = 12;
             // 
             // btnPareja
             // 
@@ -351,7 +362,7 @@
             // 
             this.grpAsociar.Controls.Add(this.btnPareja);
             this.grpAsociar.Controls.Add(this.btnHijo);
-            this.grpAsociar.Location = new System.Drawing.Point(293, 159);
+            this.grpAsociar.Location = new System.Drawing.Point(287, 159);
             this.grpAsociar.Name = "grpAsociar";
             this.grpAsociar.Size = new System.Drawing.Size(123, 83);
             this.grpAsociar.TabIndex = 26;
@@ -364,69 +375,88 @@
             this.dgvListado.AllowUserToDeleteRows = false;
             this.dgvListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListado.Location = new System.Drawing.Point(223, 361);
+            this.dgvListado.Location = new System.Drawing.Point(175, 385);
             this.dgvListado.MultiSelect = false;
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.ReadOnly = true;
             this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListado.Size = new System.Drawing.Size(254, 110);
+            this.dgvListado.Size = new System.Drawing.Size(254, 64);
             this.dgvListado.TabIndex = 27;
+            this.dgvListado.Visible = false;
             // 
             // btnInsertAlta
             // 
-            this.btnInsertAlta.Location = new System.Drawing.Point(35, 402);
+            this.btnInsertAlta.Location = new System.Drawing.Point(104, 402);
             this.btnInsertAlta.Name = "btnInsertAlta";
-            this.btnInsertAlta.Size = new System.Drawing.Size(84, 23);
-            this.btnInsertAlta.TabIndex = 28;
-            this.btnInsertAlta.Text = "Dar ALTA";
+            this.btnInsertAlta.Size = new System.Drawing.Size(100, 23);
+            this.btnInsertAlta.TabIndex = 17;
+            this.btnInsertAlta.Text = "Registrar ALTA";
             this.btnInsertAlta.UseVisualStyleBackColor = true;
             this.btnInsertAlta.Click += new System.EventHandler(this.btnInsertAlta_Click);
             // 
             // btnNuevaAlta
             // 
             this.btnNuevaAlta.Enabled = false;
-            this.btnNuevaAlta.Location = new System.Drawing.Point(125, 402);
+            this.btnNuevaAlta.Location = new System.Drawing.Point(225, 402);
             this.btnNuevaAlta.Name = "btnNuevaAlta";
-            this.btnNuevaAlta.Size = new System.Drawing.Size(80, 23);
-            this.btnNuevaAlta.TabIndex = 29;
+            this.btnNuevaAlta.Size = new System.Drawing.Size(100, 23);
+            this.btnNuevaAlta.TabIndex = 18;
             this.btnNuevaAlta.Text = "Nueva ALTA";
             this.btnNuevaAlta.UseVisualStyleBackColor = true;
             this.btnNuevaAlta.Click += new System.EventHandler(this.btnNuevaAlta_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtPassword);
             this.groupBox3.Controls.Add(this.txtUserName);
-            this.groupBox3.Location = new System.Drawing.Point(269, 266);
+            this.groupBox3.Location = new System.Drawing.Point(249, 275);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(180, 77);
+            this.groupBox3.Size = new System.Drawing.Size(180, 51);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "User name y Password";
+            this.groupBox3.Text = "User Name";
             // 
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(14, 20);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(153, 20);
-            this.txtUserName.TabIndex = 0;
+            this.txtUserName.TabIndex = 13;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(14, 46);
+            this.txtPassword.Location = new System.Drawing.Point(14, 19);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(153, 20);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 14;
+            // 
+            // txtPrincipal
+            // 
+            this.txtPrincipal.Location = new System.Drawing.Point(290, 79);
+            this.txtPrincipal.Name = "txtPrincipal";
+            this.txtPrincipal.Size = new System.Drawing.Size(100, 20);
+            this.txtPrincipal.TabIndex = 16;
+            this.txtPrincipal.Visible = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtPassword);
+            this.groupBox4.Location = new System.Drawing.Point(249, 332);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(180, 47);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Password";
             // 
             // frmALTAafiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 452);
+            this.ClientSize = new System.Drawing.Size(448, 452);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.txtPrincipal);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnNuevaAlta);
             this.Controls.Add(this.btnInsertAlta);
-            this.Controls.Add(this.dgvListado);
             this.Controls.Add(this.grpAsociar);
             this.Controls.Add(this.cbbPlanMedico);
             this.Controls.Add(this.groupBox2);
@@ -452,9 +482,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgvListado);
             this.Name = "frmALTAafiliado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmALTAafiliado";
+            this.Text = "ALTA Afiliado";
             this.Load += new System.EventHandler(this.frmALTAafiliado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -464,6 +495,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,5 +540,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtPrincipal;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

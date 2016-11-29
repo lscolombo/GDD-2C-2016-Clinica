@@ -58,7 +58,7 @@ namespace CapaPresentacion
 
           private void btnCancelarTurno_Click(object sender, EventArgs e)
           {
-              this.cancelarTurnoAf();
+             // this.cancelarTurnoAf();
           }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
