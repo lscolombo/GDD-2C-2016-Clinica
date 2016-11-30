@@ -97,6 +97,7 @@ namespace CapaDatos
             try
             {
                 SqlCon.ConnectionString = Conexion.Cn; /*LE PASO LA RUTA DE CONEXION QUE TENGO EN LA CLASE CONEXION*/
+                SqlCon.Open();
                 SqlCommand SqlCmd = new SqlCommand(); /*OBJ ENCARGADO DE GUARDAR TODOS LOS DATOS PARA EJECUTAR UN DETERMINADO STORE POR EJEMPLO*/
                 SqlCmd.Connection = SqlCon; /*LE PASO LA CONEXION AL OBJETO DEL COMANDO*/
                 SqlCmd.CommandText = "WINCHESTER.cancelarTurnoAf"; /*LE INDICO EL NOMBRE DEL STORE/FUNCTION/VISTA/...*/
@@ -127,10 +128,7 @@ namespace CapaDatos
             {
                 rpta = ex.Message;
             }
-            finally
-            {
-                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
-            }
+           
             return rpta; 
         }
                 

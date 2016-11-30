@@ -19,30 +19,35 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-      /*  private string cancelarTurnoAf()
+        //Mostrar Mensaje de Confirmación
+        private void MensajeOk(string mensaje)
         {
-            string rpta = "";
-            try
-            {
-                            
+            MessageBox.Show(mensaje, "CLINICA - FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+
+        //Mostrar Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "CLINICA - FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void cancelarTurnoAf()
+        {
+
             N13CancAtencion Obj = new N13CancAtencion();
-           // int codTurno = this.dgvTurnosDisponibles.DataSource
-            int codTurno = (int)dgvTurnosDisponibles.CurrentRow.HeaderCell.Value;
-            //int codTurno = 1;
+            int codTurno = (int)this.dgvTurnosDisponibles.CurrentRow.Cells[0].Value;
+            //int codTurno = int.Parse(this.textBox1.Text);
             string detalle = this.textBox1.Text;
             string var = Obj.CancelarTurnoAf(codTurno, detalle);
-            }
-             catch (Exception ex)
-            {
-                rpta = ex.Message;
-            }
-            return rpta;
+            MessageBox.Show(var, "CLINICA-FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        */
+
         private void frmCancTurnoAfiliado_Load(object sender, EventArgs e)
         {
             N13CancAtencion var = new N13CancAtencion();
-            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1);
+            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1); //acá le debería pasar el usuario logueado. le hardcodeo el id 1 para probar
 
         }
 
@@ -56,12 +61,39 @@ namespace CapaPresentacion
 
         }
 
-          private void btnCancelarTurno_Click(object sender, EventArgs e)
-          {
-             // this.cancelarTurnoAf();
-          }
+        private void dgvTurnosDisponibles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //  DataGridViewRow Fila = this.dgvTurnosDisponibles.Rows[e.RowIndex];
+            // this.txtTurnoSeleccionado.Text = Fila.Cells["turn_id"].Value.ToString();
+            // this.txtTurnoSeleccionado.Text = Convert.ToString(this.dgvTurnosDisponibles.CurrentRow.Cells["turn_id"].Value);
+            this.txtTurnoSeleccionado.Text = Convert.ToString(this.dgvTurnosDisponibles.CurrentRow.Cells["turn_id"].Value);
+        }
+
+        private void dgvTurnosDisponibles_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+        }
+
+
+        private void btnCancelarTurno_Click(object sender, EventArgs e)
+        {
+
+            this.cancelarTurnoAf();
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTurnoSeleccionado_TextChanged(object sender, EventArgs e)
+        {
+            // this.Text = this.dgvTurnosDisponibles.CurrentRow.Cells["turn_id"].Value.ToString();
+        }
+
+        private void frmCancTurnoAfiliado_Click(object sender, EventArgs e)
         {
 
         }

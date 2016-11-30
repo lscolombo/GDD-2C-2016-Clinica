@@ -33,6 +33,8 @@
             this.dgvTurnosDisponibles = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTurnoSeleccionado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnosDisponibles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,11 +69,12 @@
             this.dgvTurnosDisponibles.ReadOnly = true;
             this.dgvTurnosDisponibles.Size = new System.Drawing.Size(472, 150);
             this.dgvTurnosDisponibles.TabIndex = 3;
+            this.dgvTurnosDisponibles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnosDisponibles_CellClick);
             this.dgvTurnosDisponibles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnosDisponibles_CellContentClick);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 225);
+            this.textBox1.Location = new System.Drawing.Point(15, 262);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(308, 20);
             this.textBox1.TabIndex = 4;
@@ -80,17 +83,35 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 209);
+            this.label2.Location = new System.Drawing.Point(12, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Motivo de la cancelación:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 197);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Turno seleccionado:";
+            // 
+            // txtTurnoSeleccionado
+            // 
+            this.txtTurnoSeleccionado.Location = new System.Drawing.Point(15, 214);
+            this.txtTurnoSeleccionado.Name = "txtTurnoSeleccionado";
+            this.txtTurnoSeleccionado.Size = new System.Drawing.Size(100, 20);
+            this.txtTurnoSeleccionado.TabIndex = 7;
             // 
             // frmCancTurnoAfiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 294);
+            this.Controls.Add(this.txtTurnoSeleccionado);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgvTurnosDisponibles);
@@ -112,5 +133,7 @@
         private System.Windows.Forms.DataGridView dgvTurnosDisponibles;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTurnoSeleccionado;
     }
 }
