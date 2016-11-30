@@ -25,30 +25,37 @@ namespace CapaPresentacion
 
         private void btnCrearRol_Click(object sender, EventArgs e)
         {
-            N1ABMRol abm = new N1ABMRol();
-            if (abm.crearRol(nombreRol.Text) == 0) //Verifico si el rol existe
+            if (nombreRol.Text != "")
             {
-                MessageBox.Show("El rol que ingresó ya existe. Ingrese otro rol", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("Rol creado exitosamente", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
-                { //Si el usuario clickea en el boton OK
-                    DialogResult result2 = MessageBox.Show("Seleccione la funcionalidad que desea agregar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (result2 == DialogResult.OK)
+                N1ABMRol abm = new N1ABMRol();
+                if (abm.crearRol(nombreRol.Text) == 0) //Verifico si el rol existe
+                {
+                    MessageBox.Show("El rol que ingresó ya existe. Ingrese otro rol", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Rol creado exitosamente", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
                     { //Si el usuario clickea en el boton OK
-                        nombreRol.Enabled = false;
-                        btnCrearRol.Enabled = false;
-                        funcionalidades.Enabled = true;
-                        btnAgregarFuncionalidad.Enabled = true;
-                        DataTable listaDeFuncionalidades = abm.getFuncionalidades(nombreRol.Text); //Obtengo las funcionalidades que aún no tiene el rol
-                        foreach (DataRow fila in listaDeFuncionalidades.Rows) //Recorro todas las filas del datatable
-                        {
-                            funcionalidades.Items.Add(fila[0].ToString()); //Agrego al combobox el elemento de la columna 0 de esa fila (en este caso solo hay una que es func_descripcion)
+                        DialogResult result2 = MessageBox.Show("Seleccione la funcionalidad que desea agregar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result2 == DialogResult.OK)
+                        { //Si el usuario clickea en el boton OK
+                            nombreRol.Enabled = false;
+                            btnCrearRol.Enabled = false;
+                            funcionalidades.Enabled = true;
+                            btnAgregarFuncionalidad.Enabled = true;
+                            DataTable listaDeFuncionalidades = abm.getFuncionalidades(nombreRol.Text); //Obtengo las funcionalidades que aún no tiene el rol
+                            foreach (DataRow fila in listaDeFuncionalidades.Rows) //Recorro todas las filas del datatable
+                            {
+                                funcionalidades.Items.Add(fila[0].ToString()); //Agrego al combobox el elemento de la columna 0 de esa fila (en este caso solo hay una que es func_descripcion)
+                            }
                         }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Nombre de rol vacío. Inserte el nombre del rol", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -101,6 +108,11 @@ namespace CapaPresentacion
         }
 
         private void funcionalidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAltaRol_Load(object sender, EventArgs e)
         {
 
         }
