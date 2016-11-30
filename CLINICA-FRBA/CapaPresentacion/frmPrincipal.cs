@@ -136,5 +136,33 @@ namespace CapaPresentacion
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            this.GestionUsuario(frmRoles.passingRol);
+        }
+
+        private void GestionUsuario(string rol)
+        {
+            DataTable funcionalidades = CapaNegocio.N2Login.MostrarFuncionalidades("Administrador General");
+
+            this.dgvFunc.DataSource = CapaNegocio.N2Login.MostrarFuncionalidades("Administrador General");
+            /*
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (names[i] == funcionalidades.Rows[0][i].ToString())
+                    visibilidad[i] = true;
+            }
+            */
+
+            /*
+            int a = funcionalidades.Rows.Count;
+            this.dgvFunc.DataSource = CapaNegocio.N2Login.MostrarFuncionalidades(rol);
+            MessageBox.Show("Resultados" + rol, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            */
+            this.MnuAltaRol.Visible = true;
+            this.MnuAltaAfiliado.Visible = false;
+
+        }
     }
 }

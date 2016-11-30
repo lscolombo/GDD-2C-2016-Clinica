@@ -31,13 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.sistemaClinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaDeAfiliadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.llegadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resultadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuABM = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuAltaAfiliado = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuAltaRol = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuCancelaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelarAtencionMedicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuComprar = new System.Windows.Forms.ToolStripMenuItem();
+            this.bonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuListados = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuTurnos = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuSolicitarTurno = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuRegistrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuAgenda = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuLlegada = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuResultados = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,17 +67,22 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.altaDeRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvFunc = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sistemaClinicaToolStripMenuItem,
-            this.aBMToolStripMenuItem,
-            this.registrarToolStripMenuItem,
+            this.MnuSistema,
+            this.MnuABM,
+            this.MnuCancelaciones,
+            this.MnuComprar,
+            this.MnuListados,
+            this.MnuTurnos,
+            this.MnuRegistrar,
             this.viewMenu,
             this.toolsMenu,
             this.windowsMenu,
@@ -76,17 +90,17 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(632, 24);
+            this.menuStrip.Size = new System.Drawing.Size(783, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
-            // sistemaClinicaToolStripMenuItem
+            // MnuSistema
             // 
-            this.sistemaClinicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuSistema.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
-            this.sistemaClinicaToolStripMenuItem.Name = "sistemaClinicaToolStripMenuItem";
-            this.sistemaClinicaToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.sistemaClinicaToolStripMenuItem.Text = "SistemaClinica";
+            this.MnuSistema.Name = "MnuSistema";
+            this.MnuSistema.Size = new System.Drawing.Size(96, 20);
+            this.MnuSistema.Text = "SistemaClinica";
             // 
             // salirToolStripMenuItem
             // 
@@ -95,44 +109,106 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // aBMToolStripMenuItem
+            // MnuABM
             // 
-            this.aBMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaDeAfiliadoToolStripMenuItem,
-            this.altaDeRolToolStripMenuItem});
-            this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
-            this.aBMToolStripMenuItem.Text = "ABM";
+            this.MnuABM.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuAltaAfiliado,
+            this.MnuAltaRol});
+            this.MnuABM.Name = "MnuABM";
+            this.MnuABM.Size = new System.Drawing.Size(45, 20);
+            this.MnuABM.Text = "ABM";
             // 
-            // altaDeAfiliadoToolStripMenuItem
+            // MnuAltaAfiliado
             // 
-            this.altaDeAfiliadoToolStripMenuItem.Name = "altaDeAfiliadoToolStripMenuItem";
-            this.altaDeAfiliadoToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.altaDeAfiliadoToolStripMenuItem.Text = "Alta de Afiliado";
-            this.altaDeAfiliadoToolStripMenuItem.Click += new System.EventHandler(this.altaDeAfiliadoToolStripMenuItem_Click);
+            this.MnuAltaAfiliado.Name = "MnuAltaAfiliado";
+            this.MnuAltaAfiliado.Size = new System.Drawing.Size(155, 22);
+            this.MnuAltaAfiliado.Text = "Alta de Afiliado";
+            this.MnuAltaAfiliado.Click += new System.EventHandler(this.altaDeAfiliadoToolStripMenuItem_Click);
             // 
-            // registrarToolStripMenuItem
+            // MnuAltaRol
             // 
-            this.registrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.llegadaToolStripMenuItem,
-            this.resultadosToolStripMenuItem});
-            this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.registrarToolStripMenuItem.Text = "Registrar";
+            this.MnuAltaRol.Name = "MnuAltaRol";
+            this.MnuAltaRol.Size = new System.Drawing.Size(155, 22);
+            this.MnuAltaRol.Text = "Alta de Rol";
+            this.MnuAltaRol.Click += new System.EventHandler(this.altaDeRolToolStripMenuItem_Click);
             // 
-            // llegadaToolStripMenuItem
+            // MnuCancelaciones
             // 
-            this.llegadaToolStripMenuItem.Name = "llegadaToolStripMenuItem";
-            this.llegadaToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.llegadaToolStripMenuItem.Text = "Llegada";
-            this.llegadaToolStripMenuItem.Click += new System.EventHandler(this.llegadaToolStripMenuItem_Click);
+            this.MnuCancelaciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cancelarAtencionMedicaToolStripMenuItem});
+            this.MnuCancelaciones.Name = "MnuCancelaciones";
+            this.MnuCancelaciones.Size = new System.Drawing.Size(95, 20);
+            this.MnuCancelaciones.Text = "Cancelaciones";
             // 
-            // resultadosToolStripMenuItem
+            // cancelarAtencionMedicaToolStripMenuItem
             // 
-            this.resultadosToolStripMenuItem.Name = "resultadosToolStripMenuItem";
-            this.resultadosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.resultadosToolStripMenuItem.Text = "Resultados";
-            this.resultadosToolStripMenuItem.Click += new System.EventHandler(this.resultadosToolStripMenuItem_Click);
+            this.cancelarAtencionMedicaToolStripMenuItem.Name = "cancelarAtencionMedicaToolStripMenuItem";
+            this.cancelarAtencionMedicaToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.cancelarAtencionMedicaToolStripMenuItem.Text = "Cancelar atencion medica";
+            // 
+            // MnuComprar
+            // 
+            this.MnuComprar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bonosToolStripMenuItem});
+            this.MnuComprar.Name = "MnuComprar";
+            this.MnuComprar.Size = new System.Drawing.Size(66, 20);
+            this.MnuComprar.Text = "Comprar";
+            // 
+            // bonosToolStripMenuItem
+            // 
+            this.bonosToolStripMenuItem.Name = "bonosToolStripMenuItem";
+            this.bonosToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.bonosToolStripMenuItem.Text = "Bonos";
+            // 
+            // MnuListados
+            // 
+            this.MnuListados.Name = "MnuListados";
+            this.MnuListados.Size = new System.Drawing.Size(62, 20);
+            this.MnuListados.Text = "Listados";
+            // 
+            // MnuTurnos
+            // 
+            this.MnuTurnos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuSolicitarTurno});
+            this.MnuTurnos.Name = "MnuTurnos";
+            this.MnuTurnos.Size = new System.Drawing.Size(56, 20);
+            this.MnuTurnos.Text = "Turnos";
+            // 
+            // MnuSolicitarTurno
+            // 
+            this.MnuSolicitarTurno.Name = "MnuSolicitarTurno";
+            this.MnuSolicitarTurno.Size = new System.Drawing.Size(148, 22);
+            this.MnuSolicitarTurno.Text = "Solicitar turno";
+            // 
+            // MnuRegistrar
+            // 
+            this.MnuRegistrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuAgenda,
+            this.MnuLlegada,
+            this.MnuResultados});
+            this.MnuRegistrar.Name = "MnuRegistrar";
+            this.MnuRegistrar.Size = new System.Drawing.Size(65, 20);
+            this.MnuRegistrar.Text = "Registrar";
+            // 
+            // MnuAgenda
+            // 
+            this.MnuAgenda.Name = "MnuAgenda";
+            this.MnuAgenda.Size = new System.Drawing.Size(177, 22);
+            this.MnuAgenda.Text = "Agenda Profesional";
+            // 
+            // MnuLlegada
+            // 
+            this.MnuLlegada.Name = "MnuLlegada";
+            this.MnuLlegada.Size = new System.Drawing.Size(177, 22);
+            this.MnuLlegada.Text = "Llegada";
+            this.MnuLlegada.Click += new System.EventHandler(this.llegadaToolStripMenuItem_Click);
+            // 
+            // MnuResultados
+            // 
+            this.MnuResultados.Name = "MnuResultados";
+            this.MnuResultados.Size = new System.Drawing.Size(177, 22);
+            this.MnuResultados.Text = "Resultados";
+            this.MnuResultados.Click += new System.EventHandler(this.resultadosToolStripMenuItem_Click);
             // 
             // viewMenu
             // 
@@ -265,7 +341,7 @@
             // 
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(632, 25);
+            this.toolStrip.Size = new System.Drawing.Size(783, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -275,7 +351,7 @@
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.Size = new System.Drawing.Size(783, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -285,18 +361,20 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // altaDeRolToolStripMenuItem
+            // dgvFunc
             // 
-            this.altaDeRolToolStripMenuItem.Name = "altaDeRolToolStripMenuItem";
-            this.altaDeRolToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.altaDeRolToolStripMenuItem.Text = "Alta de Rol";
-            this.altaDeRolToolStripMenuItem.Click += new System.EventHandler(this.altaDeRolToolStripMenuItem_Click);
+            this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFunc.Location = new System.Drawing.Point(156, 112);
+            this.dgvFunc.Name = "dgvFunc";
+            this.dgvFunc.Size = new System.Drawing.Size(240, 150);
+            this.dgvFunc.TabIndex = 4;
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(783, 453);
+            this.Controls.Add(this.dgvFunc);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -304,10 +382,12 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "frmPrincipal";
             this.Text = "Clinica FRBA";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,14 +416,23 @@
         private System.Windows.Forms.ToolStripMenuItem helpMenu;
         private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenuItem sistemaClinicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuSistema;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaDeAfiliadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem llegadaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resultadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaDeRolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuABM;
+        private System.Windows.Forms.ToolStripMenuItem MnuAltaAfiliado;
+        private System.Windows.Forms.ToolStripMenuItem MnuRegistrar;
+        private System.Windows.Forms.ToolStripMenuItem MnuLlegada;
+        private System.Windows.Forms.ToolStripMenuItem MnuResultados;
+        private System.Windows.Forms.ToolStripMenuItem MnuAltaRol;
+        private System.Windows.Forms.ToolStripMenuItem MnuCancelaciones;
+        private System.Windows.Forms.ToolStripMenuItem cancelarAtencionMedicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuComprar;
+        private System.Windows.Forms.ToolStripMenuItem bonosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuListados;
+        private System.Windows.Forms.ToolStripMenuItem MnuAgenda;
+        private System.Windows.Forms.ToolStripMenuItem MnuTurnos;
+        private System.Windows.Forms.ToolStripMenuItem MnuSolicitarTurno;
+        private System.Windows.Forms.DataGridView dgvFunc;
     }
 }
 

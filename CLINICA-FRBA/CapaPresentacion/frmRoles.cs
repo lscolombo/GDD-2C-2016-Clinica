@@ -12,6 +12,8 @@ namespace CapaPresentacion
 {
     public partial class frmRoles : Form
     {
+        public static String passingRol;
+
         public frmRoles()
         {
             InitializeComponent();
@@ -34,7 +36,10 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            passingRol = txtRol.Text;
+            frmPrincipal frm = new frmPrincipal();
+            frm.Show();
+            this.Hide();
         }
     }
 }

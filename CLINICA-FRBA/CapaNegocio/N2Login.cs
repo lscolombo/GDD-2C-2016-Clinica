@@ -24,5 +24,9 @@ namespace CapaNegocio
             return new D2Login().Mostrar(user_username);
         }
 
+        public static DataTable MostrarFuncionalidades(string user_rol)
+        {
+            return new D2Login().MostrarFuncionalidades(user_rol);
+        }
     }
 }

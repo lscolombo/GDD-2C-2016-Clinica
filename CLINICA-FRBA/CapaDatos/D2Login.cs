@@ -80,5 +80,36 @@ namespace CapaDatos
 
         }
 
+        public DataTable MostrarFuncionalidades(string user_rol)
+        {
+            DataTable DtResultado = new DataTable("WINCHESTER.Funcionalidad");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.pTraerFuncionalidades";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParUserRol = new SqlParameter();
+                ParUserRol.ParameterName = "@rol_descripcion";
+                ParUserRol.SqlDbType = SqlDbType.VarChar;
+                ParUserRol.Size = 255;
+                ParUserRol.Value = user_rol;
+                SqlCmd.Parameters.Add(ParUserRol);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
     }
 }
