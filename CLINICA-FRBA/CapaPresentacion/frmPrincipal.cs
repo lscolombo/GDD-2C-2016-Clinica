@@ -164,5 +164,12 @@ namespace CapaPresentacion
             this.MnuAltaAfiliado.Visible = false;
 
         }
+
+        private void cancelarAtencionMedicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCancTurnoAfiliado frm = new frmCancTurnoAfiliado();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

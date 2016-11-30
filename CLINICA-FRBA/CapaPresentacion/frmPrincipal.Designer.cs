@@ -145,6 +145,7 @@
             this.cancelarAtencionMedicaToolStripMenuItem.Name = "cancelarAtencionMedicaToolStripMenuItem";
             this.cancelarAtencionMedicaToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.cancelarAtencionMedicaToolStripMenuItem.Text = "Cancelar atencion medica";
+            this.cancelarAtencionMedicaToolStripMenuItem.Click += new System.EventHandler(this.cancelarAtencionMedicaToolStripMenuItem_Click);
             // 
             // MnuComprar
             // 

@@ -36,10 +36,17 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            passingRol = txtRol.Text;
-            frmPrincipal frm = new frmPrincipal();
-            frm.Show();
-            this.Hide();
+            if (this.txtRol.Text == "")
+            {
+                MessageBox.Show("Seleccione un rol", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                passingRol = txtRol.Text;
+                frmPrincipal frm = new frmPrincipal();
+                frm.Show();
+                this.Hide();
+            }
         }
     }
 }
