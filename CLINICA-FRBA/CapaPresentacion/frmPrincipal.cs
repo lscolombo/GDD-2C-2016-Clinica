@@ -14,6 +14,30 @@ namespace CapaPresentacion
     {
         private int childFormNumber = 0;
 
+        private string[] funcExistentes = new String[] {"ABM Afiliado",
+                                                        "ABM Rol",
+                                                        "Cancelar atencion medica",
+                                                        "Compra de bonos",
+                                                        "Listado Estadistico",
+                                                        "Pedir Turno",
+                                                        "Registro agenda profesional",
+                                                        "Registro de llegada para atencion medica",
+                                                        "Registro de resultado para atencion medica"
+                                                        };
+
+        private bool[] funcHabilitadas = new bool[] {false,
+                                                     false,
+                                                     false,
+                                                     false,
+                                                     false,
+                                                     false,
+                                                     false,
+                                                     false,
+                                                     false
+                                                     };
+
+        private string[] nombresFunc = new String[10];
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -146,6 +170,29 @@ namespace CapaPresentacion
         {
             DataTable funcionalidades = CapaNegocio.N2Login.MostrarFuncionalidades("Administrador General");
 
+            for (int i = 0; i < funcionalidades.Rows.Count; i++)
+                nombresFunc[i] = funcionalidades.Rows[i][0].ToString();
+
+            this.MnuABM.Visible = true;
+            this.MnuAltaAfiliado.Visible = funcHabilitadas[0];
+            this.MnuAltaRol.Visible = funcHabilitadas[1];
+
+            if ((funcHabilitadas[0] == false) && (funcHabilitadas[1] == false))
+                this.MnuABM.Visible = false;
+
+            this.MnuCancelaciones.Visible = funcHabilitadas[2];
+            this.MnuComprar.Visible = funcHabilitadas[3];
+            this.MnuListados.Visible = funcHabilitadas[4];
+            this.MnuTurnos.Visible = funcHabilitadas[5];
+
+            this.MnuRegistrar.Visible = true;
+            this.MnuAgenda.Visible = funcHabilitadas[6];
+            this.MnuLlegada.Visible = funcHabilitadas[7];
+            this.MnuResultados.Visible = funcHabilitadas[8];
+
+            if ((funcHabilitadas[6] == false) && (funcHabilitadas[7] == false) && (funcHabilitadas[8] == false))
+                this.MnuRegistrar.Visible = false;
+
             this.dgvFunc.DataSource = CapaNegocio.N2Login.MostrarFuncionalidades("Administrador General");
             /*
             for (int i = 0; i < names.Length; i++)
@@ -160,9 +207,6 @@ namespace CapaPresentacion
             this.dgvFunc.DataSource = CapaNegocio.N2Login.MostrarFuncionalidades(rol);
             MessageBox.Show("Resultados" + rol, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             */
-            this.MnuAltaRol.Visible = true;
-            this.MnuAltaAfiliado.Visible = false;
-
         }
 
         private void cancelarAtencionMedicaToolStripMenuItem_Click(object sender, EventArgs e)
