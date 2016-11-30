@@ -67,10 +67,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.dgvFunc = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -362,20 +360,11 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // dgvFunc
-            // 
-            this.dgvFunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFunc.Location = new System.Drawing.Point(156, 112);
-            this.dgvFunc.Name = "dgvFunc";
-            this.dgvFunc.Size = new System.Drawing.Size(240, 150);
-            this.dgvFunc.TabIndex = 4;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 453);
-            this.Controls.Add(this.dgvFunc);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -388,7 +377,6 @@
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFunc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,7 +421,6 @@
         private System.Windows.Forms.ToolStripMenuItem MnuAgenda;
         private System.Windows.Forms.ToolStripMenuItem MnuTurnos;
         private System.Windows.Forms.ToolStripMenuItem MnuSolicitarTurno;
-        private System.Windows.Forms.DataGridView dgvFunc;
     }
 }
 

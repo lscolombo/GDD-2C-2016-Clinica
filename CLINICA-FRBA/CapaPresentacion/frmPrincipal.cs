@@ -168,10 +168,15 @@ namespace CapaPresentacion
 
         private void GestionUsuario(string rol)
         {
-            DataTable funcionalidades = CapaNegocio.N2Login.MostrarFuncionalidades("Administrador General");
+            DataTable funcionalidades = CapaNegocio.N2Login.MostrarFuncionalidades(rol);
 
             for (int i = 0; i < funcionalidades.Rows.Count; i++)
                 nombresFunc[i] = funcionalidades.Rows[i][0].ToString();
+
+            for (int i = 0; i < funcExistentes.Length; i++)
+                for (int j = 0; j < funcionalidades.Rows.Count; j++)
+                    if (funcExistentes[i].Equals(funcionalidades.Rows[j][0].ToString()))
+                        funcHabilitadas[i] = true;
 
             this.MnuABM.Visible = true;
             this.MnuAltaAfiliado.Visible = funcHabilitadas[0];
@@ -193,20 +198,6 @@ namespace CapaPresentacion
             if ((funcHabilitadas[6] == false) && (funcHabilitadas[7] == false) && (funcHabilitadas[8] == false))
                 this.MnuRegistrar.Visible = false;
 
-            this.dgvFunc.DataSource = CapaNegocio.N2Login.MostrarFuncionalidades("Administrador General");
-            /*
-            for (int i = 0; i < names.Length; i++)
-            {
-                if (names[i] == funcionalidades.Rows[0][i].ToString())
-                    visibilidad[i] = true;
-            }
-            */
-
-            /*
-            int a = funcionalidades.Rows.Count;
-            this.dgvFunc.DataSource = CapaNegocio.N2Login.MostrarFuncionalidades(rol);
-            MessageBox.Show("Resultados" + rol, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            */
         }
 
         private void cancelarAtencionMedicaToolStripMenuItem_Click(object sender, EventArgs e)
