@@ -25,8 +25,8 @@ namespace CLINICA___FRBA
             //Application.Run(new frmLogin());
             //Application.Run(new frmRegResultados()); 
             //Application.Run(new frmALTAafiliado()); 
-            Application.Run(new frmCancTurnoAfiliado()); 
-            //Application.Run(new frmABMRolInicio());
+            //Application.Run(new frmCancTurnoAfiliado()); 
+            Application.Run(new frmABMRolInicio());
         }
     }
 }

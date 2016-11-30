@@ -13,10 +13,15 @@ namespace CapaPresentacion
 {
     public partial class frmModificarRol : Form
     {
+        //Variables para asegurare el correcto funcionamiento del btnAceptar_Click
+
         private bool estoyCambiandoNombre = false;
         private bool estoyAgregandoUnaFuncionalidad = false;
         private bool estoyEliminandoUnaFuncionalidad = false;
         private bool estoyHabilitandoUnRol = false;
+
+        //Variable para recuperar el nombre en caso de cancelar
+        private String nombre;
 
         public frmModificarRol()
         {
@@ -37,6 +42,7 @@ namespace CapaPresentacion
                 /*APARTIR DE ACA SOLO GUARDO EN CONTROLES TEXTBOX LOS RESPECTIVOS CAMPOS DEL REGISTRO SELECCIONADO*/
                 this.idRol.Text = Fila.Cells["Id"].Value.ToString();
                 this.nombreRol.Text = Fila.Cells["Nombre"].Value.ToString();
+                nombre = Fila.Cells["Nombre"].Value.ToString();
                 this.habilitado.Text = Fila.Cells["Habilitado"].Value.ToString();
 
                 btnCambiarNombre.Enabled = true;
@@ -401,7 +407,7 @@ namespace CapaPresentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            nombreRol.Text = nombre;
             nombreRol.Enabled = false;
             funcionalidades.Enabled = false;
             habilitado.Enabled = false;
