@@ -28,7 +28,6 @@ namespace CapaPresentacion
 
         private void frmALTAafiliado_Load(object sender, EventArgs e)
         {
-            this.CenterToScreen();
             generarNroRaiz();             
         }
 
@@ -57,6 +56,9 @@ namespace CapaPresentacion
             txtCantHijos.ReadOnly = false;
             ContadorHijos = 0;
             cbbEstadoCivil.Enabled = true;
+
+            txtUserName.Text = "";
+            txtPassword.Text = "";
 
             btnPareja.Enabled = false;
             btnHijo.Enabled = false;
@@ -206,7 +208,7 @@ namespace CapaPresentacion
                             darPosibilidadesDeAfiliacion();
                             btnNuevaAlta.Enabled = true;
                             //MessageBox.Show("1.- inserto A");
-                            MessageBox.Show("1.-Afiliado registrado", "Alta exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Afiliado registrado", "Alta exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
@@ -235,7 +237,7 @@ namespace CapaPresentacion
                         darPosibilidadesDeAfiliacion();
                         btnNuevaAlta.Enabled = true;
                         //MessageBox.Show("4.- inserto U y A");
-                        MessageBox.Show("4.-Afiliado registrado", "Alta exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Afiliado registrado", "Alta exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }                
             }            

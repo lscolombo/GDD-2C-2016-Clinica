@@ -19,15 +19,16 @@ namespace CLINICA___FRBA
             Application.SetCompatibleTextRenderingDefault(false);
             /*Application.Run(new Form1());*/ /*el default, seria el login*/
 
-
+            
             /*ACA ESPECIFICO CON QUE FORM ARANQUE AL EJECUTAR*/
             //Application.Run(new frmRegLlegada());
-            Application.Run(new frmLogin());
+            //Application.Run(new frmLogin());
             //Application.Run(new frmRegResultados()); 
             //Application.Run(new frmALTAafiliado()); 
             //Application.Run(new frmCancTurnoAfiliado()); 
             //Application.Run(new frmABMRolInicio());
-            //Application.Run(new frmPrincipal());
+            //Application.Run(new frmBAJAafiliado()); 
+            Application.Run(new frmABMAfiliado()); 
         }
     }
 }

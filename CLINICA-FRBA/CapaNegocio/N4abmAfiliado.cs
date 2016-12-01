@@ -52,5 +52,36 @@ namespace CapaNegocio
             D4abmAfiliado Obj = new D4abmAfiliado();
             return Obj.InsertarAfiliado(unId, unUsuario, unPlan, unPrincipal, unaCantHijos);
         }
+
+        
+        // BAJA
+
+        public static DataTable BuscarAlAfiliado(string unApellido, string unNombre)
+        {
+            D4abmAfiliado Obj = new D4abmAfiliado();
+            return Obj.BuscarAfiliado(unApellido, unNombre);
+              
+        }
+
+        public static DataTable BajaLogicaADelAfiliado(string unUsuario, int unID) // ,DateTime unaFechaBaja)
+        {
+            D4abmAfiliado Obj = new D4abmAfiliado();
+            return Obj.BajaLogicaAfiliado(unUsuario, unID);
+        }
+
+        // MODIFICACION
+
+        public static DataTable ActualizarLosDatos(string unUserName, int unTelefono, string unaDireccion, string unMail, string unPassword,
+                                                   int unId, int unPlan)
+        {
+            D4abmAfiliado Obj = new D4abmAfiliado();
+            return Obj.ActualizarDatos(unUserName, unTelefono, unaDireccion, unMail, unPassword, unId, unPlan);
+        }
+
+        public static DataTable InsertarCambioDePlanM(int unAfiliado, int unPlan, string unaDescripcion)
+        {
+            D4abmAfiliado Obj = new D4abmAfiliado();
+            return Obj.InsertarCambioPlanM(unAfiliado, unPlan, unaDescripcion);
+        }
     }
 }

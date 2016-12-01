@@ -111,3 +111,6 @@ C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresenta
 C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
 C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRoles.resources
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRoles.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmABMAfiliado.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmBAJAafiliado.resources
+C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmMODIafiliado.resources

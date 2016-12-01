@@ -42,6 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="frmABMAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMAfiliado.Designer.cs">
+      <DependentUpon>frmABMAfiliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABMRolInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
     <Compile Include="frmAltaRol.Designer.cs">
       <DependentUpon>frmAltaRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBAJAafiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBAJAafiliado.Designer.cs">
+      <DependentUpon>frmBAJAafiliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCancTurnoAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,12 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMODIafiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMODIafiliado.Designer.cs">
+      <DependentUpon>frmMODIafiliado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModificarRol.cs">
       <SubType>Form</SubType>
@@ -129,6 +147,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmABMAfiliado.resx">
+      <DependentUpon>frmABMAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmABMRolInicio.resx">
       <DependentUpon>frmABMRolInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +159,9 @@
     <EmbeddedResource Include="frmAltaRol.resx">
       <DependentUpon>frmAltaRol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBAJAafiliado.resx">
+      <DependentUpon>frmBAJAafiliado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCancTurnoAfiliado.resx">
       <DependentUpon>frmCancTurnoAfiliado.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMODIafiliado.resx">
+      <DependentUpon>frmMODIafiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarRol.resx">
       <DependentUpon>frmModificarRol.cs</DependentUpon>
