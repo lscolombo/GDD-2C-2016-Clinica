@@ -13,6 +13,8 @@ namespace CapaPresentacion
     public partial class frmLogin : Form
     {
         public static String passingText;
+        public static String passingRol;
+        public static int cantRoles;
 
         public frmLogin()
         {
@@ -39,29 +41,23 @@ namespace CapaPresentacion
             }
             else
             {
-                /*
-                frm.Idtrabajador = Datos.Rows[0][0].ToString();
-                frm.Apellidos = Datos.Rows[0][1].ToString();
-                frm.Nombre = Datos.Rows[0][2].ToString();
-                frm.Acceso = Datos.Rows[0][3].ToString();
-                */
-
-                /*
-                frmPrincipal frm = new frmPrincipal();
-                frm.Show();
-                this.Hide();
-                */
-
                 passingText = TxtUsuario.Text;
+                cantRoles = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows.Count;
 
-                frmRoles frm = new frmRoles();
-                frm.Show();
-                this.Hide();
-
-                //MessageBox.Show("SI Tiene Acceso al Sistema", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                if (cantRoles == 1)
+                {
+                    passingRol = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows[0][0].ToString();
+                    frmPrincipal frm = new frmPrincipal();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    frmRoles frm = new frmRoles();
+                    frm.Show();
+                    this.Hide();
+                }
             }
-
         }
     }
 }

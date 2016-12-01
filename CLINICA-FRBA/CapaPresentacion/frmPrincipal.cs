@@ -165,7 +165,11 @@ namespace CapaPresentacion
         {
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.CenterToScreen();
-            this.GestionUsuario(frmRoles.passingRol);
+
+            if (frmRoles.passingRol == null)
+                this.GestionUsuario(frmLogin.passingRol);
+            else
+                this.GestionUsuario(frmRoles.passingRol);
         }
 
         private void GestionUsuario(string rol)
