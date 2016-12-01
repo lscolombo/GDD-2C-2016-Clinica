@@ -23,6 +23,7 @@ namespace CapaPresentacion
             especialidad = this.cbEspecialidades.SelectedValue.ToString();
             textBox1.Text = especialidad;
             this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
+            txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
         }
 
         private void llenarComboEspecialidad()
@@ -47,6 +48,12 @@ namespace CapaPresentacion
         {
             especialidad = this.cbEspecialidades.SelectedValue.ToString();
             textBox1.Text = especialidad;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
+            txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
         }
     }
 }
