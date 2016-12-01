@@ -25,6 +25,7 @@ namespace CapaPresentacion
 
         private void frmRegResultados_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             BuscarLasConsultasParaReg();
             if (dgvListado.RowCount == 0)
             {

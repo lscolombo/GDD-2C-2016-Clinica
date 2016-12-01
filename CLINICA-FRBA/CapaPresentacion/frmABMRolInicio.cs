@@ -34,5 +34,10 @@ namespace CapaPresentacion
             frmEliminarRol frmBaja = new frmEliminarRol();
             frmBaja.Visible = true;
         }
+
+        private void frmABMRolInicio_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

@@ -64,6 +64,7 @@ namespace CapaPresentacion
 
         private void frmModificarRol_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             this.tablaDeRoles.DataSource = N1ABMRol.mostrarRoles();
         }
 

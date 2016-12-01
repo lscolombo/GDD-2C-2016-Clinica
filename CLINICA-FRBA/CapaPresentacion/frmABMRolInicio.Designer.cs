@@ -88,6 +88,7 @@
             this.Controls.Add(this.btnAlta);
             this.Name = "frmABMRolInicio";
             this.Text = "ABM Rol Inicio";
+            this.Load += new System.EventHandler(this.frmABMRolInicio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

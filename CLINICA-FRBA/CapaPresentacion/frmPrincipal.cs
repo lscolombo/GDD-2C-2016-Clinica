@@ -163,6 +163,7 @@ namespace CapaPresentacion
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             this.GestionUsuario(frmRoles.passingRol);
         }
 

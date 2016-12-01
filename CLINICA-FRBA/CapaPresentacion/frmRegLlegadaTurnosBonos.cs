@@ -57,6 +57,7 @@ namespace CapaPresentacion
 
         private void frmRegLlegadaTurnosBonos_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             BuscarLosBonosDisponibles();
             if (dgvListado.RowCount == 0)
             {

@@ -20,6 +20,7 @@ namespace CapaPresentacion
 
         private void frmRegLlegada_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
         }
 
         /*METODO USADO POR LA CONSULTAR UN STORE PROCEDURE PASANDO COMO PARAMTROS LOS CAMPOS INGRESADOS POR LOS TEXTBOX*/

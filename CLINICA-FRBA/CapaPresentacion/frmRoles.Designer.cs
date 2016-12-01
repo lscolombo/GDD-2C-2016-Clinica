@@ -80,15 +80,16 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 18);
+            this.label1.Size = new System.Drawing.Size(220, 18);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Seleccione un rol haciendo doble click";
+            this.label1.Text = "Seleccione un rol haciendo click";
             // 
             // dgvRoles
             // 
             this.dgvRoles.AllowUserToAddRows = false;
             this.dgvRoles.AllowUserToDeleteRows = false;
             this.dgvRoles.AllowUserToOrderColumns = true;
+            this.dgvRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoles.Location = new System.Drawing.Point(12, 29);
             this.dgvRoles.MultiSelect = false;
@@ -96,6 +97,8 @@
             this.dgvRoles.ReadOnly = true;
             this.dgvRoles.Size = new System.Drawing.Size(257, 117);
             this.dgvRoles.TabIndex = 6;
+            this.dgvRoles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellClick);
+            this.dgvRoles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellContentClick);
             this.dgvRoles.DoubleClick += new System.EventHandler(this.dgvRoles_DoubleClick);
             // 
             // frmRoles

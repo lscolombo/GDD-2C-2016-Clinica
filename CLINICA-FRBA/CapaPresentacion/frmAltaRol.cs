@@ -114,7 +114,7 @@ namespace CapaPresentacion
 
         private void frmAltaRol_Load(object sender, EventArgs e)
         {
-
+            this.CenterToScreen();
         }
     }
 }

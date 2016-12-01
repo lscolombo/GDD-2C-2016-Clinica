@@ -28,6 +28,7 @@ namespace CapaPresentacion
 
         private void frmALTAafiliado_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             generarNroRaiz();             
         }
 

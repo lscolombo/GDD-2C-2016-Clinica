@@ -46,6 +46,7 @@ namespace CapaPresentacion
 
         private void frmCancTurnoAfiliado_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             N13CancAtencion var = new N13CancAtencion();
             dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1); //acá le debería pasar el usuario logueado. le hardcodeo el id 1 para probar
 

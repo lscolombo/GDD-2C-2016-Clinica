@@ -26,6 +26,7 @@ namespace CapaPresentacion
 
         private void Roles_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             this.dgvRoles.DataSource = CapaNegocio.N2Login.Mostrar(frmLogin.passingText);
         }
 
@@ -47,6 +48,16 @@ namespace CapaPresentacion
                 frm.Show();
                 this.Hide();
             }
+        }
+
+        private void dgvRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvRoles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtRol.Text = Convert.ToString(this.dgvRoles.CurrentRow.Cells["rol_descripcion"].Value);
         }
     }
 }

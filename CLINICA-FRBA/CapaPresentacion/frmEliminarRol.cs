@@ -20,6 +20,7 @@ namespace CapaPresentacion
 
         private void frmEliminarRol_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             this.tablaDeRoles.DataSource = N1ABMRol.mostrarRolesHabilitados();
         }
 

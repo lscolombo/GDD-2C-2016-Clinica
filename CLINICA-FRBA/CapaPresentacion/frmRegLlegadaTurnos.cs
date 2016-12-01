@@ -22,6 +22,7 @@ namespace CapaPresentacion
         private void frmRegLlegadaTurnos_Load(object sender, EventArgs e)
         {
             /*lblDateTime.Text = DateTime.Now.ToString();*/
+            this.CenterToScreen();
             lblDateTime.Text = DateTime.Now.ToLongDateString();
 
             BuscarLosTurnosDisponibles();
