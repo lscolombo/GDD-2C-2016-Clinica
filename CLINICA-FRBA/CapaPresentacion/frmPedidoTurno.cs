@@ -20,6 +20,9 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             this.llenarComboEspecialidad();
+            especialidad = this.cbEspecialidades.SelectedValue.ToString();
+            textBox1.Text = especialidad;
+            this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
         }
 
         private void llenarComboEspecialidad()
@@ -32,11 +35,18 @@ namespace CapaPresentacion
         private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
         {
             especialidad = this.cbEspecialidades.SelectedValue.ToString();
+            textBox1.Text = especialidad;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmPedidoTurno_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+            this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
         }
     }
 }

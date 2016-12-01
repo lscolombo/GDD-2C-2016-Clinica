@@ -13,8 +13,12 @@ namespace CapaNegocio
     {
         public static DataTable MostrarEspecialidades()
         {
-            
             return new D10Turno().MostrarEspecialidades();
+        }
+
+        public static DataTable MostrarProfesionales(string especialidad)
+        {
+            return new D10Turno().MostrarProfesionales(especialidad);
         }
     }
 }
