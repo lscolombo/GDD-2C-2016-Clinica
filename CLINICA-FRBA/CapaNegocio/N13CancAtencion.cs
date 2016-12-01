@@ -32,6 +32,17 @@ namespace CapaNegocio
             return Obj.CancelarTurnoAf(Obj);
         }
 
+        public string CancelarTurnosProf(DateTime fechaInicio, DateTime fechaFin, string detalle, int profesionalID)
+        {
+            D13CancAtencion Obj = new D13CancAtencion();
+            Obj.fechaInicio = fechaInicio;
+            Obj.fechaFin = fechaFin;
+            Obj.detalle = detalle;
+            Obj.profesionalID = profesionalID;
+            return Obj.CancelarTurnosProf(Obj);
+        }
+
+
 
     }
 }
