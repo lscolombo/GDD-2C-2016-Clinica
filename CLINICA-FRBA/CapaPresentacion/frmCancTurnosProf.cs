@@ -23,7 +23,6 @@ namespace CapaPresentacion
         {
             N13CancAtencion var = new N13CancAtencion();
             dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(1465925, this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
-            
         }
 
 
@@ -52,14 +51,39 @@ namespace CapaPresentacion
 
         }
 
-        private void dgvTurnosPendientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnMostrarTurnos_Click(object sender, EventArgs e)
         {
             this.cargarDataGridView();
+        }
+
+        private void btnCancelarTurnos_Click(object sender, EventArgs e)
+        {
+            if (dgvTurnosPendientes.Rows.Count == 0)
+            {
+                MessageBox.Show("No posee turnos pendientes para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            this.cancelarTurnosProf();
+            this.txtMotivoCancelacion.Text = "";
+            this.cargarDataGridView();
+           
+         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox1.Checked == true)
+            {
+                this.dTimeFechaFin.Value = dTimeFechaInicio.Value;
+                this.dTimeFechaFin.Enabled = false;
+
+            }
+
+            if (this.checkBox1.Checked == false)
+            {
+                
+                this.dTimeFechaFin.Enabled = true;
+
+            }
         }
     }
 }

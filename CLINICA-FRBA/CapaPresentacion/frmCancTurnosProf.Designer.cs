@@ -100,6 +100,7 @@
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Cancelar turnos de un sólo día";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -118,9 +119,9 @@
             this.dgvTurnosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnosPendientes.Location = new System.Drawing.Point(6, 20);
             this.dgvTurnosPendientes.Name = "dgvTurnosPendientes";
+            this.dgvTurnosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTurnosPendientes.Size = new System.Drawing.Size(428, 174);
             this.dgvTurnosPendientes.TabIndex = 0;
-            this.dgvTurnosPendientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnosPendientes_CellContentClick);
             // 
             // txtMotivoCancelacion
             // 
@@ -156,6 +157,7 @@
             this.btnCancelarTurnos.TabIndex = 5;
             this.btnCancelarTurnos.Text = "Cancelar turnos";
             this.btnCancelarTurnos.UseVisualStyleBackColor = true;
+            this.btnCancelarTurnos.Click += new System.EventHandler(this.btnCancelarTurnos_Click);
             // 
             // frmCancTurnosProf
             // 

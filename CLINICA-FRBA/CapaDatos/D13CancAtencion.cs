@@ -252,7 +252,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(ParProfesionalID);
 
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se cancelaron los turnos para las fechas seleccionadas";
+                rpta = "Se cancelaron" + " " + SqlCmd.ExecuteNonQuery() +" " + "turnos"; // == 1 ? "OK" : "No se cancelaron los turnos para las fechas seleccionadas";
 
 
             }
