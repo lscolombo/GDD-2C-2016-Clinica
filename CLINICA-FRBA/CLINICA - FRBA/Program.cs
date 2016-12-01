@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using CapaPresentacion;
 
 namespace CLINICA___FRBA
@@ -28,7 +29,8 @@ namespace CLINICA___FRBA
             //Application.Run(new frmCancTurnoAfiliado()); 
             //Application.Run(new frmABMRolInicio());
             //Application.Run(new frmBAJAafiliado()); 
-            Application.Run(new frmABMAfiliado()); 
+            //Application.Run(new frmABMAfiliado()); 
+            Application.Run(new frmPedidoTurno());
         }
     }
 }

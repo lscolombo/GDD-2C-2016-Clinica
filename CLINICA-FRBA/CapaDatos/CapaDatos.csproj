@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="D10Turno.cs" />
     <Compile Include="D11RegLlegada.cs" />
     <Compile Include="D12RegResultados.cs" />
     <Compile Include="D13CancAtencion.cs" />
