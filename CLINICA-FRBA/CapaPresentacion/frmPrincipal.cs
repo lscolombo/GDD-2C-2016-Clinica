@@ -149,7 +149,7 @@ namespace CapaPresentacion
 
         private void altaDeRolToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAltaRol frm = new frmAltaRol();
+            frmABMRolInicio frm = new frmABMRolInicio();
             frm.MdiParent = this;
             frm.Show();
         }

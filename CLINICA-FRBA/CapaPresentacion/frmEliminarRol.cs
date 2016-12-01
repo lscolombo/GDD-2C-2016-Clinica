@@ -22,6 +22,11 @@ namespace CapaPresentacion
         {
             this.CenterToScreen();
             this.tablaDeRoles.DataSource = N1ABMRol.mostrarRolesHabilitados();
+            if (tablaDeRoles.Rows.Count == 0)
+            {
+                MessageBox.Show("Actualmente no hay roles para dar de baja", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void tablaDeRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -52,6 +57,12 @@ namespace CapaPresentacion
             this.nombreRol.Text = "";
             this.btnEliminarRol.Enabled = false;
             MessageBox.Show("Baja de rol exitosa", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (tablaDeRoles.Rows.Count == 0)
+            {
+                MessageBox.Show("Actualmente no hay roles para dar de baja", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
     }

@@ -66,6 +66,9 @@ namespace CapaPresentacion
         {
             this.CenterToScreen();
             this.tablaDeRoles.DataSource = N1ABMRol.mostrarRoles();
+            if (tablaDeRoles.RowCount == 0) {
+                MessageBox.Show("Actualmente no hay roles en el sistema", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void habilitado_SelectedIndexChanged(object sender, EventArgs e)

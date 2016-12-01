@@ -44,12 +44,20 @@ namespace CapaPresentacion
                 passingText = TxtUsuario.Text;
                 cantRoles = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows.Count;
 
-                if (cantRoles == 1)
+                if (cantRoles <= 1)
                 {
-                    passingRol = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows[0][0].ToString();
-                    frmPrincipal frm = new frmPrincipal();
-                    frm.Show();
-                    this.Hide();
+                    if (cantRoles == 1)
+                    {
+                        passingRol = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows[0][0].ToString();
+                        frmPrincipal frm = new frmPrincipal();
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Acceso Denegado. Usted no posee roles asignados del sistema", "ClínicaFRBA",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                    
                 }
                 else
                 {

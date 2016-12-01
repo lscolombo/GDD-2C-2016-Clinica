@@ -48,6 +48,7 @@
             // 
             // txtRol
             // 
+            this.txtRol.Enabled = false;
             this.txtRol.Location = new System.Drawing.Point(110, 162);
             this.txtRol.Name = "txtRol";
             this.txtRol.ReadOnly = true;
