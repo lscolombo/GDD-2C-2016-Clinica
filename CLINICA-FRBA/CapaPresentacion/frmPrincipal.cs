@@ -212,5 +212,12 @@ namespace CapaPresentacion
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void MnuSolicitarTurno_Click(object sender, EventArgs e)
+        {
+            frmPedidoTurno frm = new frmPedidoTurno();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -176,8 +176,9 @@
             // MnuSolicitarTurno
             // 
             this.MnuSolicitarTurno.Name = "MnuSolicitarTurno";
-            this.MnuSolicitarTurno.Size = new System.Drawing.Size(148, 22);
+            this.MnuSolicitarTurno.Size = new System.Drawing.Size(152, 22);
             this.MnuSolicitarTurno.Text = "Solicitar turno";
+            this.MnuSolicitarTurno.Click += new System.EventHandler(this.MnuSolicitarTurno_Click);
             // 
             // MnuRegistrar
             // 
