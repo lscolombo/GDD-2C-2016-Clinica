@@ -49,6 +49,11 @@ namespace CapaPresentacion
             this.CenterToScreen();
             N13CancAtencion var = new N13CancAtencion();
             dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1); //acá le debería pasar el usuario logueado. le hardcodeo el id 1 para probar
+            if (dgvTurnosDisponibles.Rows.Count == 0)
+            {
+                MessageBox.Show("No posee turnos disponibles para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvTurnosDisponibles.Enabled = false;
+            }
 
         }
 
@@ -68,6 +73,8 @@ namespace CapaPresentacion
             // this.txtTurnoSeleccionado.Text = Fila.Cells["turn_id"].Value.ToString();
             // this.txtTurnoSeleccionado.Text = Convert.ToString(this.dgvTurnosDisponibles.CurrentRow.Cells["turn_id"].Value);
             this.txtTurnoSeleccionado.Text = Convert.ToString(this.dgvTurnosDisponibles.CurrentRow.Cells["turn_id"].Value);
+            this.btnCancelarTurno.Enabled = true;
+            this.textBox1.Enabled = true;
         }
 
         private void dgvTurnosDisponibles_DoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -82,6 +89,17 @@ namespace CapaPresentacion
         {
 
             this.cancelarTurnoAf();
+            this.textBox1.Text = "";
+            this.txtTurnoSeleccionado.Text = "";
+            this.btnCancelarTurno.Enabled = false;
+            this.textBox1.Enabled = false;
+            N13CancAtencion var = new N13CancAtencion();
+            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1);
+            if (dgvTurnosDisponibles.Rows.Count == 0)
+            {
+                MessageBox.Show("No posee turnos disponibles para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

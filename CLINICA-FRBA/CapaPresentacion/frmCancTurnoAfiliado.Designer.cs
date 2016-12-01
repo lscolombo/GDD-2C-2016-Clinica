@@ -51,6 +51,7 @@
             // 
             // btnCancelarTurno
             // 
+            this.btnCancelarTurno.Enabled = false;
             this.btnCancelarTurno.Location = new System.Drawing.Point(369, 225);
             this.btnCancelarTurno.Name = "btnCancelarTurno";
             this.btnCancelarTurno.Size = new System.Drawing.Size(118, 23);
@@ -63,10 +64,13 @@
             // 
             this.dgvTurnosDisponibles.AllowUserToAddRows = false;
             this.dgvTurnosDisponibles.AllowUserToDeleteRows = false;
+            this.dgvTurnosDisponibles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTurnosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnosDisponibles.Location = new System.Drawing.Point(15, 40);
+            this.dgvTurnosDisponibles.MultiSelect = false;
             this.dgvTurnosDisponibles.Name = "dgvTurnosDisponibles";
             this.dgvTurnosDisponibles.ReadOnly = true;
+            this.dgvTurnosDisponibles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTurnosDisponibles.Size = new System.Drawing.Size(472, 150);
             this.dgvTurnosDisponibles.TabIndex = 3;
             this.dgvTurnosDisponibles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnosDisponibles_CellClick);
@@ -74,6 +78,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(15, 262);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(308, 20);
@@ -100,6 +105,7 @@
             // 
             // txtTurnoSeleccionado
             // 
+            this.txtTurnoSeleccionado.Enabled = false;
             this.txtTurnoSeleccionado.Location = new System.Drawing.Point(15, 214);
             this.txtTurnoSeleccionado.Name = "txtTurnoSeleccionado";
             this.txtTurnoSeleccionado.Size = new System.Drawing.Size(100, 20);
