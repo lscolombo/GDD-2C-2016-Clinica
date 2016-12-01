@@ -72,6 +72,12 @@
     <Compile Include="frmBAJAafiliado.Designer.cs">
       <DependentUpon>frmBAJAafiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCancTurnosProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCancTurnosProf.Designer.cs">
+      <DependentUpon>frmCancTurnosProf.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCancTurnoAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCancTurnoAfiliado.resx">
       <DependentUpon>frmCancTurnoAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCancTurnosProf.resx">
+      <DependentUpon>frmCancTurnosProf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEliminarRol.resx">
       <DependentUpon>frmEliminarRol.cs</DependentUpon>

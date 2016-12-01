@@ -104,9 +104,7 @@ namespace CapaDatos
 
         }
 
-
-
-
+        
         //Método cancelar turno por parte de afiliado
         public string CancelarTurnoAf(D13CancAtencion CancAtencion)
         {
@@ -153,6 +151,56 @@ namespace CapaDatos
         }
 
 
+        //Método mostrar todos los turnos pendientes de un médico dado un intervalo de fechas
+        public DataTable TurnosPendientesEntreFechas(D13CancAtencion CancAtencion)
+        {
+
+            DataTable DtResultado = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.TurnosPendientesEntreFechas";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                /*ESPECIFICO CARACTERISTICAS DEL 1º PARAMETRO*/
+                SqlParameter ParProf = new SqlParameter();
+
+                ParProf.ParameterName = "@profesionalID";
+                ParProf.SqlDbType = SqlDbType.Int;
+                ParProf.Value = profesionalID;
+                SqlCmd.Parameters.Add(ParProf);
+
+
+                SqlParameter ParFechaInicio = new SqlParameter();
+
+                ParFechaInicio.ParameterName = "@fechaInicio";
+                ParFechaInicio.SqlDbType = SqlDbType.DateTime;
+                ParFechaInicio.Value = fechaInicio;
+                SqlCmd.Parameters.Add(ParFechaInicio);
+
+
+                SqlParameter ParFechaFin = new SqlParameter();
+
+                ParFechaFin.ParameterName = "@fechaFin";
+                ParFechaFin.SqlDbType = SqlDbType.DateTime;
+                ParFechaFin.Value = fechaFin;
+                SqlCmd.Parameters.Add(ParFechaFin);
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
 
         //Método cancelar rango de fechas/día por parte de médico
         public string CancelarTurnosProf(D13CancAtencion CancAtencion)
