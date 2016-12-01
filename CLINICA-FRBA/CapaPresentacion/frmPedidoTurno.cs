@@ -32,12 +32,6 @@ namespace CapaPresentacion
             cbEspecialidades.DisplayMember = "esp_descripcion";
         }
 
-        private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            especialidad = this.cbEspecialidades.SelectedValue.ToString();
-            textBox1.Text = especialidad;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -47,6 +41,12 @@ namespace CapaPresentacion
         {
             this.CenterToScreen();
             this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
+        }
+
+        private void cbEspecialidades_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            especialidad = this.cbEspecialidades.SelectedValue.ToString();
+            textBox1.Text = especialidad;
         }
     }
 }

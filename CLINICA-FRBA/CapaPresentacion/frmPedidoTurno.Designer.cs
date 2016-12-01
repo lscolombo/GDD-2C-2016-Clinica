@@ -63,6 +63,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(30, 134);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
             // 
@@ -106,6 +107,7 @@
             this.cbEspecialidades.Name = "cbEspecialidades";
             this.cbEspecialidades.Size = new System.Drawing.Size(235, 21);
             this.cbEspecialidades.TabIndex = 0;
+            this.cbEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidades_SelectedIndexChanged_1);
             // 
             // groupBox2
             // 
