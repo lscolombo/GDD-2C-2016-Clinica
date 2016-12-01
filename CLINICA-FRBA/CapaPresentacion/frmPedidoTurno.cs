@@ -15,6 +15,10 @@ namespace CapaPresentacion
     public partial class frmPedidoTurno : Form
     {
         private string especialidad;
+        private string usuarioProf;
+
+        private string nombreProf;
+        private string apellidoProf;
 
         public frmPedidoTurno()
         {
@@ -23,6 +27,7 @@ namespace CapaPresentacion
             especialidad = this.cbEspecialidades.SelectedValue.ToString();
             textBox1.Text = especialidad;
             this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
+            this.dgvProfesionales.Columns[0].Visible = false;
             txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
         }
 
@@ -53,7 +58,18 @@ namespace CapaPresentacion
         private void button2_Click(object sender, EventArgs e)
         {
             this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
+            this.dgvProfesionales.Columns[0].Visible = false;
             txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
+        }
+
+        private void dgvProfesionales_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            usuarioProf = Convert.ToString(this.dgvProfesionales.CurrentRow.Cells["user_username"].Value);
+
+            nombreProf = Convert.ToString(this.dgvProfesionales.CurrentRow.Cells["Nombre"].Value);
+            apellidoProf = Convert.ToString(this.dgvProfesionales.CurrentRow.Cells["Apellido"].Value);
+            txtEleccion.Text = "Dr. " + nombreProf + " " + apellidoProf;
+            textBox2.Text = usuarioProf;
         }
     }
 }
