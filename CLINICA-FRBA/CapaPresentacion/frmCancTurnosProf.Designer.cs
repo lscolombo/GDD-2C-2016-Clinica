@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dTimeFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.dTimeFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.labelDesde = new System.Windows.Forms.Label();
-            this.labelHasta = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.labelHasta = new System.Windows.Forms.Label();
+            this.labelDesde = new System.Windows.Forms.Label();
+            this.dTimeFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.dTimeFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvTurnosPendientes = new System.Windows.Forms.DataGridView();
             this.txtMotivoCancelacion = new System.Windows.Forms.TextBox();
@@ -59,38 +59,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rango de fechas";
             // 
-            // dTimeFechaInicio
-            // 
-            this.dTimeFechaInicio.Location = new System.Drawing.Point(53, 42);
-            this.dTimeFechaInicio.Name = "dTimeFechaInicio";
-            this.dTimeFechaInicio.Size = new System.Drawing.Size(200, 20);
-            this.dTimeFechaInicio.TabIndex = 0;
-            // 
-            // dTimeFechaFin
-            // 
-            this.dTimeFechaFin.Location = new System.Drawing.Point(53, 80);
-            this.dTimeFechaFin.Name = "dTimeFechaFin";
-            this.dTimeFechaFin.Size = new System.Drawing.Size(200, 20);
-            this.dTimeFechaFin.TabIndex = 1;
-            // 
-            // labelDesde
-            // 
-            this.labelDesde.AutoSize = true;
-            this.labelDesde.Location = new System.Drawing.Point(6, 48);
-            this.labelDesde.Name = "labelDesde";
-            this.labelDesde.Size = new System.Drawing.Size(41, 13);
-            this.labelDesde.TabIndex = 2;
-            this.labelDesde.Text = "Desde:";
-            // 
-            // labelHasta
-            // 
-            this.labelHasta.AutoSize = true;
-            this.labelHasta.Location = new System.Drawing.Point(6, 86);
-            this.labelHasta.Name = "labelHasta";
-            this.labelHasta.Size = new System.Drawing.Size(38, 13);
-            this.labelHasta.TabIndex = 3;
-            this.labelHasta.Text = "Hasta:";
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -101,6 +69,38 @@
             this.checkBox1.Text = "Cancelar turnos de un sólo día";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // labelHasta
+            // 
+            this.labelHasta.AutoSize = true;
+            this.labelHasta.Location = new System.Drawing.Point(6, 86);
+            this.labelHasta.Name = "labelHasta";
+            this.labelHasta.Size = new System.Drawing.Size(38, 13);
+            this.labelHasta.TabIndex = 3;
+            this.labelHasta.Text = "Hasta:";
+            // 
+            // labelDesde
+            // 
+            this.labelDesde.AutoSize = true;
+            this.labelDesde.Location = new System.Drawing.Point(6, 48);
+            this.labelDesde.Name = "labelDesde";
+            this.labelDesde.Size = new System.Drawing.Size(41, 13);
+            this.labelDesde.TabIndex = 2;
+            this.labelDesde.Text = "Desde:";
+            // 
+            // dTimeFechaFin
+            // 
+            this.dTimeFechaFin.Location = new System.Drawing.Point(53, 80);
+            this.dTimeFechaFin.Name = "dTimeFechaFin";
+            this.dTimeFechaFin.Size = new System.Drawing.Size(200, 20);
+            this.dTimeFechaFin.TabIndex = 1;
+            // 
+            // dTimeFechaInicio
+            // 
+            this.dTimeFechaInicio.Location = new System.Drawing.Point(53, 42);
+            this.dTimeFechaInicio.Name = "dTimeFechaInicio";
+            this.dTimeFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dTimeFechaInicio.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -172,6 +172,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCancTurnosProf";
             this.Text = "frmCancAtencionProf";
+            this.Load += new System.EventHandler(this.frmCancTurnosProf_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

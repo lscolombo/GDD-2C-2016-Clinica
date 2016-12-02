@@ -152,6 +152,13 @@ namespace CapaDatos
                 ParDetalle.Value = detalle;
                 SqlCmd.Parameters.Add(ParDetalle);
 
+                SqlParameter ParFechaApp = new SqlParameter();
+
+                ParFechaApp.ParameterName = "@fechaApp";
+                ParFechaApp.SqlDbType = SqlDbType.DateTime;
+                ParFechaApp.Value = fechaApp;
+                SqlCmd.Parameters.Add(ParFechaApp);
+
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se canceló el turno";
 
 
@@ -203,6 +210,12 @@ namespace CapaDatos
                 ParFechaFin.Value = fechaFin;
                 SqlCmd.Parameters.Add(ParFechaFin);
 
+                SqlParameter ParFechaApp = new SqlParameter();
+
+                ParFechaApp.ParameterName = "@fechaApp";
+                ParFechaApp.SqlDbType = SqlDbType.DateTime;
+                ParFechaApp.Value = fechaApp;
+                SqlCmd.Parameters.Add(ParFechaApp);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);
