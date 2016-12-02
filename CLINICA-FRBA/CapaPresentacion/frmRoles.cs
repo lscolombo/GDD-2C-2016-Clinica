@@ -44,6 +44,7 @@ namespace CapaPresentacion
             else
             {
                 passingRol = txtRol.Text;
+                frmLogin.passingRol = passingRol;
                 frmPrincipal frm = new frmPrincipal();
                 frm.Show();
                 this.Hide();
