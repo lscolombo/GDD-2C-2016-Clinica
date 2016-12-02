@@ -45,6 +45,7 @@
     <Compile Include="D11RegLlegada.cs" />
     <Compile Include="D12RegResultados.cs" />
     <Compile Include="D13CancAtencion.cs" />
+    <Compile Include="D14Estadisticas.cs" />
     <Compile Include="D1ABMRol.cs" />
     <Compile Include="D2Login.cs" />
     <Compile Include="D3Usuario.cs" />
