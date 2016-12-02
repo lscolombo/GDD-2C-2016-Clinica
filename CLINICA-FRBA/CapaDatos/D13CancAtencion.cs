@@ -17,6 +17,7 @@ namespace CapaDatos
         private string _detalle;
         private DateTime _fechaInicio;
         private DateTime _fechaFin;
+        private DateTime _fechaApp;
         private int _profesionalID;
 
         public int afilID
@@ -47,6 +48,12 @@ namespace CapaDatos
         {
             get { return _fechaFin; }
             set { _fechaFin = value; }
+        }
+
+        public DateTime fechaApp
+        {
+            get { return _fechaApp; }
+            set { _fechaApp = value; }
         }
 
         public int profesionalID
@@ -91,6 +98,13 @@ namespace CapaDatos
                 ParAfilID.SqlDbType = SqlDbType.Int;
                 ParAfilID.Value = afilID;
                 SqlCmd.Parameters.Add(ParAfilID);
+
+                SqlParameter ParFechaApp = new SqlParameter();
+
+                ParFechaApp.ParameterName = "@fechaApp";
+                ParFechaApp.SqlDbType = SqlDbType.DateTime;
+                ParFechaApp.Value = fechaApp;
+                SqlCmd.Parameters.Add(ParFechaApp);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);

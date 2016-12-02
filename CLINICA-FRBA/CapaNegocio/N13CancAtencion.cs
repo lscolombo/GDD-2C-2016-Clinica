@@ -17,10 +17,11 @@ namespace CapaNegocio
 
         }
 
-        public DataTable TurnosPedidos(int afilID)
+        public DataTable TurnosPedidos(int afilID, DateTime fechaApp)
         {
             D13CancAtencion Obj = new D13CancAtencion();
             Obj.afilID = afilID;
+            Obj.fechaApp = fechaApp;
             return Obj.TurnosPedidos(Obj);
         }
 

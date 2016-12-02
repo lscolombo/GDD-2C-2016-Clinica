@@ -48,7 +48,7 @@ namespace CapaPresentacion
         {
             this.CenterToScreen();
             N13CancAtencion var = new N13CancAtencion();
-            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1); //acá le debería pasar el usuario logueado. le hardcodeo el id 1 para probar
+            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1,DateTime.Now); //acá le debería pasar el usuario logueado. le hardcodeo el id 1 para probar
             if (dgvTurnosDisponibles.Rows.Count == 0)
             {
                 MessageBox.Show("No posee turnos disponibles para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -94,7 +94,7 @@ namespace CapaPresentacion
             this.btnCancelarTurno.Enabled = false;
             this.textBox1.Enabled = false;
             N13CancAtencion var = new N13CancAtencion();
-            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1);
+            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(1,DateTime.Now);
             if (dgvTurnosDisponibles.Rows.Count == 0)
             {
                 MessageBox.Show("No posee turnos disponibles para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
