@@ -94,5 +94,35 @@ namespace CapaDatos
             return DtResultado;
         }
 
+        public DataTable TraerMatricula(string usuario)
+        {
+            DataTable DtResultado = new DataTable("WINCHESTER.Profesional");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.pTraerMatricula";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParUserName = new SqlParameter();
+                ParUserName.ParameterName = "@prof_usuario";
+                ParUserName.SqlDbType = SqlDbType.VarChar;
+                ParUserName.Size = 255;
+                ParUserName.Value = usuario;
+                SqlCmd.Parameters.Add(ParUserName);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
     }
 }
