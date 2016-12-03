@@ -32,24 +32,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvResultadosEstadisticas = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbPrimerSemestre = new System.Windows.Forms.RadioButton();
             this.rbSegundoSemestre = new System.Windows.Forms.RadioButton();
+            this.rbPrimerSemestre = new System.Windows.Forms.RadioButton();
             this.cmbAnio = new System.Windows.Forms.ComboBox();
             this.chkMes = new System.Windows.Forms.CheckBox();
             this.cmbMes = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTipoListado = new System.Windows.Forms.ComboBox();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chkTipoCancelacion = new System.Windows.Forms.CheckBox();
-            this.rbMedico = new System.Windows.Forms.RadioButton();
             this.rbPaciente = new System.Windows.Forms.RadioButton();
-            this.dgvResultadosEstadisticas = new System.Windows.Forms.DataGridView();
+            this.rbMedico = new System.Windows.Forms.RadioButton();
+            this.chkTipoCancelacion = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosEstadisticas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosEstadisticas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,10 +84,18 @@
             this.groupBox1.Controls.Add(this.dgvResultadosEstadisticas);
             this.groupBox1.Location = new System.Drawing.Point(12, 200);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(579, 206);
+            this.groupBox1.Size = new System.Drawing.Size(659, 206);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resultados";
+            // 
+            // dgvResultadosEstadisticas
+            // 
+            this.dgvResultadosEstadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultadosEstadisticas.Location = new System.Drawing.Point(6, 19);
+            this.dgvResultadosEstadisticas.Name = "dgvResultadosEstadisticas";
+            this.dgvResultadosEstadisticas.Size = new System.Drawing.Size(647, 181);
+            this.dgvResultadosEstadisticas.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -101,17 +109,6 @@
             this.groupBox2.Text = "Semestre";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // rbPrimerSemestre
-            // 
-            this.rbPrimerSemestre.AutoSize = true;
-            this.rbPrimerSemestre.Location = new System.Drawing.Point(6, 19);
-            this.rbPrimerSemestre.Name = "rbPrimerSemestre";
-            this.rbPrimerSemestre.Size = new System.Drawing.Size(99, 17);
-            this.rbPrimerSemestre.TabIndex = 0;
-            this.rbPrimerSemestre.TabStop = true;
-            this.rbPrimerSemestre.Text = "Primer semestre";
-            this.rbPrimerSemestre.UseVisualStyleBackColor = true;
-            // 
             // rbSegundoSemestre
             // 
             this.rbSegundoSemestre.AutoSize = true;
@@ -122,6 +119,17 @@
             this.rbSegundoSemestre.TabStop = true;
             this.rbSegundoSemestre.Text = "Segundo semestre";
             this.rbSegundoSemestre.UseVisualStyleBackColor = true;
+            // 
+            // rbPrimerSemestre
+            // 
+            this.rbPrimerSemestre.AutoSize = true;
+            this.rbPrimerSemestre.Location = new System.Drawing.Point(6, 19);
+            this.rbPrimerSemestre.Name = "rbPrimerSemestre";
+            this.rbPrimerSemestre.Size = new System.Drawing.Size(99, 17);
+            this.rbPrimerSemestre.TabIndex = 0;
+            this.rbPrimerSemestre.TabStop = true;
+            this.rbPrimerSemestre.Text = "Primer semestre";
+            this.rbPrimerSemestre.UseVisualStyleBackColor = true;
             // 
             // cmbAnio
             // 
@@ -149,13 +157,13 @@
             this.cmbMes.Size = new System.Drawing.Size(121, 21);
             this.cmbMes.TabIndex = 7;
             // 
-            // comboBox1
+            // cmbTipoListado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(319, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(275, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cmbTipoListado.FormattingEnabled = true;
+            this.cmbTipoListado.Location = new System.Drawing.Point(319, 12);
+            this.cmbTipoListado.Name = "cmbTipoListado";
+            this.cmbTipoListado.Size = new System.Drawing.Size(352, 21);
+            this.cmbTipoListado.TabIndex = 8;
             // 
             // cmbEspecialidad
             // 
@@ -185,15 +193,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cancelaciones por parte de:";
             // 
-            // chkTipoCancelacion
+            // rbPaciente
             // 
-            this.chkTipoCancelacion.AutoSize = true;
-            this.chkTipoCancelacion.Location = new System.Drawing.Point(217, 39);
-            this.chkTipoCancelacion.Name = "chkTipoCancelacion";
-            this.chkTipoCancelacion.Size = new System.Drawing.Size(165, 17);
-            this.chkTipoCancelacion.TabIndex = 12;
-            this.chkTipoCancelacion.Text = "Filtrar por tipo de cancelación";
-            this.chkTipoCancelacion.UseVisualStyleBackColor = true;
+            this.rbPaciente.AutoSize = true;
+            this.rbPaciente.Location = new System.Drawing.Point(79, 20);
+            this.rbPaciente.Name = "rbPaciente";
+            this.rbPaciente.Size = new System.Drawing.Size(67, 17);
+            this.rbPaciente.TabIndex = 1;
+            this.rbPaciente.TabStop = true;
+            this.rbPaciente.Text = "Paciente";
+            this.rbPaciente.UseVisualStyleBackColor = true;
             // 
             // rbMedico
             // 
@@ -206,35 +215,26 @@
             this.rbMedico.Text = "Médico";
             this.rbMedico.UseVisualStyleBackColor = true;
             // 
-            // rbPaciente
+            // chkTipoCancelacion
             // 
-            this.rbPaciente.AutoSize = true;
-            this.rbPaciente.Location = new System.Drawing.Point(79, 20);
-            this.rbPaciente.Name = "rbPaciente";
-            this.rbPaciente.Size = new System.Drawing.Size(67, 17);
-            this.rbPaciente.TabIndex = 1;
-            this.rbPaciente.TabStop = true;
-            this.rbPaciente.Text = "Paciente";
-            this.rbPaciente.UseVisualStyleBackColor = true;
-            // 
-            // dgvResultadosEstadisticas
-            // 
-            this.dgvResultadosEstadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultadosEstadisticas.Location = new System.Drawing.Point(6, 19);
-            this.dgvResultadosEstadisticas.Name = "dgvResultadosEstadisticas";
-            this.dgvResultadosEstadisticas.Size = new System.Drawing.Size(558, 181);
-            this.dgvResultadosEstadisticas.TabIndex = 0;
+            this.chkTipoCancelacion.AutoSize = true;
+            this.chkTipoCancelacion.Location = new System.Drawing.Point(217, 39);
+            this.chkTipoCancelacion.Name = "chkTipoCancelacion";
+            this.chkTipoCancelacion.Size = new System.Drawing.Size(165, 17);
+            this.chkTipoCancelacion.TabIndex = 12;
+            this.chkTipoCancelacion.Text = "Filtrar por tipo de cancelación";
+            this.chkTipoCancelacion.UseVisualStyleBackColor = true;
             // 
             // frmEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 412);
+            this.ClientSize = new System.Drawing.Size(680, 412);
             this.Controls.Add(this.chkTipoCancelacion);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbEspecialidad);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTipoListado);
             this.Controls.Add(this.cmbMes);
             this.Controls.Add(this.chkMes);
             this.Controls.Add(this.cmbAnio);
@@ -245,12 +245,13 @@
             this.Controls.Add(this.label1);
             this.Name = "frmEstadisticas";
             this.Text = "Filtrar por un mes en particular";
+            this.Load += new System.EventHandler(this.frmEstadisticas_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosEstadisticas)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosEstadisticas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,7 +270,7 @@
         private System.Windows.Forms.ComboBox cmbAnio;
         private System.Windows.Forms.CheckBox chkMes;
         private System.Windows.Forms.ComboBox cmbMes;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTipoListado;
         private System.Windows.Forms.ComboBox cmbEspecialidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;

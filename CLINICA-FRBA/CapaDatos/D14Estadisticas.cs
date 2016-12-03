@@ -53,6 +53,16 @@ namespace CapaDatos
             get { return _tipoCancelacion; }
             set { _tipoCancelacion = value; }
         }
+        
+
+     /*public Especialidades(string nombreEspecialidad, int codigoEspecialidad)
+     {
+           NombreEspecialidad = nombreEspecialidad;
+           CodigoEspecialidad = codigoEspecialidad
+     }
+     public string NombreEspecialidad {get;set;}
+     public int CodigoEspecialidad {get;set;}
+}*/
 
 
         public D14Estadisticas()
@@ -136,8 +146,35 @@ namespace CapaDatos
             return DtResultado;
 
         }
+
+        public DataTable MostrarEspecialidades()
+        {
+            DataTable DtResultado = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.mostrarEspecialidades";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+                
+        }
+        
+         catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+     }
+
+
+
+
+
+
     }
-
-
 
 }

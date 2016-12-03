@@ -33,10 +33,3 @@ C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\bin
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\obj\Debug\CapaNegocio.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\bin\Debug\CapaNegocio.dll
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\bin\Debug\CapaNegocio.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\bin\Debug\CapaDatos.dll
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\bin\Debug\CapaDatos.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\obj\Debug\CapaNegocio.dll
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaNegocio\obj\Debug\CapaNegocio.pdb

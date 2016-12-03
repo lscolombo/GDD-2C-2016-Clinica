@@ -73,18 +73,3 @@ C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.csproj.GenerateResource.Cache
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.exe
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.exe.config
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.exe
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.exe
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaPresentacion.dll
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaNegocio.dll
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaDatos.dll
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaPresentacion.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaNegocio.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaDatos.pdb
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.csprojResolveAssemblyReference.cache
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA___FRBA.Form1.resources
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA___FRBA.Properties.Resources.resources
-D:\Users\USUARIO\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.csproj.GenerateResource.Cache
