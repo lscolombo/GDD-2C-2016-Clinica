@@ -47,6 +47,7 @@
     <Compile Include="N14Estadisticas.cs" />
     <Compile Include="N1ABMRol.cs" />
     <Compile Include="N2Login.cs" />
+    <Compile Include="N3Usuario.cs" />
     <Compile Include="N4abmAfiliado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

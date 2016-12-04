@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data;
+using System.Data.SqlClient;
+
 namespace CapaDatos
 {
     public class D3Usuario
@@ -144,6 +147,37 @@ namespace CapaDatos
             this.User_password = user_password;
             this.User_intentos_fallidos = user_intentos_fallidos;
             this.User_habilitado = user_habilitado;
+        }
+
+        public DataTable TraerDatosAfiliado(string user_username)
+        {
+            DataTable DtResultado = new DataTable("WINCHESTER.Afiliado");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.pDatosAfiliado";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParUserName = new SqlParameter();
+                ParUserName.ParameterName = "@afil_usuario";
+                ParUserName.SqlDbType = SqlDbType.VarChar;
+                ParUserName.Size = 255;
+                ParUserName.Value = user_username;
+                SqlCmd.Parameters.Add(ParUserName);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
         }
 
     }
