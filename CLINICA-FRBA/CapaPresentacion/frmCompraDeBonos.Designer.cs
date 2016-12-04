@@ -69,6 +69,7 @@
             this.txtNroAfiliado.Name = "txtNroAfiliado";
             this.txtNroAfiliado.Size = new System.Drawing.Size(250, 20);
             this.txtNroAfiliado.TabIndex = 1;
+            this.txtNroAfiliado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroAfiliado_KeyPress);
             // 
             // label2
             // 

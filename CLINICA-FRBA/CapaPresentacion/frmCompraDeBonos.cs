@@ -43,10 +43,29 @@ namespace CapaPresentacion
                 txtPlan.Text = (CapaNegocio.N3Usuario.TraerDatosAfiliado(frmLogin.passingText)).
                                     Rows[0][1].ToString(); 
             }
-            else
-            {
+        }
 
-            }
+        private void txtNroAfiliado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                try
+                {
+                    nroAfiliadoInt = Convert.ToInt32(txtNroAfiliado.Text);
+
+                    apellidoAfiliado = (CapaNegocio.N3Usuario.TraerNombreYApellidoAfiliado
+                                        (nroAfiliadoInt)).Rows[0][0].ToString();
+                    nombreAfiliado = (CapaNegocio.N3Usuario.TraerNombreYApellidoAfiliado
+                                        (nroAfiliadoInt)).Rows[0][1].ToString();
+
+                    txtNombre.Text = nombreAfiliado + " " + apellidoAfiliado;
+
+                    txtPlan.Text = (CapaNegocio.N3Usuario.ObtenerPlanAfiliado(nroAfiliadoInt)).
+                                        Rows[0][0].ToString(); 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ingrese un numero de afiliado valido", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
     }
 }
