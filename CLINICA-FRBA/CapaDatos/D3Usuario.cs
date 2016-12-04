@@ -180,5 +180,35 @@ namespace CapaDatos
 
         }
 
+        public DataTable TraerNombreYApellidoAfiliado(int nroAfiliado)
+        {
+            DataTable DtResultado = new DataTable("WINCHESTER.Usuario");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.pApellNombAfiliado";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParNroAfil = new SqlParameter();
+                ParNroAfil.ParameterName = "@afiliado";
+                ParNroAfil.SqlDbType = SqlDbType.Int;
+                ParNroAfil.Value = nroAfiliado;
+                SqlCmd.Parameters.Add(ParNroAfil);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
     }
 }

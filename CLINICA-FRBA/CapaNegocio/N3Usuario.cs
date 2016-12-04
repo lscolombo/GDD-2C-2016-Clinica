@@ -15,5 +15,11 @@ namespace CapaNegocio
         {
             return new D3Usuario().TraerDatosAfiliado(usuario);
         }
+
+        public static DataTable TraerNombreYApellidoAfiliado(int nroAfiliado)
+        {
+            return new D3Usuario().TraerNombreYApellidoAfiliado(nroAfiliado);
+        }
+
     }
 }

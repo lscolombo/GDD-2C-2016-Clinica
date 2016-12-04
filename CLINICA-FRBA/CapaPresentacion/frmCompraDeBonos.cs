@@ -13,6 +13,10 @@ namespace CapaPresentacion
     public partial class frmCompraDeBonos : Form
     {
         string nroAfiliado;
+        string nombreAfiliado;
+        string apellidoAfiliado;
+
+        int nroAfiliadoInt;
 
         public frmCompraDeBonos()
         {
@@ -27,7 +31,13 @@ namespace CapaPresentacion
                 txtNroAfiliado.ReadOnly = true;
                 nroAfiliado = (CapaNegocio.N3Usuario.TraerDatosAfiliado(frmLogin.passingText)).
                                     Rows[0][0].ToString();
+                nroAfiliadoInt = Convert.ToInt32(nroAfiliado);
                 txtNroAfiliado.Text = nroAfiliado;
+                apellidoAfiliado = (CapaNegocio.N3Usuario.TraerNombreYApellidoAfiliado(nroAfiliadoInt)).
+                                    Rows[0][0].ToString();
+                nombreAfiliado = (CapaNegocio.N3Usuario.TraerNombreYApellidoAfiliado(nroAfiliadoInt)).
+                                    Rows[0][1].ToString();
+                txtNombre.Text = nombreAfiliado + " " + apellidoAfiliado;
             }
             else
             {
