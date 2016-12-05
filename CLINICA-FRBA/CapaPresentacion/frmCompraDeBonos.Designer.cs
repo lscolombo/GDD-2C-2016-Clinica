@@ -166,6 +166,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(250, 20);
             this.txtCantidad.TabIndex = 3;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // frmCompraDeBonos
             // 

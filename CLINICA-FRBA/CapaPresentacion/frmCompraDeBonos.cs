@@ -17,6 +17,9 @@ namespace CapaPresentacion
         string apellidoAfiliado;
 
         int nroAfiliadoInt;
+        int cantidadBonos;
+        int planId;
+        int precioBono;
 
         public frmCompraDeBonos()
         {
@@ -60,11 +63,44 @@ namespace CapaPresentacion
                     txtNombre.Text = nombreAfiliado + " " + apellidoAfiliado;
 
                     txtPlan.Text = (CapaNegocio.N3Usuario.ObtenerPlanAfiliado(nroAfiliadoInt)).
-                                        Rows[0][0].ToString(); 
+                                        Rows[0][0].ToString();
+
+                    txtCantidad.Clear();
+                    txtTotal.Clear();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Ingrese un numero de afiliado valido", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNroAfiliado.Clear();
+                }
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                try
+                {
+                    cantidadBonos = Convert.ToInt32(txtCantidad.Text);
+
+                    if (cantidadBonos < 0)
+                    {
+                        MessageBox.Show("Ingrese una cantidad valida", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtCantidad.Clear();
+                    }
+                    else
+                    {
+                        planId = Convert.ToInt32(txtPlan.Text);
+
+                        precioBono = Convert.ToInt32(CapaNegocio.N9CompraBono.ObtenerDatosPlan
+                                        (planId).Rows[0][1]);
+
+                        txtTotal.Text = Convert.ToString(precioBono * cantidadBonos);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ingrese una cantidad valida", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCantidad.Clear();
                 }
         }
     }
