@@ -62,8 +62,11 @@ namespace CapaPresentacion
 
                     txtNombre.Text = nombreAfiliado + " " + apellidoAfiliado;
 
-                    txtPlan.Text = (CapaNegocio.N3Usuario.ObtenerPlanAfiliado(nroAfiliadoInt)).
-                                        Rows[0][0].ToString();
+                    planId = Convert.ToInt32((CapaNegocio.N3Usuario.ObtenerPlanAfiliado
+                                (nroAfiliadoInt)).Rows[0][0]);
+
+                    txtPlan.Text = Convert.ToString(CapaNegocio.N9CompraBono.ObtenerDatosPlan
+                                       (planId).Rows[0][0]);
 
                     txtCantidad.Clear();
                     txtTotal.Clear();
@@ -89,8 +92,6 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        planId = Convert.ToInt32(txtPlan.Text);
-
                         precioBono = Convert.ToInt32(CapaNegocio.N9CompraBono.ObtenerDatosPlan
                                         (planId).Rows[0][1]);
 
@@ -102,6 +103,12 @@ namespace CapaPresentacion
                     MessageBox.Show("Ingrese una cantidad valida", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtCantidad.Clear();
                 }
+        }
+
+        // Boton "Confirmar compra"
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
