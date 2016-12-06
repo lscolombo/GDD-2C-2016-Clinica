@@ -3,11 +3,6 @@ C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.pd
 C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Jazel\Downloads\GDD\TP\TP\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.pdb
-C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.dll
-C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.pdb
-C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
-C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.dll
-C:\Users\Jazel\Downloads\GDD\TP\TP\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.pdb
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.dll
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
