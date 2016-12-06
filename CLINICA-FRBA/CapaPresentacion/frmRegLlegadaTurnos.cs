@@ -95,7 +95,11 @@ namespace CapaPresentacion
                 this.txtAfiliado.Text = Fila.Cells["Apellido"].Value.ToString() + ", " + Fila.Cells["Nombre"].Value.ToString();
                 this.txtElAfiliado.Text = Fila.Cells["Afiliado"].Value.ToString();
                 this.txtTurno.Text = Fila.Cells["Numero"].Value.ToString();
-                               
+
+            }
+            else
+            {
+                txtAfiliado.Text = "";
             }
         }
 

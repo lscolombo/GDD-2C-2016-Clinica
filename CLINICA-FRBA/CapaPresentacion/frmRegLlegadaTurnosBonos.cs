@@ -99,7 +99,11 @@ namespace CapaPresentacion
                 DataGridViewRow Fila = this.dgvListado.Rows[e.RowIndex];
 
                 this.txtBono.Text = Fila.Cells["Id"].Value.ToString();
-                
+
+            }
+            else
+            {
+                txtBono.Text = "";
             }
         }
 

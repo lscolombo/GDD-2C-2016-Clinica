@@ -177,6 +177,7 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 16;
             this.label1.Text = "Turno";
+            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -186,6 +187,7 @@
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 17;
             this.label2.Text = "Afiliado";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -195,6 +197,7 @@
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 18;
             this.label3.Text = "Matricula";
+            this.label3.Visible = false;
             // 
             // frmRegLlegadaTurnos
             // 

@@ -71,6 +71,10 @@ namespace CapaPresentacion
                 txtApellNombre.Text = Fila.Cells["Apellido"].Value.ToString() + ", " + Fila.Cells["Nombre"].Value.ToString();
                 txtProfesional.Text = "Dr. " + txtApellNombre.Text + "  -  " + txtSuEspecialidad.Text;
             }
+            else
+            {
+                txtProfesional.Text = "";
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
