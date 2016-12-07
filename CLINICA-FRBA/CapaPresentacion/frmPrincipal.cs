@@ -142,7 +142,7 @@ namespace CapaPresentacion
 
         private void altaDeAfiliadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmALTAafiliado frm = new frmALTAafiliado();
+            frmABMAfiliado frm = new frmABMAfiliado();
             frm.MdiParent = this;
             frm.Show();
         }

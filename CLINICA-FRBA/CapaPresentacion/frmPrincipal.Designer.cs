@@ -119,15 +119,15 @@
             // MnuAltaAfiliado
             // 
             this.MnuAltaAfiliado.Name = "MnuAltaAfiliado";
-            this.MnuAltaAfiliado.Size = new System.Drawing.Size(155, 22);
-            this.MnuAltaAfiliado.Text = "Alta de Afiliado";
+            this.MnuAltaAfiliado.Size = new System.Drawing.Size(160, 22);
+            this.MnuAltaAfiliado.Text = "ABM de Afiliado";
             this.MnuAltaAfiliado.Click += new System.EventHandler(this.altaDeAfiliadoToolStripMenuItem_Click);
             // 
             // MnuAltaRol
             // 
             this.MnuAltaRol.Name = "MnuAltaRol";
-            this.MnuAltaRol.Size = new System.Drawing.Size(155, 22);
-            this.MnuAltaRol.Text = "Alta de Rol";
+            this.MnuAltaRol.Size = new System.Drawing.Size(160, 22);
+            this.MnuAltaRol.Text = "ABM de Rol";
             this.MnuAltaRol.Click += new System.EventHandler(this.altaDeRolToolStripMenuItem_Click);
             // 
             // MnuCancelaciones
@@ -156,7 +156,7 @@
             // bonosToolStripMenuItem
             // 
             this.bonosToolStripMenuItem.Name = "bonosToolStripMenuItem";
-            this.bonosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bonosToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.bonosToolStripMenuItem.Text = "Bonos";
             this.bonosToolStripMenuItem.Click += new System.EventHandler(this.bonosToolStripMenuItem_Click);
             // 
@@ -217,7 +217,7 @@
             this.toolBarToolStripMenuItem,
             this.statusBarToolStripMenuItem});
             this.viewMenu.Name = "viewMenu";
-            this.viewMenu.Size = new System.Drawing.Size(35, 20);
+            this.viewMenu.Size = new System.Drawing.Size(36, 20);
             this.viewMenu.Text = "&Ver";
             // 
             // toolBarToolStripMenuItem
@@ -264,7 +264,7 @@
             this.closeAllToolStripMenuItem,
             this.arrangeIconsToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(66, 20);
+            this.windowsMenu.Size = new System.Drawing.Size(67, 20);
             this.windowsMenu.Text = "&Ventanas";
             // 
             // newWindowToolStripMenuItem
