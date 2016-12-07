@@ -41,7 +41,7 @@ namespace CapaPresentacion
             int codTurno = (int)this.dgvTurnosDisponibles.CurrentRow.Cells[0].Value;
             //int codTurno = int.Parse(this.textBox1.Text);
             string detalle = this.textBox1.Text;
-            string var = Obj.CancelarTurnoAf(codTurno, detalle, DateTime.Now);
+            string var = Obj.CancelarTurnoAf(codTurno, detalle);
             MessageBox.Show(var, "CLINICA-FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

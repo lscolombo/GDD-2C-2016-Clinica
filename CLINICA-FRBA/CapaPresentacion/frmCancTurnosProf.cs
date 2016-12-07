@@ -34,7 +34,7 @@ namespace CapaPresentacion
             DateTime fechaInicio = this.dTimeFechaInicio.Value;
             DateTime fechaFin = this.dTimeFechaFin.Value;
             string detalle = this.txtMotivoCancelacion.Text;
-            string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, profesionalID, DateTime.Now);
+            string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, profesionalID);
             
             MessageBox.Show(var, "CLINICA-FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
