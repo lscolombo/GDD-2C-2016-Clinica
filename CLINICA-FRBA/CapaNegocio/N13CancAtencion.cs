@@ -25,12 +25,11 @@ namespace CapaNegocio
             return Obj.TurnosPedidos(Obj);
         }
 
-        public string CancelarTurnoAf(int codTurno, string detalle, DateTime fechaApp)
+        public string CancelarTurnoAf(int codTurno, string detalle)
         {
             D13CancAtencion Obj = new D13CancAtencion();
             Obj.codTurno = codTurno;
             Obj.detalle = detalle;
-            Obj.fechaApp = fechaApp;
             return Obj.CancelarTurnoAf(Obj);
         }
 
@@ -43,14 +42,13 @@ namespace CapaNegocio
             return Obj.TurnosPendientesEntreFechas(Obj);
         }
 
-        public string CancelarTurnosProf(DateTime fechaInicio, DateTime fechaFin, string detalle, int profesionalID, DateTime fechaApp)
+        public string CancelarTurnosProf(DateTime fechaInicio, DateTime fechaFin, string detalle, int profesionalID)
         {
             D13CancAtencion Obj = new D13CancAtencion();
             Obj.fechaInicio = fechaInicio;
             Obj.fechaFin = fechaFin;
             Obj.detalle = detalle;
             Obj.profesionalID = profesionalID;
-            Obj.fechaApp = fechaApp;
             return Obj.CancelarTurnosProf(Obj);
         }
 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using CapaNegocio;
 
+
 namespace CapaPresentacion
 {
     public partial class frmCancTurnoAfiliado : Form

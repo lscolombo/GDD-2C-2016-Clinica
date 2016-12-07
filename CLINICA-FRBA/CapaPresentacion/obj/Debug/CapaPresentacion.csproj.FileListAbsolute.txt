@@ -19,28 +19,6 @@ C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CapaPresentaci
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.dll
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaNegocio.dll
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaDatos.dll
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaNegocio.pdb
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaDatos.pdb
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmLogin.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegLlegada.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegLlegadaTurnos.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegLlegadaTurnosBonos.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegResultados.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.dll
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmALTAafiliado.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmCancTurnoAfiliado.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmPrincipal.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmABMRolInicio.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmAltaRol.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmEliminarRol.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmModificarRol.resources
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.dll
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaNegocio.dll
@@ -63,15 +41,7 @@ C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacio
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRoles.resources
 C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmRoles.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmABMAfiliado.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmBAJAafiliado.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmCancTurnosProf.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmMODIafiliado.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmPedidoTurno.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmCompraDeBonos.resources
-C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmEstadisticas.resources
 C:\Users\G u z.Guz-PC\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.dll
 C:\Users\G u z.Guz-PC\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
 C:\Users\G u z.Guz-PC\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\bin\Debug\CapaNegocio.dll
