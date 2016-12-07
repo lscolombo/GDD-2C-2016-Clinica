@@ -20,6 +20,9 @@ namespace CapaPresentacion
         int cantidadBonos;
         int planId;
         int precioBono;
+        int precioTotal;
+
+        string rtaCompra;
 
         public frmCompraDeBonos()
         {
@@ -96,6 +99,7 @@ namespace CapaPresentacion
                                         (planId).Rows[0][1]);
 
                         txtTotal.Text = Convert.ToString(precioBono * cantidadBonos);
+                        precioTotal = precioBono * cantidadBonos;
                     }
                 }
                 catch (Exception ex)
@@ -108,7 +112,27 @@ namespace CapaPresentacion
         // Boton "Confirmar compra"
         private void button1_Click(object sender, EventArgs e)
         {
+            rtaCompra = CapaNegocio.N9CompraBono.InsertarCompraBono
+                            (nroAfiliadoInt, precioBono, cantidadBonos, precioTotal);
+            if (rtaCompra == "OK")
+            {
+                MessageBox.Show("La compra de " + cantidadBonos + " bonos, por un total de $"
+                    + precioTotal + " ha sido realizada con exito", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                // Fuerzo a valores no validos para tener que volver a ingresar algo
+                txtCantidad.Clear();
+                txtTotal.Clear();
+
+                if (frmLogin.passingRol == "Administrador General")
+                {
+                    txtNroAfiliado.Clear();
+                    txtCantidad.Clear();
+                    txtNombre.Clear();
+                    txtPlan.Clear();
+                }
+            }
+            else
+                MessageBox.Show(rtaCompra, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

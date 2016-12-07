@@ -15,5 +15,12 @@ namespace CapaNegocio
         {
             return new D9CompraBono().ObtenerDatosPlan(planId);
         }
+
+        public static string InsertarCompraBono(int nroAfiliado, int precioBono,
+                                                    int cantidadBonos, int precioTotal)
+        {
+            return new D9CompraBono().InsertarCompraBono(nroAfiliado, precioBono,
+                                                            cantidadBonos, precioTotal);
+        }
     }
 }
