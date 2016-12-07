@@ -40,8 +40,16 @@ namespace CapaDatos
                 ParMatricula.SqlDbType = SqlDbType.Int; /*EL TIPO DE DATO Q ES*/
 
                 ParMatricula.Value = unaMatricula; /*EL VALOR QUE RECIBE*/
-
                 SqlCmd.Parameters.Add(ParMatricula); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+
+                /*2º Parametro*/
+                SqlParameter ParFechaSistema = new SqlParameter();
+
+                ParFechaSistema.ParameterName = "@fechaSistema";
+                ParFechaSistema.SqlDbType = SqlDbType.VarChar;
+                ParFechaSistema.Size = 10;
+                ParFechaSistema.Value = Conexion.FechaSistema;
+                SqlCmd.Parameters.Add(ParFechaSistema);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd); /*OBJETO ENCARGADO DE EJECUTAR EL COMANDO Q SE LE PASE*/
                 SqlDat.Fill(DtResultado); /*GUARDO EN LA VARIABLE DE TIPO DATATABLE EL RESULTADO DE LA EJECUCION DEL COMANDO*/

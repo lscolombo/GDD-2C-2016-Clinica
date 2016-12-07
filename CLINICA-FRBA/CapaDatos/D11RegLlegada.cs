@@ -88,6 +88,15 @@ namespace CapaDatos
                 ParMatricula.Value = unaMatricula;
                 SqlCmd.Parameters.Add(ParMatricula);
 
+                /*2º Parametro*/
+                SqlParameter ParFechaSistema = new SqlParameter();
+
+                ParFechaSistema.ParameterName = "@fechaSistema";
+                ParFechaSistema.SqlDbType = SqlDbType.VarChar;
+                ParFechaSistema.Size = 10;
+                ParFechaSistema.Value = Conexion.FechaSistema;
+                SqlCmd.Parameters.Add(ParFechaSistema);
+
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);
             }
@@ -167,6 +176,15 @@ namespace CapaDatos
                 /*ParBono.Size = 50;*/
                 ParBono.Value = unBono;
                 SqlCmd.Parameters.Add(ParBono);
+
+                /*3º Parametro*/
+                SqlParameter ParFechaSistema = new SqlParameter();
+
+                ParFechaSistema.ParameterName = "@fechaSistema";
+                ParFechaSistema.SqlDbType = SqlDbType.VarChar;
+                ParFechaSistema.Size = 10;
+                ParFechaSistema.Value = Conexion.FechaSistema;
+                SqlCmd.Parameters.Add(ParFechaSistema);
 
                 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
