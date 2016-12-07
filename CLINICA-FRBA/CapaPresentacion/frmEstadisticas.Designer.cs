@@ -46,6 +46,7 @@
             this.rbPaciente = new System.Windows.Forms.RadioButton();
             this.rbMedico = new System.Windows.Forms.RadioButton();
             this.chkTipoCancelacion = new System.Windows.Forms.CheckBox();
+            this.btnMostrarResultados = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosEstadisticas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -107,7 +108,7 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Semestre";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.groupBox2.Enter += new System.EventHandler(this.frmEstadisticas_Load);
             // 
             // rbSegundoSemestre
             // 
@@ -119,6 +120,7 @@
             this.rbSegundoSemestre.TabStop = true;
             this.rbSegundoSemestre.Text = "Segundo semestre";
             this.rbSegundoSemestre.UseVisualStyleBackColor = true;
+            this.rbSegundoSemestre.CheckedChanged += new System.EventHandler(this.rbSegundoSemestre_CheckedChanged);
             // 
             // rbPrimerSemestre
             // 
@@ -130,6 +132,7 @@
             this.rbPrimerSemestre.TabStop = true;
             this.rbPrimerSemestre.Text = "Primer semestre";
             this.rbPrimerSemestre.UseVisualStyleBackColor = true;
+            this.rbPrimerSemestre.CheckedChanged += new System.EventHandler(this.rbPrimerSemestre_CheckedChanged);
             // 
             // cmbAnio
             // 
@@ -225,11 +228,22 @@
             this.chkTipoCancelacion.Text = "Filtrar por tipo de cancelación";
             this.chkTipoCancelacion.UseVisualStyleBackColor = true;
             // 
+            // btnMostrarResultados
+            // 
+            this.btnMostrarResultados.Location = new System.Drawing.Point(525, 92);
+            this.btnMostrarResultados.Name = "btnMostrarResultados";
+            this.btnMostrarResultados.Size = new System.Drawing.Size(109, 102);
+            this.btnMostrarResultados.TabIndex = 13;
+            this.btnMostrarResultados.Text = "Mostrar resultados";
+            this.btnMostrarResultados.UseVisualStyleBackColor = true;
+            this.btnMostrarResultados.Click += new System.EventHandler(this.btnMostrarResultados_Click);
+            // 
             // frmEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 412);
+            this.Controls.Add(this.btnMostrarResultados);
             this.Controls.Add(this.chkTipoCancelacion);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label4);
@@ -244,7 +258,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmEstadisticas";
-            this.Text = "Filtrar por un mes en particular";
+            this.Text = "Listados estadísticos";
             this.Load += new System.EventHandler(this.frmEstadisticas_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosEstadisticas)).EndInit();
@@ -277,5 +291,6 @@
         private System.Windows.Forms.RadioButton rbPaciente;
         private System.Windows.Forms.RadioButton rbMedico;
         private System.Windows.Forms.CheckBox chkTipoCancelacion;
+        private System.Windows.Forms.Button btnMostrarResultados;
     }
 }

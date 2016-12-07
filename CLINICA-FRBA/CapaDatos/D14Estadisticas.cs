@@ -13,10 +13,10 @@ namespace CapaDatos
     {
         private int _anio;
         private int _semestre;
-        private int _mes;
+        private int? _mes;
         private int _tipoListado;
-        private int _especialidad;
-        private int _tipoCancelacion;
+        private int? _especialidad;
+        private int? _tipoCancelacion;
 
         public int anio
         {
@@ -30,7 +30,7 @@ namespace CapaDatos
             set { _semestre = value; }
         }
 
-        public int mes
+        public int? mes
         {
             get { return _mes; }
             set { _mes = value; }
@@ -42,13 +42,13 @@ namespace CapaDatos
             set { _tipoListado = value; }
         }
 
-        public int especialidad
+        public int? especialidad
         {
             get { return _especialidad; }
             set { _especialidad = value; }
         }
 
-        public int tipoCancelacion
+        public int? tipoCancelacion
         {
             get { return _tipoCancelacion; }
             set { _tipoCancelacion = value; }
