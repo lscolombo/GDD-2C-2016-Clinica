@@ -22,7 +22,7 @@ namespace CapaPresentacion
         private void cargarDataGridView()
         {
             N13CancAtencion var = new N13CancAtencion();
-            dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(1465925, this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
+            dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(frmLogin.passingText, this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
         }
 
 
@@ -34,7 +34,7 @@ namespace CapaPresentacion
             DateTime fechaInicio = this.dTimeFechaInicio.Value;
             DateTime fechaFin = this.dTimeFechaFin.Value;
             string detalle = this.txtMotivoCancelacion.Text;
-            string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, profesionalID);
+            string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, frmLogin.passingText);
             
             MessageBox.Show(var, "CLINICA-FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
