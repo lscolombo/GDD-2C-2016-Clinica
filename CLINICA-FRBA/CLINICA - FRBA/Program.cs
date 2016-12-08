@@ -23,7 +23,7 @@ namespace CLINICA___FRBA
             
             /*ACA ESPECIFICO CON QUE FORM ARANQUE AL EJECUTAR*/
             //Application.Run(new frmRegLlegada());
-            //Application.Run(new frmLogin());
+            Application.Run(new frmLogin());
             //Application.Run(new frmRegResultados()); 
             //Application.Run(new frmALTAafiliado()); 
             //Application.Run(new frmCancTurnoAfiliado()); 
@@ -31,7 +31,7 @@ namespace CLINICA___FRBA
             //Application.Run(new frmBAJAafiliado()); 
             //Application.Run(new frmABMAfiliado()); 
             //Application.Run(new frmPedidoTurno());
-            Application.Run(new frmEstadisticas());
+            //Application.Run(new frmEstadisticas());
         }
     }
 }

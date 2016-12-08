@@ -79,6 +79,13 @@ namespace CapaDatos
                 ParTotal.SqlDbType = SqlDbType.Int;
                 ParTotal.Value = precioTotal;
                 SqlCmd.Parameters.Add(ParTotal);
+                
+                SqlParameter ParFecha = new SqlParameter();
+                ParFecha.ParameterName = "@comp_fecha";
+                ParFecha.SqlDbType = SqlDbType.VarChar;
+                ParFecha.Size = 10;
+                ParFecha.Value = Conexion.FechaSistema;
+                SqlCmd.Parameters.Add(ParFecha);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro, intente nuevamente";
 

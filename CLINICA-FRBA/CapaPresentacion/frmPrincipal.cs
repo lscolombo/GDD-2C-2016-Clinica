@@ -226,5 +226,19 @@ namespace CapaPresentacion
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void MnuEstadisticas_Click(object sender, EventArgs e)
+        {
+            frmEstadisticas frm = new frmEstadisticas();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void MnuHistorial_Click(object sender, EventArgs e)
+        {
+            frmHistorialCambioPlan frm = new frmHistorialCambioPlan();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

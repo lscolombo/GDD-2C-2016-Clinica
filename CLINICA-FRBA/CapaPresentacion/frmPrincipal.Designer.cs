@@ -67,6 +67,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.MnuEstadisticas = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -162,6 +164,9 @@
             // 
             // MnuListados
             // 
+            this.MnuListados.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuEstadisticas,
+            this.MnuHistorial});
             this.MnuListados.Name = "MnuListados";
             this.MnuListados.Size = new System.Drawing.Size(62, 20);
             this.MnuListados.Text = "Listados";
@@ -177,7 +182,7 @@
             // MnuSolicitarTurno
             // 
             this.MnuSolicitarTurno.Name = "MnuSolicitarTurno";
-            this.MnuSolicitarTurno.Size = new System.Drawing.Size(148, 22);
+            this.MnuSolicitarTurno.Size = new System.Drawing.Size(152, 22);
             this.MnuSolicitarTurno.Text = "Solicitar turno";
             this.MnuSolicitarTurno.Click += new System.EventHandler(this.MnuSolicitarTurno_Click);
             // 
@@ -217,7 +222,7 @@
             this.toolBarToolStripMenuItem,
             this.statusBarToolStripMenuItem});
             this.viewMenu.Name = "viewMenu";
-            this.viewMenu.Size = new System.Drawing.Size(36, 20);
+            this.viewMenu.Size = new System.Drawing.Size(35, 20);
             this.viewMenu.Text = "&Ver";
             // 
             // toolBarToolStripMenuItem
@@ -264,7 +269,7 @@
             this.closeAllToolStripMenuItem,
             this.arrangeIconsToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(67, 20);
+            this.windowsMenu.Size = new System.Drawing.Size(66, 20);
             this.windowsMenu.Text = "&Ventanas";
             // 
             // newWindowToolStripMenuItem
@@ -362,6 +367,20 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
+            // MnuEstadisticas
+            // 
+            this.MnuEstadisticas.Name = "MnuEstadisticas";
+            this.MnuEstadisticas.Size = new System.Drawing.Size(227, 22);
+            this.MnuEstadisticas.Text = "Estadistico";
+            this.MnuEstadisticas.Click += new System.EventHandler(this.MnuEstadisticas_Click);
+            // 
+            // MnuHistorial
+            // 
+            this.MnuHistorial.Name = "MnuHistorial";
+            this.MnuHistorial.Size = new System.Drawing.Size(227, 22);
+            this.MnuHistorial.Text = "Historial de cambios (planes)";
+            this.MnuHistorial.Click += new System.EventHandler(this.MnuHistorial_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +442,8 @@
         private System.Windows.Forms.ToolStripMenuItem MnuAgenda;
         private System.Windows.Forms.ToolStripMenuItem MnuTurnos;
         private System.Windows.Forms.ToolStripMenuItem MnuSolicitarTurno;
+        private System.Windows.Forms.ToolStripMenuItem MnuEstadisticas;
+        private System.Windows.Forms.ToolStripMenuItem MnuHistorial;
     }
 }
 
