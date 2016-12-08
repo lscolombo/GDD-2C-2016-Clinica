@@ -47,6 +47,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(101, 306);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 23);
@@ -165,6 +166,7 @@
             // 
             this.txtCantidad.Location = new System.Drawing.Point(16, 42);
             this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.ReadOnly = true;
             this.txtCantidad.Size = new System.Drawing.Size(250, 20);
             this.txtCantidad.TabIndex = 3;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);

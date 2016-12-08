@@ -46,8 +46,14 @@ namespace CapaPresentacion
                                     Rows[0][1].ToString();
                 txtNombre.Text = nombreAfiliado + " " + apellidoAfiliado;
 
-                txtPlan.Text = (CapaNegocio.N3Usuario.TraerDatosAfiliado(frmLogin.passingText)).
-                                    Rows[0][1].ToString(); 
+                planId = Convert.ToInt32((CapaNegocio.N3Usuario.ObtenerPlanAfiliado
+                                    (nroAfiliadoInt)).Rows[0][0]);
+
+                txtPlan.Text = Convert.ToString(CapaNegocio.N9CompraBono.ObtenerDatosPlan
+                                    (planId).Rows[0][0]);
+
+                txtCantidad.ReadOnly = false;
+                button1.Enabled = true;
             }
         }
 
@@ -71,6 +77,7 @@ namespace CapaPresentacion
                     txtPlan.Text = Convert.ToString(CapaNegocio.N9CompraBono.ObtenerDatosPlan
                                        (planId).Rows[0][0]);
 
+                    txtCantidad.ReadOnly = false;
                     txtCantidad.Clear();
                     txtTotal.Clear();
                 }
@@ -100,6 +107,7 @@ namespace CapaPresentacion
 
                         txtTotal.Text = Convert.ToString(precioBono * cantidadBonos);
                         precioTotal = precioBono * cantidadBonos;
+                        button1.Enabled = true;
                     }
                 }
                 catch (Exception ex)
@@ -122,9 +130,11 @@ namespace CapaPresentacion
                 // Fuerzo a valores no validos para tener que volver a ingresar algo
                 txtCantidad.Clear();
                 txtTotal.Clear();
+                button1.Enabled = false;
 
                 if (frmLogin.passingRol == "Administrador General")
                 {
+                    txtCantidad.ReadOnly = true;
                     txtNroAfiliado.Clear();
                     txtCantidad.Clear();
                     txtNombre.Clear();
