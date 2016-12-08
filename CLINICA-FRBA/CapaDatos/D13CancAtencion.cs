@@ -12,15 +12,15 @@ namespace CapaDatos
 
     public class D13CancAtencion
     {
-        private int _afilID;
+        private string _afilID;
         private int _codTurno;
         private string _detalle;
         private DateTime _fechaInicio;
         private DateTime _fechaFin;
         private DateTime _fechaApp;
-        private int _profesionalID;
+        private string _profesionalID;
 
-        public int afilID
+        public string afilID
         {
             get { return _afilID; }
             set { _afilID = value; }
@@ -56,7 +56,7 @@ namespace CapaDatos
             set { _fechaApp = value; }
         }
 
-        public int profesionalID
+        public string profesionalID
         {
             get { return _profesionalID; }
             set { _profesionalID = value; }
@@ -70,7 +70,7 @@ namespace CapaDatos
         }
 
         //constructor con parámetros
-        public D13CancAtencion(int AfilID, int CodTurno, string Detalle)
+        public D13CancAtencion(string AfilID, int CodTurno, string Detalle)
         {
             this.afilID = AfilID;
             this.codTurno = CodTurno;
@@ -95,7 +95,8 @@ namespace CapaDatos
                 SqlParameter ParAfilID = new SqlParameter();
 
                 ParAfilID.ParameterName = "@afilID";
-                ParAfilID.SqlDbType = SqlDbType.Int;
+                ParAfilID.SqlDbType = SqlDbType.VarChar;
+                ParAfilID.Size = 255;
                 ParAfilID.Value = afilID;
                 SqlCmd.Parameters.Add(ParAfilID);
 
@@ -190,7 +191,8 @@ namespace CapaDatos
                 SqlParameter ParProf = new SqlParameter();
 
                 ParProf.ParameterName = "@profesionalID";
-                ParProf.SqlDbType = SqlDbType.Int;
+                ParProf.SqlDbType = SqlDbType.VarChar;
+                ParProf.Size = 255;
                 ParProf.Value = profesionalID;
                 SqlCmd.Parameters.Add(ParProf);
 
@@ -274,7 +276,8 @@ namespace CapaDatos
                 SqlParameter ParProfesionalID = new SqlParameter();
 
                 ParProfesionalID.ParameterName = "@profesionalID";
-                ParProfesionalID.SqlDbType = SqlDbType.Int;
+                ParProfesionalID.SqlDbType = SqlDbType.VarChar;
+                ParProfesionalID.Size = 255;
                 ParProfesionalID.Value = profesionalID;
                 SqlCmd.Parameters.Add(ParProfesionalID);
 

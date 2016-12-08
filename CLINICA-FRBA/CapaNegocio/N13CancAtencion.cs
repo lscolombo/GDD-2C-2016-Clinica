@@ -17,7 +17,7 @@ namespace CapaNegocio
 
         }
 
-        public DataTable TurnosPedidos(int afilID)
+        public DataTable TurnosPedidos(string afilID)
         {
             D13CancAtencion Obj = new D13CancAtencion();
             Obj.afilID = afilID;
@@ -32,7 +32,7 @@ namespace CapaNegocio
             return Obj.CancelarTurnoAf(Obj);
         }
 
-        public DataTable TurnosPendientesEntreFechas(int profesionalID, DateTime fechaInicio, DateTime fechaFin)
+        public DataTable TurnosPendientesEntreFechas(string profesionalID, DateTime fechaInicio, DateTime fechaFin)
         {
             D13CancAtencion Obj = new D13CancAtencion();
             Obj.profesionalID = profesionalID;
@@ -41,7 +41,7 @@ namespace CapaNegocio
             return Obj.TurnosPendientesEntreFechas(Obj);
         }
 
-        public string CancelarTurnosProf(DateTime fechaInicio, DateTime fechaFin, string detalle, int profesionalID)
+        public string CancelarTurnosProf(DateTime fechaInicio, DateTime fechaFin, string detalle, string profesionalID)
         {
             D13CancAtencion Obj = new D13CancAtencion();
             Obj.fechaInicio = fechaInicio;

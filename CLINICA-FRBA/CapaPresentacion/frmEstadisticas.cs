@@ -25,31 +25,31 @@ namespace CapaPresentacion
         //int? mes;
         //int? especialidad;
         //int? tipoCancelacion;
-         
+
         int? mes = null;
         int? especialidad = null;
         int? tipoCancelacion = null;
 
 
         private DataTable MostrarEspecialidades()
-            {
-           
+        {
+
             N14Estadisticas Obj = new N14Estadisticas();
             DataTable var = Obj.MostrarEspecialidades();
             return (var);
-            }
+        }
 
         private DataTable MostrarResultados()
         {
             N14Estadisticas Obj = new N14Estadisticas();
-           // DataTable var = Obj.ListadoEstadistico(anio, semestre, mes, tipoListado, especialidad, tipoCancelacion);
+            // DataTable var = Obj.ListadoEstadistico(anio, semestre, mes, tipoListado, especialidad, tipoCancelacion);
             DataTable var = Obj.ListadoEstadistico(2015, 2, null, 1, null, null);
             return (var);
         }
 
         private void frmEstadisticas_Load(object sender, EventArgs e)
         {
-           //cmb TipoListado
+            //cmb TipoListado
             DataTable dtTipoListado = new DataTable();
             dtTipoListado.Columns.Add("tipo");
             dtTipoListado.Columns.Add("descripcion");
@@ -84,9 +84,9 @@ namespace CapaPresentacion
 
             cmbTipoListado.SelectedIndex = -1;
 
-            
-            
-            
+
+
+
 
 
             //cmb Mes
@@ -113,7 +113,7 @@ namespace CapaPresentacion
             }
 
             cmbAnio.SelectedIndex = -1;
-            
+
 
             //cmb Especialidades
             cmbEspecialidad.DataSource = MostrarEspecialidades();
@@ -135,8 +135,8 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Debe seleccionar un año", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-           
+
+
             //validación combobox tipo listado
             if (cmbTipoListado.SelectedItem != null)
             {
@@ -153,7 +153,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Debe seleccionar un semestre", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
 
             //cargar dataGridView con resultados
