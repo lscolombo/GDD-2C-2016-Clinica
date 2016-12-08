@@ -102,6 +102,12 @@
     <Compile Include="frmEstadisticas.Designer.cs">
       <DependentUpon>frmEstadisticas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHistorialCambioPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorialCambioPlan.Designer.cs">
+      <DependentUpon>frmHistorialCambioPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEstadisticas.resx">
       <DependentUpon>frmEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorialCambioPlan.resx">
+      <DependentUpon>frmHistorialCambioPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

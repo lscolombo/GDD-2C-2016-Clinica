@@ -83,5 +83,13 @@ namespace CapaNegocio
             D4abmAfiliado Obj = new D4abmAfiliado();
             return Obj.InsertarCambioPlanM(unAfiliado, unPlan, unaDescripcion);
         }
+
+        //HISTORIAL
+
+        public static DataTable FiltroDeHistorial(int unIdAfil, string unApellido, string unNombre)
+        { 
+            D4abmAfiliado Obj = new D4abmAfiliado();
+            return Obj.FiltroHistorial(unIdAfil, unApellido, unNombre);
+        }
     }
 }

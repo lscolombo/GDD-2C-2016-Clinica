@@ -62,6 +62,7 @@
             this.txtPlanMedicoActual = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.grpMotivoCambioP = new System.Windows.Forms.GroupBox();
+            this.btnHistorialCambioP = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -283,6 +284,7 @@
             this.txtNumDni.ReadOnly = true;
             this.txtNumDni.Size = new System.Drawing.Size(100, 20);
             this.txtNumDni.TabIndex = 4;
+            this.txtNumDni.TextChanged += new System.EventHandler(this.txtNumDni_TextChanged);
             // 
             // cbbTipoDni
             // 
@@ -364,7 +366,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(178, 383);
+            this.btnUpdate.Location = new System.Drawing.Point(165, 383);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 23);
             this.btnUpdate.TabIndex = 62;
@@ -403,11 +405,22 @@
             this.grpMotivoCambioP.TabStop = false;
             this.grpMotivoCambioP.Text = "Motivo cambio de plan";
             // 
+            // btnHistorialCambioP
+            // 
+            this.btnHistorialCambioP.Location = new System.Drawing.Point(298, 383);
+            this.btnHistorialCambioP.Name = "btnHistorialCambioP";
+            this.btnHistorialCambioP.Size = new System.Drawing.Size(130, 23);
+            this.btnHistorialCambioP.TabIndex = 66;
+            this.btnHistorialCambioP.Text = "Historial Cambio de Plan";
+            this.btnHistorialCambioP.UseVisualStyleBackColor = true;
+            this.btnHistorialCambioP.Click += new System.EventHandler(this.btnHistorialCambioP_Click);
+            // 
             // frmMODIafiliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 418);
+            this.Controls.Add(this.btnHistorialCambioP);
             this.Controls.Add(this.grpMotivoCambioP);
             this.Controls.Add(this.txtPlanMedicoActual);
             this.Controls.Add(this.btnUpdate);
@@ -491,5 +504,6 @@
         private System.Windows.Forms.TextBox txtPlanMedicoActual;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.GroupBox grpMotivoCambioP;
+        private System.Windows.Forms.Button btnHistorialCambioP;
     }
 }

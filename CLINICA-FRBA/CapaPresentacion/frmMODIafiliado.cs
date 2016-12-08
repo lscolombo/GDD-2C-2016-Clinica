@@ -74,7 +74,7 @@ namespace CapaPresentacion
                     N4abmAfiliado.ActualizarLosDatos(txtUserName.Text, Convert.ToInt32(txtTelefono.Text),
                                                      txtDireccion.Text, txtMail.Text, txtPassword.Text,
                                                      Convert.ToInt32(txtNumAfiliado.Text), planElegido);
-                    MessageBox.Show("", "Modificaciones exitosas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se guardaron los cambios realizados", "Modificaciones exitosas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     if (CambioPlanMedico)
                     {                        
@@ -144,6 +144,17 @@ namespace CapaPresentacion
                 grpMotivoCambioP.Enabled = true;
                 CambioPlanMedico = true;
             }
+        }
+
+        private void btnHistorialCambioP_Click(object sender, EventArgs e)
+        {
+            frmHistorialCambioPlan frmHistorialCambioPlan = new frmHistorialCambioPlan();
+            frmHistorialCambioPlan.Visible = true;
+        }
+
+        private void txtNumDni_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

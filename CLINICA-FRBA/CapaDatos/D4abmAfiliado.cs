@@ -637,5 +637,60 @@ namespace CapaDatos
 
             return DtResultado; /*EL METODO DEVUELVE EL RESULTADO EN "FORMATO" DATATABLE AL OBJETO Q LO INVOCO*/
         }
+
+        // HISTORIAL
+        /*METODO POR EL CUAL LA CLASE SE CONECTA A SQL PARA EJECUTAR UN STORE PROCEDURE*/
+        public DataTable FiltroHistorial(int unIdAfil,string unApellido, string unNombre)
+        {
+            DataTable DtResultado = new DataTable(); /*VARIABLE DONDE GUARDO LO Q ME DEVUELVA SQL*/
+            SqlConnection SqlCon = new SqlConnection(); /*VAR. ENCARGADA DE LA CONEXION*/
+
+            /*UTILIZO UN TRY/CATCH PARA POSIBLES ERRORES*/
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn; /*LE PASO LA RUTA DE CONEXION QUE TENGO EN LA CLASE CONEXION*/
+                SqlCommand SqlCmd = new SqlCommand(); /*OBJ ENCARGADO DE GUARDAR TODOS LOS DATOS PARA EJECUTAR UN DETERMINADO STORE POR EJEMPLO*/
+                SqlCmd.Connection = SqlCon; /*LE PASO LA CONEXION AL OBJETO DEL COMANDO*/
+                SqlCmd.CommandText = "p4FiltroHistorial"; /*LE INDICO EL NOMBRE DEL STORE/FUNCTION/VISTA/...*/
+                SqlCmd.CommandType = CommandType.StoredProcedure; /*ESPECIFICO Q TIPO DE OBJETO VOY A USAR EN SQL*/
+
+                /*ESPECIFICO CARACTERISTICAS DEL 1º PARAMETRO*/
+                SqlParameter ParID = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+
+                ParID.ParameterName = "@afiliado"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParID.SqlDbType = SqlDbType.Int; /*EL TIPO DE DATO Q ES*/
+                //ParID.Size = 255; /*LA DIMENSION*/
+                ParID.Value = unIdAfil; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParID); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+
+                /*ESPECIFICO CARACTERISTICAS DEL 2º PARAMETRO*/
+                SqlParameter ParApell = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+
+                ParApell.ParameterName = "@apellido"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParApell.SqlDbType = SqlDbType.VarChar; /*EL TIPO DE DATO Q ES*/
+                ParApell.Size = 255; /*LA DIMENSION*/
+                ParApell.Value = unApellido; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParApell); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+
+                /*ESPECIFICO CARACTERISTICAS DEL 3º PARAMETRO */
+                SqlParameter ParNombre = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+
+                ParNombre.ParameterName = "@nombre"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParNombre.SqlDbType = SqlDbType.VarChar; /*EL TIPO DE DATO Q ES*/
+                ParNombre.Size = 255; /*LA DIMENSION*/
+                ParNombre.Value = unNombre; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParNombre); /*LE PASO TODO LO REFERIDO AL 2º PARAMETRO*/
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd); /*OBJETO ENCARGADO DE EJECUTAR EL COMANDO Q SE LE PASE*/
+                SqlDat.Fill(DtResultado); /*GUARDO EN LA VARIABLE DE TIPO DATATABLE EL RESULTADO DE LA EJECUCION DEL COMANDO*/
+            }
+
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+
+            return DtResultado; /*EL METODO DEVUELVE EL RESULTADO EN "FORMATO" DATATABLE AL OBJETO Q LO INVOCO*/
+        }
     }
 }
