@@ -208,9 +208,19 @@ namespace CapaPresentacion
 
         private void cancelarAtencionMedicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCancTurnoAfiliado frm = new frmCancTurnoAfiliado();
-            frm.MdiParent = this;
-            frm.Show();
+            if (frmLogin.passingRol == "Afiliado")
+            {
+                frmCancTurnoAfiliado frm = new frmCancTurnoAfiliado();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+
+            if (frmLogin.passingRol == "Profesional")
+            {
+                frmCancTurnosProf frm = new frmCancTurnosProf();
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
 
         private void MnuSolicitarTurno_Click(object sender, EventArgs e)
