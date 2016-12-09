@@ -125,7 +125,7 @@ namespace CapaPresentacion
             if (rtaCompra == "OK")
             {
                 MessageBox.Show("La compra de " + cantidadBonos + " bonos, por un total de $"
-                    + precioTotal + " ha sido realizada con exito", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    + precioTotal + " ha sido realizada con exito", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Fuerzo a valores no validos para tener que volver a ingresar algo
                 txtCantidad.Clear();
