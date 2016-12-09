@@ -22,7 +22,10 @@ namespace CapaPresentacion
         private void cargarDataGridView()
         {
             N13CancAtencion var = new N13CancAtencion();
-            dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(frmLogin.passingText, this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
+           // dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(this.profesionalID, this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
+            dgvTurnosPendientes.AutoGenerateColumns = true;
+            dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(80527583.ToString(), this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
+            
         }
 
 
@@ -30,24 +33,19 @@ namespace CapaPresentacion
         {
 
             N13CancAtencion Obj = new N13CancAtencion();
-            int profesionalID = 1465925; //pasarle el id del profesional logueado
+            //string profesionalID = "80527583"; //pasarle el id del profesional logueado
+           // string profesionalID = frmLogin.passingText;
             DateTime fechaInicio = this.dTimeFechaInicio.Value;
             DateTime fechaFin = this.dTimeFechaFin.Value;
             string detalle = this.txtMotivoCancelacion.Text;
-            string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, frmLogin.passingText);
+            //string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, frmLogin.passingText);
+            string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, "80527583");
             
             MessageBox.Show(var, "CLINICA-FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void frmCancTurnosProf_Load(object sender, EventArgs e)
         {
-            this.CenterToScreen();
-            this.cargarDataGridView();
-            if (dgvTurnosPendientes.Rows.Count == 0)
-            {
-                MessageBox.Show("No posee turnos disponibles para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvTurnosPendientes.Enabled = false;
-            }
 
         }
 

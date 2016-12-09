@@ -212,13 +212,9 @@ namespace CapaDatos
                 ParFechaFin.Value = fechaFin;
                 SqlCmd.Parameters.Add(ParFechaFin);
 
-                SqlParameter ParFechaApp = new SqlParameter();
 
-                ParFechaApp.ParameterName = "@fechaApp";
-                ParFechaApp.SqlDbType = SqlDbType.DateTime;
-                ParFechaApp.Value = Conexion.FechaSistema;
-                SqlCmd.Parameters.Add(ParFechaApp);
 
+               
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);
 
@@ -280,6 +276,13 @@ namespace CapaDatos
                 ParProfesionalID.Size = 255;
                 ParProfesionalID.Value = profesionalID;
                 SqlCmd.Parameters.Add(ParProfesionalID);
+
+                SqlParameter ParFechaApp = new SqlParameter();
+
+                ParFechaApp.ParameterName = "@fechaApp";
+                ParFechaApp.SqlDbType = SqlDbType.DateTime;
+                ParFechaApp.Value = Conexion.FechaSistema;
+                SqlCmd.Parameters.Add(ParFechaApp);
 
 
                 rpta = "Se cancelaron" + " " + SqlCmd.ExecuteNonQuery() +" " + "turnos"; // == 1 ? "OK" : "No se cancelaron los turnos para las fechas seleccionadas";

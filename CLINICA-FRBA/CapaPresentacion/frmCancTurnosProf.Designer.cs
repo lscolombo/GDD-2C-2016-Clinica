@@ -172,7 +172,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCancTurnosProf";
             this.Text = "frmCancAtencionProf";
-            this.Load += new System.EventHandler(this.frmCancTurnosProf_Load_1);
+            this.Load += new System.EventHandler(this.frmCancTurnosProf_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
