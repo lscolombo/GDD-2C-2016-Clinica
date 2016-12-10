@@ -15,7 +15,7 @@ namespace CapaNegocio
         {
         }
 
-        public DataTable ListadoEstadistico(int anio, int semestre, int? mes, int tipoListado, int? especialidad, int? tipoCancelacion)
+        public DataTable ListadoEstadistico(int anio, int semestre, int mes, int tipoListado, int especialidad, int tipoCancelacion)
         {
             D14Estadisticas Obj = new D14Estadisticas();
             Obj.anio = anio;

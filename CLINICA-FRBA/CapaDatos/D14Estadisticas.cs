@@ -13,10 +13,10 @@ namespace CapaDatos
     {
         private int _anio;
         private int _semestre;
-        private int? _mes;
+        private int _mes;
         private int _tipoListado;
-        private int? _especialidad;
-        private int? _tipoCancelacion;
+        private int _especialidad;
+        private int _tipoCancelacion;
 
         public int anio
         {
@@ -30,7 +30,7 @@ namespace CapaDatos
             set { _semestre = value; }
         }
 
-        public int? mes
+        public int mes
         {
             get { return _mes; }
             set { _mes = value; }
@@ -42,13 +42,13 @@ namespace CapaDatos
             set { _tipoListado = value; }
         }
 
-        public int? especialidad
+        public int especialidad
         {
             get { return _especialidad; }
             set { _especialidad = value; }
         }
 
-        public int? tipoCancelacion
+        public int tipoCancelacion
         {
             get { return _tipoCancelacion; }
             set { _tipoCancelacion = value; }
@@ -79,6 +79,18 @@ namespace CapaDatos
             this.especialidad = especialidad;
             this.tipoCancelacion = tipoCancelacion;
         }
+        
+        private object ValueOrDBNullIfZero(int val)
+        {
+            if (val == 0)
+                {
+                return DBNull.Value;
+                }
+            else
+            {
+            return val;
+        }
+         }
 
         //Método mostrar todos los turnos disponibles pedidos por un afiliado
         public DataTable ListadoEstadistico(D14Estadisticas Estadisticas)
@@ -90,8 +102,10 @@ namespace CapaDatos
             {
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
+                SqlCon.Open();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "WINCHESTER.p_ObtenerEstadisticas";
+                
+                SqlCmd.CommandText = "[WINCHESTER].[p_ObtenerEstadisticas]";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParAnio = new SqlParameter();
@@ -113,7 +127,7 @@ namespace CapaDatos
 
                 ParMes.ParameterName = "@Mes";
                 ParMes.SqlDbType = SqlDbType.Int;
-                ParMes.Value = mes;
+                ParMes.Value = ValueOrDBNullIfZero(mes);
                 SqlCmd.Parameters.Add(ParMes);
 
                 SqlParameter ParTipoListado = new SqlParameter();
@@ -127,14 +141,14 @@ namespace CapaDatos
 
                 ParEspecialidad.ParameterName = "@Especialidad";
                 ParEspecialidad.SqlDbType = SqlDbType.Int;
-                ParEspecialidad.Value = especialidad;
+                ParEspecialidad.Value = ValueOrDBNullIfZero(especialidad);
                 SqlCmd.Parameters.Add(ParEspecialidad);
-
+                                
                 SqlParameter ParTipoCancelacion = new SqlParameter();
 
                 ParTipoCancelacion.ParameterName = "@TipoCancelacion";
                 ParTipoCancelacion.SqlDbType = SqlDbType.Int;
-                ParTipoCancelacion.Value = tipoCancelacion;
+                ParTipoCancelacion.Value = ValueOrDBNullIfZero(tipoCancelacion);
                 SqlCmd.Parameters.Add(ParTipoCancelacion);
 
 

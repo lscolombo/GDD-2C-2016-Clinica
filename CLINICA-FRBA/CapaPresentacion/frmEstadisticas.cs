@@ -22,13 +22,10 @@ namespace CapaPresentacion
         int anio;
         int semestre;
         int tipoListado;
-        //int? mes;
-        //int? especialidad;
-        //int? tipoCancelacion;
+        int mes;
+        int especialidad;
+        int tipoCancelacion;
 
-        int? mes = null;
-        int? especialidad = null;
-        int? tipoCancelacion = null;
 
 
         private DataTable MostrarEspecialidades()
@@ -43,7 +40,7 @@ namespace CapaPresentacion
         {
             N14Estadisticas Obj = new N14Estadisticas();
             // DataTable var = Obj.ListadoEstadistico(anio, semestre, mes, tipoListado, especialidad, tipoCancelacion);
-            DataTable var = Obj.ListadoEstadistico(2015, 2, null, 1, null, null);
+            DataTable var = Obj.ListadoEstadistico(2015, 2, 0, 1, 0, 0);
             return (var);
         }
 
