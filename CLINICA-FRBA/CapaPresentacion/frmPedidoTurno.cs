@@ -64,7 +64,7 @@ namespace CapaPresentacion
             txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
 
             // Guardo el codigo de la especialidad en un String
-            especialidad = this.cbEspecialidades.SelectedValue.ToString();
+            especialidad = this.cbEspecialidades.SelectedValue.ToString();             
         }
 
         private void dgvProfesionales_CellClick(object sender, DataGridViewCellEventArgs e)

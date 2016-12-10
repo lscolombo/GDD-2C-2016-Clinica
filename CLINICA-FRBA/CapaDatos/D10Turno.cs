@@ -44,11 +44,11 @@ namespace CapaDatos
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "WINCHESTER.pTraerProfesionales";
+                SqlCmd.CommandText = "WINCHESTER.pMostrarProfesionales";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParEspecialidad = new SqlParameter();
-                ParEspecialidad.ParameterName = "@esp_codigo";
+                ParEspecialidad.ParameterName = "@esp_por_prof_especialidad";
                 ParEspecialidad.SqlDbType = SqlDbType.Int;
                 ParEspecialidad.Value = Convert.ToInt32(especialidad);
                 SqlCmd.Parameters.Add(ParEspecialidad);

@@ -22,3 +22,4 @@ C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaD
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
