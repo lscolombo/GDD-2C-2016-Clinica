@@ -282,7 +282,8 @@ namespace CapaDatos
                 SqlParameter ParFechaApp = new SqlParameter();
 
                 ParFechaApp.ParameterName = "@fechaApp";
-                ParFechaApp.SqlDbType = SqlDbType.DateTime;
+                ParFechaApp.SqlDbType = SqlDbType.VarChar;
+                ParFechaApp.Size = 10;
                 ParFechaApp.Value = Conexion.FechaSistema;
                 SqlCmd.Parameters.Add(ParFechaApp);
 
