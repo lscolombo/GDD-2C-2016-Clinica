@@ -25,6 +25,7 @@ namespace CapaPresentacion
         private string idTurno;
 
         private int nroAfiliado;
+        private string nroAfiliadoString;
         private string rtaTurno;
 
         private string matriculaAux;
@@ -119,18 +120,19 @@ namespace CapaPresentacion
         private void btnPedirTurno_Click(object sender, EventArgs e)
         {
             // Si iniciamos la app directamente de este form rompe xq toma datos desde el login
-            nroAfiliado = Convert.ToInt32((CapaNegocio.N3Usuario.TraerDatosAfiliado
-                            (frmLogin.passingRol)).Rows[0][0]);
+            nroAfiliadoString = (CapaNegocio.N3Usuario.TraerDatosAfiliado
+                                    (frmLogin.passingText)).Rows[0][0].ToString();
+            nroAfiliado = Convert.ToInt32(nroAfiliadoString);
             //textBox4.Text = Convert.ToString(nroAfiliado);
             //textBox3.Text = idTurno;
 
-            if (frmLogin.passingRol == "Profesional")
+            if (frmLogin.passingRol == "Afiliado")
             {
                 matriculaAux = (CapaNegocio.N3Usuario.
                         ProfesionalQueTambienEsAfiliado(nroAfiliado)).Rows[0][0].ToString();
             }
 
-            if (frmLogin.passingRol == "Profesional" && matriculaAux == matricula)
+            if (frmLogin.passingRol == "Afiliado" && matriculaAux == matricula)
                 MessageBox.Show("No puede asignarse un turno con usted mismo",
                         "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
