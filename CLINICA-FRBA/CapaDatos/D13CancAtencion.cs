@@ -88,7 +88,7 @@ namespace CapaDatos
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "WINCHESTER.TurnosPedidos";
+                SqlCmd.CommandText = "WINCHESTER.turnosPedidos";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 /*ESPECIFICO CARACTERISTICAS DEL 1º PARAMETRO*/
@@ -103,7 +103,8 @@ namespace CapaDatos
                 SqlParameter ParFechaApp = new SqlParameter();
 
                 ParFechaApp.ParameterName = "@fechaApp";
-                ParFechaApp.SqlDbType = SqlDbType.DateTime;
+                ParFechaApp.SqlDbType = SqlDbType.VarChar;
+                ParFechaApp.Size = 10;
                 ParFechaApp.Value = Conexion.FechaSistema;
                 SqlCmd.Parameters.Add(ParFechaApp);
 
@@ -156,7 +157,8 @@ namespace CapaDatos
                 SqlParameter ParFechaApp = new SqlParameter();
 
                 ParFechaApp.ParameterName = "@fechaApp";
-                ParFechaApp.SqlDbType = SqlDbType.DateTime;
+                ParFechaApp.SqlDbType = SqlDbType.VarChar;
+                ParFechaApp.Size = 10;
                 ParFechaApp.Value = Conexion.FechaSistema;
                 SqlCmd.Parameters.Add(ParFechaApp);
 
