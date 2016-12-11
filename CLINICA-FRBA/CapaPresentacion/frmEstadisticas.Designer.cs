@@ -47,6 +47,7 @@
             this.rbMedico = new System.Windows.Forms.RadioButton();
             this.chkTipoCancelacion = new System.Windows.Forms.CheckBox();
             this.btnMostrarResultados = new System.Windows.Forms.Button();
+            this.chkEspecialidad = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosEstadisticas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -151,6 +152,7 @@
             this.chkMes.TabIndex = 6;
             this.chkMes.Text = "Filtrar por un mes en particular";
             this.chkMes.UseVisualStyleBackColor = true;
+            this.chkMes.CheckedChanged += new System.EventHandler(this.chkMes_CheckedChanged);
             // 
             // cmbMes
             // 
@@ -167,11 +169,12 @@
             this.cmbTipoListado.Name = "cmbTipoListado";
             this.cmbTipoListado.Size = new System.Drawing.Size(352, 21);
             this.cmbTipoListado.TabIndex = 8;
+            this.cmbTipoListado.SelectedIndexChanged += new System.EventHandler(this.cmbTipoListado_SelectedIndexChanged);
             // 
             // cmbEspecialidad
             // 
             this.cmbEspecialidad.FormattingEnabled = true;
-            this.cmbEspecialidad.Location = new System.Drawing.Point(290, 91);
+            this.cmbEspecialidad.Location = new System.Drawing.Point(290, 111);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(185, 21);
             this.cmbEspecialidad.TabIndex = 9;
@@ -179,7 +182,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(214, 96);
+            this.label4.Location = new System.Drawing.Point(214, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 10;
@@ -227,6 +230,7 @@
             this.chkTipoCancelacion.TabIndex = 12;
             this.chkTipoCancelacion.Text = "Filtrar por tipo de cancelación";
             this.chkTipoCancelacion.UseVisualStyleBackColor = true;
+            this.chkTipoCancelacion.CheckedChanged += new System.EventHandler(this.chkTipoCancelacion_CheckedChanged);
             // 
             // btnMostrarResultados
             // 
@@ -238,11 +242,23 @@
             this.btnMostrarResultados.UseVisualStyleBackColor = true;
             this.btnMostrarResultados.Click += new System.EventHandler(this.btnMostrarResultados_Click);
             // 
+            // chkEspecialidad
+            // 
+            this.chkEspecialidad.AutoSize = true;
+            this.chkEspecialidad.Location = new System.Drawing.Point(217, 92);
+            this.chkEspecialidad.Name = "chkEspecialidad";
+            this.chkEspecialidad.Size = new System.Drawing.Size(131, 17);
+            this.chkEspecialidad.TabIndex = 14;
+            this.chkEspecialidad.Text = "Filtrar por especialidad";
+            this.chkEspecialidad.UseVisualStyleBackColor = true;
+            this.chkEspecialidad.CheckedChanged += new System.EventHandler(this.chkEspecialidad_CheckedChanged);
+            // 
             // frmEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 412);
+            this.Controls.Add(this.chkEspecialidad);
             this.Controls.Add(this.btnMostrarResultados);
             this.Controls.Add(this.chkTipoCancelacion);
             this.Controls.Add(this.groupBox3);
@@ -292,5 +308,6 @@
         private System.Windows.Forms.RadioButton rbMedico;
         private System.Windows.Forms.CheckBox chkTipoCancelacion;
         private System.Windows.Forms.Button btnMostrarResultados;
+        private System.Windows.Forms.CheckBox chkEspecialidad;
     }
 }

@@ -27,6 +27,7 @@ namespace CapaNegocio
             return Obj.ListadoEstadistico(Obj);
         }
 
+        
         public DataTable MostrarEspecialidades()
         {
             D14Estadisticas Obj = new D14Estadisticas();

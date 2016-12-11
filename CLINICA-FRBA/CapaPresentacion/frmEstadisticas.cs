@@ -40,7 +40,7 @@ namespace CapaPresentacion
         {
             N14Estadisticas Obj = new N14Estadisticas();
             // DataTable var = Obj.ListadoEstadistico(anio, semestre, mes, tipoListado, especialidad, tipoCancelacion);
-            DataTable var = Obj.ListadoEstadistico(2015, 2, 0, 1, 0, 0);
+            DataTable var = Obj.ListadoEstadistico(2015, 2, 1000, 1, 1000, 1000);
             return (var);
         }
 
@@ -80,10 +80,7 @@ namespace CapaPresentacion
             cmbTipoListado.DataSource = dtTipoListado;
 
             cmbTipoListado.SelectedIndex = -1;
-
-
-
-
+            
 
 
             //cmb Mes
@@ -118,6 +115,19 @@ namespace CapaPresentacion
             cmbEspecialidad.ValueMember = "esp_codigo";
             cmbEspecialidad.SelectedIndex = -1;
             //especialidad = (int)cmbEspecialidad.SelectedValue;
+
+            this.groupBox3.Hide();
+            this.rbMedico.Hide();
+            this.rbPaciente.Hide();
+            this.chkTipoCancelacion.Hide();
+
+            this.label2.Hide();
+            this.cmbMes.Hide();
+
+            this.label4.Hide();
+            this.cmbEspecialidad.Hide();
+
+            this.chkEspecialidad.Hide();
 
         }
 
@@ -171,6 +181,82 @@ namespace CapaPresentacion
             if (rbSegundoSemestre.Checked == true)
             {
                 semestre = 2;
+            }
+        }
+
+        private void cmbTipoListado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(cmbTipoListado.SelectedValue) == 1)
+                {
+                    this.chkTipoCancelacion.Show();
+                    this.label4.Hide();
+                    this.cmbEspecialidad.Hide();
+                    this.chkEspecialidad.Hide();
+                }
+
+            if (Convert.ToInt32(cmbTipoListado.SelectedValue) == 2 || Convert.ToInt32(cmbTipoListado.SelectedValue) == 3)
+            {
+                this.chkTipoCancelacion.Hide();
+                this.chkEspecialidad.Show();
+
+            }
+
+            if (Convert.ToInt32(cmbTipoListado.SelectedValue) == 4 || Convert.ToInt32(cmbTipoListado.SelectedValue) == 5)
+            {
+                this.chkTipoCancelacion.Hide();
+                this.label4.Hide();
+                this.cmbEspecialidad.Hide();
+                this.chkEspecialidad.Hide();
+
+            }
+
+            this.chkEspecialidad.Checked = false;
+            this.chkTipoCancelacion.Checked = false;
+        }
+
+        private void chkTipoCancelacion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkTipoCancelacion.Checked == true)
+            {
+                this.groupBox3.Show();
+                this.rbPaciente.Show();
+                this.rbMedico.Show();
+            }
+            else
+            {
+                this.groupBox3.Hide();
+                this.rbPaciente.Hide();
+                this.rbMedico.Hide();
+            }
+
+        }
+
+        private void chkMes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkMes.Checked == true)
+            {
+                this.label2.Show();
+                this.cmbMes.Show();
+            }
+            else
+            {
+                this.label2.Hide();
+                this.cmbMes.Hide();
+            }
+
+        }
+
+        private void chkEspecialidad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkEspecialidad.Checked == true)
+            {
+                this.label4.Show();
+                this.cmbEspecialidad.Show();
+            }
+            else
+            {
+                this.label4.Hide();
+                this.cmbEspecialidad.Hide();
             }
         }
     }

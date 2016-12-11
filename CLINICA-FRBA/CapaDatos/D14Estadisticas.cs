@@ -82,15 +82,15 @@ namespace CapaDatos
         
         private object ValueOrDBNullIfZero(int val)
         {
-            if (val == 0)
+            if (val == 1000)
                 {
                 return DBNull.Value;
                 }
             else
             {
             return val;
+            }
         }
-         }
 
         //Método mostrar todos los turnos disponibles pedidos por un afiliado
         public DataTable ListadoEstadistico(D14Estadisticas Estadisticas)
@@ -105,7 +105,7 @@ namespace CapaDatos
                 SqlCon.Open();
                 SqlCmd.Connection = SqlCon;
                 
-                SqlCmd.CommandText = "[WINCHESTER].[p_ObtenerEstadisticas]";
+                SqlCmd.CommandText = "WINCHESTER.p_ObtenerEstadisticas";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParAnio = new SqlParameter();
@@ -151,6 +151,8 @@ namespace CapaDatos
                 ParTipoCancelacion.Value = ValueOrDBNullIfZero(tipoCancelacion);
                 SqlCmd.Parameters.Add(ParTipoCancelacion);
 
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
 
             }
             catch (Exception ex)

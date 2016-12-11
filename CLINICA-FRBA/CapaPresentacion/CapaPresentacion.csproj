@@ -169,6 +169,12 @@
       <DependentUpon>frmRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRUEBA ESTADISTICAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRUEBA ESTADISTICAS.Designer.cs">
+      <DependentUpon>PRUEBA ESTADISTICAS.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoles.resx">
       <DependentUpon>frmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRUEBA ESTADISTICAS.resx">
+      <DependentUpon>PRUEBA ESTADISTICAS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
