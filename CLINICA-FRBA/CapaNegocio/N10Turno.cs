@@ -30,5 +30,10 @@ namespace CapaNegocio
         {
             return new D10Turno().TraerMatricula(usuario);
         }
+
+        public static DataTable MostrarTurnos(string fecha, string matricula, string especialidad)
+        {
+            return new D10Turno().MostrarTurnos(fecha, matricula, especialidad);
+        }
     }
 }

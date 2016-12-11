@@ -38,16 +38,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbTurnos = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.btnTurno = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtEleccion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtProfesional = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnPedirTurno = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesionales)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -141,13 +144,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.cbTurnos);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.dtpFechaNacimiento);
+            this.groupBox2.Controls.Add(this.btnTurno);
+            this.groupBox2.Controls.Add(this.dtpFecha);
             this.groupBox2.Location = new System.Drawing.Point(12, 359);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(323, 115);
+            this.groupBox2.Size = new System.Drawing.Size(323, 143);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Elija una fecha";
@@ -155,19 +160,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 71);
+            this.label4.Location = new System.Drawing.Point(6, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Turnos disponibles:";
             // 
-            // comboBox3
+            // cbTurnos
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(110, 68);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(202, 21);
-            this.comboBox3.TabIndex = 11;
+            this.cbTurnos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTurnos.FormattingEnabled = true;
+            this.cbTurnos.Location = new System.Drawing.Point(110, 87);
+            this.cbTurnos.Name = "cbTurnos";
+            this.cbTurnos.Size = new System.Drawing.Size(202, 21);
+            this.cbTurnos.TabIndex = 11;
             // 
             // label3
             // 
@@ -178,26 +184,28 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Fecha deseada para la atencion medica:";
             // 
-            // dtpFechaNacimiento
+            // dtpFecha
             // 
-            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(212, 30);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(100, 20);
-            this.dtpFechaNacimiento.TabIndex = 9;
-            this.dtpFechaNacimiento.Value = new System.DateTime(2016, 11, 22, 0, 0, 0, 0);
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(212, 30);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
+            this.dtpFecha.TabIndex = 9;
+            this.dtpFecha.Value = new System.DateTime(2016, 11, 22, 0, 0, 0, 0);
             // 
-            // button1
+            // btnTurno
             // 
-            this.button1.Location = new System.Drawing.Point(127, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Pedir turno";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTurno.Location = new System.Drawing.Point(82, 56);
+            this.btnTurno.Name = "btnTurno";
+            this.btnTurno.Size = new System.Drawing.Size(167, 23);
+            this.btnTurno.TabIndex = 9;
+            this.btnTurno.Text = "Ver Turnos";
+            this.btnTurno.UseVisualStyleBackColor = true;
+            this.btnTurno.Click += new System.EventHandler(this.btnTurno_Click);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.txtEleccion);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
@@ -256,15 +264,41 @@
             this.txtProfesional.Size = new System.Drawing.Size(197, 20);
             this.txtProfesional.TabIndex = 5;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(41, 135);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 11;
+            // 
+            // btnPedirTurno
+            // 
+            this.btnPedirTurno.Location = new System.Drawing.Point(94, 508);
+            this.btnPedirTurno.Name = "btnPedirTurno";
+            this.btnPedirTurno.Size = new System.Drawing.Size(167, 23);
+            this.btnPedirTurno.TabIndex = 8;
+            this.btnPedirTurno.Text = "Pedir Turno";
+            this.btnPedirTurno.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(4, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(315, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Seleccione un turno y haga click en \"Pedir Turno\" para confirmar";
+            // 
             // frmPedidoTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 515);
+            this.ClientSize = new System.Drawing.Size(346, 538);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.btnPedirTurno);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button1);
             this.Name = "frmPedidoTurno";
             this.Text = "Pedido de turno";
             this.Load += new System.EventHandler(this.frmPedidoTurno_Load);
@@ -289,10 +323,10 @@
         private System.Windows.Forms.ComboBox cbEspecialidades;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbTurnos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button btnTurno;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -301,6 +335,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtEleccion;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnPedirTurno;
 
 
     }

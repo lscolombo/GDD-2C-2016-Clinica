@@ -21,6 +21,8 @@ namespace CapaPresentacion
         private string nombreProf;
         private string apellidoProf;
 
+        private string fechaDeseada;
+
         public frmPedidoTurno()
         {
             InitializeComponent();
@@ -78,5 +80,20 @@ namespace CapaPresentacion
             // Guardo la matricula en un string
             matricula = (CapaNegocio.N10Turno.TraerMatricula(usuarioProf)).Rows[0][0].ToString();
         }
+
+        private void btnTurno_Click(object sender, EventArgs e)
+        {
+            fechaDeseada = dtpFecha.Value.ToString("yyyyMMdd");
+            textBox2.Text = fechaDeseada;
+            this.llenarComboTurnos();
+        }
+
+        private void llenarComboTurnos()
+        {
+            cbTurnos.DataSource = N10Turno.MostrarTurnos(fechaDeseada, matricula, especialidad);
+            cbTurnos.ValueMember = "turn_id";
+            cbTurnos.DisplayMember = "turn_fecha";
+        }
+
     }
 }
