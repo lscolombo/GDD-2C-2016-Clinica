@@ -25,6 +25,7 @@ namespace CapaPresentacion
         private string idTurno;
 
         private int nroAfiliado;
+        private string rtaTurno;
 
         public frmPedidoTurno()
         {
@@ -117,8 +118,20 @@ namespace CapaPresentacion
         {
             // CAMBIAR POR FRMLOGIN.PASSINGROL EN "ADMIN"
             nroAfiliado = Convert.ToInt32((CapaNegocio.N3Usuario.TraerDatosAfiliado
-                ("admin")).Rows[0][0]);
+                            ("admin")).Rows[0][0]);
             textBox4.Text = Convert.ToString(nroAfiliado);
+            textBox3.Text = idTurno;
+
+            rtaTurno = CapaNegocio.N10Turno.InsertarAfiliadoEnTurno
+                            (idTurno, nroAfiliado);
+
+            if (rtaTurno == "OK")
+            {
+                MessageBox.Show("El turno " + idTurno + " ha sido reservado con exito",
+                        "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show(rtaTurno, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 

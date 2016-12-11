@@ -166,5 +166,46 @@ namespace CapaDatos
             return DtResultado;
         }
 
+        public string InsertarAfiliadoEnTurno(string idTurno, int nroAfiliado)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.pInsertarAfiliadoEnTurno";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdTurno = new SqlParameter();
+                ParIdTurno.ParameterName = "@turn_id";
+                ParIdTurno.SqlDbType = SqlDbType.Int;
+                ParIdTurno.Value = Convert.ToInt32(idTurno);
+                SqlCmd.Parameters.Add(ParIdTurno);
+
+                SqlParameter ParAfiliadoId = new SqlParameter();
+                ParAfiliadoId.ParameterName = "@turn_afiliado";
+                ParAfiliadoId.SqlDbType = SqlDbType.Int;
+                ParAfiliadoId.Value = nroAfiliado;
+                SqlCmd.Parameters.Add(ParAfiliadoId);
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se pudo reservar el turno";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                    SqlCon.Close();
+            }
+
+            return rpta;
+        }
     }
 }

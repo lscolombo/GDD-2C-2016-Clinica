@@ -35,5 +35,11 @@ namespace CapaNegocio
         {
             return new D10Turno().MostrarTurnos(fecha, matricula, especialidad);
         }
+
+        public static string InsertarAfiliadoEnTurno(string idTurno, int nroAfiliado)
+        {
+            return new D10Turno().InsertarAfiliadoEnTurno(idTurno, nroAfiliado);
+        }
+
     }
 }
