@@ -22,6 +22,9 @@ namespace CapaPresentacion
         private string apellidoProf;
 
         private string fechaDeseada;
+        private string idTurno;
+
+        private int nroAfiliado;
 
         public frmPedidoTurno()
         {
@@ -29,9 +32,9 @@ namespace CapaPresentacion
             this.llenarComboEspecialidad();
             especialidad = this.cbEspecialidades.SelectedValue.ToString();
             textBox1.Text = especialidad;
-            this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
-            this.dgvProfesionales.Columns[0].Visible = false;
-            txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
+            //this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
+            //this.dgvProfesionales.Columns[0].Visible = false;
+            //txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
         }
 
         private void llenarComboEspecialidad()
@@ -49,13 +52,19 @@ namespace CapaPresentacion
         private void frmPedidoTurno_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
+            //this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
         }
 
         private void cbEspecialidades_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             especialidad = this.cbEspecialidades.SelectedValue.ToString();
             textBox1.Text = especialidad;
+            btnPedirTurno.Enabled = false;
+            btnTurno.Enabled = false;
+            txtProfesional.Clear();
+            txtEleccion.Clear();
+            dgvProfesionales.DataSource = null;
+            cbTurnos.DataSource = null;
         }
 
         // Boton "Buscar profesionales"
@@ -65,8 +74,11 @@ namespace CapaPresentacion
             this.dgvProfesionales.Columns[0].Visible = false;
             txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
 
+            btnPedirTurno.Enabled = false;
+            cbTurnos.DataSource = null;
+
             // Guardo el codigo de la especialidad en un String
-            especialidad = this.cbEspecialidades.SelectedValue.ToString();             
+            especialidad = this.cbEspecialidades.SelectedValue.ToString();
         }
 
         private void dgvProfesionales_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -77,6 +89,8 @@ namespace CapaPresentacion
             apellidoProf = Convert.ToString(this.dgvProfesionales.CurrentRow.Cells["Apellido"].Value);
             txtEleccion.Text = "Dr. " + nombreProf + " " + apellidoProf;
 
+            btnTurno.Enabled = true;
+            cbTurnos.DataSource = null;
             // Guardo la matricula en un string
             matricula = (CapaNegocio.N10Turno.TraerMatricula(usuarioProf)).Rows[0][0].ToString();
         }
@@ -86,6 +100,7 @@ namespace CapaPresentacion
             fechaDeseada = dtpFecha.Value.ToString("yyyyMMdd");
             textBox2.Text = fechaDeseada;
             this.llenarComboTurnos();
+            btnPedirTurno.Enabled = true;
         }
 
         private void llenarComboTurnos()
@@ -93,7 +108,19 @@ namespace CapaPresentacion
             cbTurnos.DataSource = N10Turno.MostrarTurnos(fechaDeseada, matricula, especialidad);
             cbTurnos.ValueMember = "turn_id";
             cbTurnos.DisplayMember = "turn_fecha";
+
+            // Toma el id
+            idTurno = cbTurnos.SelectedValue.ToString();
         }
+
+        private void btnPedirTurno_Click(object sender, EventArgs e)
+        {
+            // CAMBIAR POR FRMLOGIN.PASSINGROL EN "ADMIN"
+            nroAfiliado = Convert.ToInt32((CapaNegocio.N3Usuario.TraerDatosAfiliado
+                ("admin")).Rows[0][0]);
+            textBox4.Text = Convert.ToString(nroAfiliado);
+        }
+
 
     }
 }

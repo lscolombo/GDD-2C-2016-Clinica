@@ -37,20 +37,22 @@
             this.dgvProfesionales = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbTurnos = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnTurno = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtEleccion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtProfesional = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnPedirTurno = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfesionales)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -144,6 +146,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cbTurnos);
@@ -156,6 +160,16 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Elija una fecha";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(4, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(315, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Seleccione un turno y haga click en \"Pedir Turno\" para confirmar";
             // 
             // label4
             // 
@@ -184,17 +198,9 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Fecha deseada para la atencion medica:";
             // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(212, 30);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
-            this.dtpFecha.TabIndex = 9;
-            this.dtpFecha.Value = new System.DateTime(2016, 11, 22, 0, 0, 0, 0);
-            // 
             // btnTurno
             // 
+            this.btnTurno.Enabled = false;
             this.btnTurno.Location = new System.Drawing.Point(82, 56);
             this.btnTurno.Name = "btnTurno";
             this.btnTurno.Size = new System.Drawing.Size(167, 23);
@@ -202,6 +208,15 @@
             this.btnTurno.Text = "Ver Turnos";
             this.btnTurno.UseVisualStyleBackColor = true;
             this.btnTurno.Click += new System.EventHandler(this.btnTurno_Click);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(212, 30);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
+            this.dtpFecha.TabIndex = 9;
+            this.dtpFecha.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             // 
             // groupBox3
             // 
@@ -219,6 +234,13 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Elija el profesional";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(41, 135);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 11;
             // 
             // txtEleccion
             // 
@@ -264,31 +286,30 @@
             this.txtProfesional.Size = new System.Drawing.Size(197, 20);
             this.txtProfesional.TabIndex = 5;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(41, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            // 
             // btnPedirTurno
             // 
+            this.btnPedirTurno.Enabled = false;
             this.btnPedirTurno.Location = new System.Drawing.Point(94, 508);
             this.btnPedirTurno.Name = "btnPedirTurno";
             this.btnPedirTurno.Size = new System.Drawing.Size(167, 23);
             this.btnPedirTurno.TabIndex = 8;
             this.btnPedirTurno.Text = "Pedir Turno";
             this.btnPedirTurno.UseVisualStyleBackColor = true;
+            this.btnPedirTurno.Click += new System.EventHandler(this.btnPedirTurno_Click);
             // 
-            // label9
+            // textBox3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(315, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Seleccione un turno y haga click en \"Pedir Turno\" para confirmar";
+            this.textBox3.Location = new System.Drawing.Point(13, 19);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 14;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(9, 58);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 15;
             // 
             // frmPedidoTurno
             // 
@@ -338,6 +359,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnPedirTurno;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
 
 
     }
