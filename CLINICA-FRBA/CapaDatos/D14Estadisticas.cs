@@ -82,7 +82,7 @@ namespace CapaDatos
         
         private object ValueOrDBNullIfZero(int val)
         {
-            if (val == 1000)
+            if (val == -2)
                 {
                 return DBNull.Value;
                 }

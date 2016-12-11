@@ -209,6 +209,7 @@
             this.rbPaciente.TabStop = true;
             this.rbPaciente.Text = "Paciente";
             this.rbPaciente.UseVisualStyleBackColor = true;
+            this.rbPaciente.CheckedChanged += new System.EventHandler(this.rbPaciente_CheckedChanged);
             // 
             // rbMedico
             // 
@@ -220,6 +221,7 @@
             this.rbMedico.TabStop = true;
             this.rbMedico.Text = "Médico";
             this.rbMedico.UseVisualStyleBackColor = true;
+            this.rbMedico.CheckedChanged += new System.EventHandler(this.rbMedico_CheckedChanged);
             // 
             // chkTipoCancelacion
             // 
