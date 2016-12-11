@@ -25,5 +25,10 @@ namespace CapaNegocio
         {
             return new D3Usuario().ObtenerPlanAfiliado(nroAfiliado);
         }
+
+        public static DataTable ProfesionalQueTambienEsAfiliado(int nroAfiliado)
+        {
+            return new D3Usuario().ProfesionalQueTambienEsAfiliado(nroAfiliado);
+        }
     }
 }

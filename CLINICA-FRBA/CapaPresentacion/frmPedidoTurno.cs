@@ -27,6 +27,8 @@ namespace CapaPresentacion
         private int nroAfiliado;
         private string rtaTurno;
 
+        private string matriculaAux;
+
         public frmPedidoTurno()
         {
             InitializeComponent();
@@ -99,7 +101,7 @@ namespace CapaPresentacion
         private void btnTurno_Click(object sender, EventArgs e)
         {
             fechaDeseada = dtpFecha.Value.ToString("yyyyMMdd");
-            textBox2.Text = fechaDeseada;
+            //textBox2.Text = fechaDeseada;
             this.llenarComboTurnos();
             btnPedirTurno.Enabled = true;
         }
@@ -116,22 +118,40 @@ namespace CapaPresentacion
 
         private void btnPedirTurno_Click(object sender, EventArgs e)
         {
-            // CAMBIAR POR FRMLOGIN.PASSINGROL EN "ADMIN"
+            // Si iniciamos la app directamente de este form rompe xq toma datos desde el login
             nroAfiliado = Convert.ToInt32((CapaNegocio.N3Usuario.TraerDatosAfiliado
-                            ("admin")).Rows[0][0]);
-            textBox4.Text = Convert.ToString(nroAfiliado);
-            textBox3.Text = idTurno;
+                            (frmLogin.passingRol)).Rows[0][0]);
+            //textBox4.Text = Convert.ToString(nroAfiliado);
+            //textBox3.Text = idTurno;
 
-            rtaTurno = CapaNegocio.N10Turno.InsertarAfiliadoEnTurno
-                            (idTurno, nroAfiliado);
-
-            if (rtaTurno == "OK")
+            if (frmLogin.passingRol == "Profesional")
             {
-                MessageBox.Show("El turno " + idTurno + " ha sido reservado con exito",
-                        "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                matriculaAux = (CapaNegocio.N3Usuario.
+                        ProfesionalQueTambienEsAfiliado(nroAfiliado)).Rows[0][0].ToString();
             }
+
+            if (frmLogin.passingRol == "Profesional" && matriculaAux == matricula)
+                MessageBox.Show("No puede asignarse un turno con usted mismo",
+                        "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                MessageBox.Show(rtaTurno, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                rtaTurno = CapaNegocio.N10Turno.InsertarAfiliadoEnTurno
+                                (idTurno, nroAfiliado);
+
+                if (rtaTurno == "OK")
+                {
+                    MessageBox.Show("El turno " + idTurno + " ha sido reservado con exito",
+                           "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtProfesional.Clear();
+                    txtEleccion.Clear();
+                    dgvProfesionales.DataSource = null;
+                    cbTurnos.DataSource = null;
+                    btnTurno.Enabled = false;
+                    btnPedirTurno.Enabled = false;
+                }
+                else
+                    MessageBox.Show(rtaTurno, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
