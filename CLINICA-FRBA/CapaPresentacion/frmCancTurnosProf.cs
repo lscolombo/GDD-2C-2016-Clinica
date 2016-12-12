@@ -22,9 +22,8 @@ namespace CapaPresentacion
         private void cargarDataGridView()
         {
             N13CancAtencion var = new N13CancAtencion();
-           // dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(this.profesionalID, this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
+            dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(frmLogin.passingText.ToString(), this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
             dgvTurnosPendientes.AutoGenerateColumns = true;
-            dgvTurnosPendientes.DataSource = var.TurnosPendientesEntreFechas(80527583.ToString(), this.dTimeFechaInicio.Value, this.dTimeFechaFin.Value); //acá le debería pasar como primer paràmetro el usuario logueado. le hardcodeo el id 1465925 para probar
             
         }
 
@@ -38,8 +37,7 @@ namespace CapaPresentacion
             DateTime fechaInicio = this.dTimeFechaInicio.Value;
             DateTime fechaFin = this.dTimeFechaFin.Value;
             string detalle = this.txtMotivoCancelacion.Text;
-            //string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, frmLogin.passingText);
-            string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, "80527583");
+            string var = Obj.CancelarTurnosProf(fechaInicio, fechaFin, detalle, frmLogin.passingText.ToString());
             
             MessageBox.Show(var, "CLINICA-FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
