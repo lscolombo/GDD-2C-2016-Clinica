@@ -20,10 +20,7 @@ namespace CapaPresentacion
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
-
-
-
-
+            
         }
 
         int anio;
@@ -33,13 +30,25 @@ namespace CapaPresentacion
         int especialidad;
         int tipoCancelacion;
 
+        private void asignarTipoCancelacion()
+        {
+            if (chkTipoCancelacion.Checked == false)
+            {
+                tipoCancelacion = -2;
+            }
 
+            if (rbMedico.Checked == true)
+            {
+                tipoCancelacion = 1;
+            }
 
+            if (rbPaciente.Checked == true)
+            {
+                tipoCancelacion = 0;
+            }
+        }
 
-
-
-
-
+        
         private DataTable MostrarEspecialidades()
         {
 
@@ -52,23 +61,10 @@ namespace CapaPresentacion
         {
             N14Estadisticas Obj = new N14Estadisticas();
             DataTable var = Obj.ListadoEstadistico(anio, semestre, mes, tipoListado, especialidad, tipoCancelacion);
-            //DataTable var = Obj.ListadoEstadistico(anio, semestre, -2, tipoListado, -2, -2);
-            // DataTable var = Obj.ListadoEstadistico(2015, 2, 1000, 1, 1000, 1000);
             return (var);
         }
 
-        //private void llenarCmbMes()
-        //    {
-        //   if (rbPrimerSemestre.Checked == true)
-        //   {
-        //       cmbMes.DataSource = primerSemestre;
-        //   }
-
-        //   if (rbSegundoSemestre.Checked == true)
-        //   {
-        //       cmbMes.DataSource = segundoSemestre;
-        //   }
-        //    }
+      
 
         private void frmEstadisticas_Load(object sender, EventArgs e)
         {
@@ -110,19 +106,6 @@ namespace CapaPresentacion
 
 
             //cmb Mes
-            //cmbMes.Items.Add("Enero");
-            //cmbMes.Items.Add("Febrero");
-            //cmbMes.Items.Add("Marzo");
-            //cmbMes.Items.Add("Abril");
-            //cmbMes.Items.Add("Mayo");
-            //cmbMes.Items.Add("Junio");
-            //cmbMes.Items.Add("Julio");
-            //cmbMes.Items.Add("Agosto");
-            //cmbMes.Items.Add("Septiembre");
-            //cmbMes.Items.Add("Octubre");
-            //cmbMes.Items.Add("Noviembre");
-            //cmbMes.Items.Add("Diciembre");
-            //cmbMes.SelectedIndex = -1;
 
             cmbMes.DisplayMember = "Mes";
             cmbMes.ValueMember = "Valor";
@@ -180,7 +163,7 @@ namespace CapaPresentacion
 
             this.chkEspecialidad.Hide();
 
-            this.MostrarResultados();
+            //  this.MostrarResultados();
 
         }
 
@@ -240,21 +223,7 @@ namespace CapaPresentacion
 
 
             //asignar tipoCancelacion
-
-            if (chkTipoCancelacion.Checked == false)
-            {
-                tipoCancelacion = -2;
-            }
-
-            if (rbMedico.Checked == true)
-            {
-                tipoCancelacion = 1;
-            }
-
-            if (rbPaciente.Checked == true)
-            {
-                tipoCancelacion = 0;
-            }
+            this.asignarTipoCancelacion();
 
 
             //cargar dataGridView con resultados
@@ -318,18 +287,26 @@ namespace CapaPresentacion
 
         private void chkTipoCancelacion_CheckedChanged(object sender, EventArgs e)
         {
+
             if (this.chkTipoCancelacion.Checked == true)
             {
                 this.groupBox3.Show();
                 this.rbPaciente.Show();
                 this.rbMedico.Show();
+
             }
             else
             {
                 this.groupBox3.Hide();
                 this.rbPaciente.Hide();
                 this.rbMedico.Hide();
+                this.rbMedico.Checked = false;
+                this.rbPaciente.Checked = false;
+
             }
+
+            this.asignarTipoCancelacion();
+
 
         }
 

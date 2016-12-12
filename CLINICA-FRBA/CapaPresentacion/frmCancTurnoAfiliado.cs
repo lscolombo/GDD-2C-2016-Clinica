@@ -39,7 +39,6 @@ namespace CapaPresentacion
 
             N13CancAtencion Obj = new N13CancAtencion();
             int codTurno = (int)this.dgvTurnosDisponibles.CurrentRow.Cells[0].Value;
-            //int codTurno = int.Parse(this.textBox1.Text);
             string detalle = this.textBox1.Text;
             string var = Obj.CancelarTurnoAf(codTurno, detalle);
             MessageBox.Show(var, "CLINICA-FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -49,8 +48,8 @@ namespace CapaPresentacion
         {
             this.CenterToScreen();
             N13CancAtencion var = new N13CancAtencion();
-          //  dgvTurnosDisponibles.DataSource = var.TurnosPedidos(frmLogin.passingText);
-            dgvTurnosDisponibles.DataSource = var.TurnosPedidos("83201353");//acá le debería pasar el usuario logueado. le hardcodeo el id 1 para probar
+            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(frmLogin.passingText);
+           
             if (dgvTurnosDisponibles.Rows.Count == 0)
             {
                 MessageBox.Show("No posee turnos disponibles para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,9 +70,7 @@ namespace CapaPresentacion
 
         private void dgvTurnosDisponibles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //  DataGridViewRow Fila = this.dgvTurnosDisponibles.Rows[e.RowIndex];
-            // this.txtTurnoSeleccionado.Text = Fila.Cells["turn_id"].Value.ToString();
-            // this.txtTurnoSeleccionado.Text = Convert.ToString(this.dgvTurnosDisponibles.CurrentRow.Cells["turn_id"].Value);
+            
             this.txtTurnoSeleccionado.Text = Convert.ToString(this.dgvTurnosDisponibles.CurrentRow.Cells["turn_id"].Value);
             this.btnCancelarTurno.Enabled = true;
             this.textBox1.Enabled = true;
@@ -96,8 +93,7 @@ namespace CapaPresentacion
             this.btnCancelarTurno.Enabled = false;
             this.textBox1.Enabled = false;
             N13CancAtencion var = new N13CancAtencion();
-            //dgvTurnosDisponibles.DataSource = var.TurnosPedidos(frmLogin.passingText);
-            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(83201353.ToString());
+            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(frmLogin.passingText);
             if (dgvTurnosDisponibles.Rows.Count == 0)
             {
                 MessageBox.Show("No posee turnos disponibles para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
