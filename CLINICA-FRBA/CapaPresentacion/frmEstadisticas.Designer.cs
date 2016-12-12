@@ -36,7 +36,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbSegundoSemestre = new System.Windows.Forms.RadioButton();
             this.rbPrimerSemestre = new System.Windows.Forms.RadioButton();
-            this.cmbAnio = new System.Windows.Forms.ComboBox();
             this.chkMes = new System.Windows.Forms.CheckBox();
             this.cmbMes = new System.Windows.Forms.ComboBox();
             this.cmbTipoListado = new System.Windows.Forms.ComboBox();
@@ -48,6 +47,7 @@
             this.chkTipoCancelacion = new System.Windows.Forms.CheckBox();
             this.btnMostrarResultados = new System.Windows.Forms.Button();
             this.chkEspecialidad = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultadosEstadisticas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -121,7 +121,6 @@
             this.rbSegundoSemestre.TabStop = true;
             this.rbSegundoSemestre.Text = "Segundo semestre";
             this.rbSegundoSemestre.UseVisualStyleBackColor = true;
-            this.rbSegundoSemestre.CheckedChanged += new System.EventHandler(this.rbSegundoSemestre_CheckedChanged);
             // 
             // rbPrimerSemestre
             // 
@@ -133,15 +132,6 @@
             this.rbPrimerSemestre.TabStop = true;
             this.rbPrimerSemestre.Text = "Primer semestre";
             this.rbPrimerSemestre.UseVisualStyleBackColor = true;
-            this.rbPrimerSemestre.CheckedChanged += new System.EventHandler(this.rbPrimerSemestre_CheckedChanged);
-            // 
-            // cmbAnio
-            // 
-            this.cmbAnio.FormattingEnabled = true;
-            this.cmbAnio.Location = new System.Drawing.Point(48, 12);
-            this.cmbAnio.Name = "cmbAnio";
-            this.cmbAnio.Size = new System.Drawing.Size(121, 21);
-            this.cmbAnio.TabIndex = 5;
             // 
             // chkMes
             // 
@@ -209,7 +199,6 @@
             this.rbPaciente.TabStop = true;
             this.rbPaciente.Text = "Paciente";
             this.rbPaciente.UseVisualStyleBackColor = true;
-            this.rbPaciente.CheckedChanged += new System.EventHandler(this.rbPaciente_CheckedChanged);
             // 
             // rbMedico
             // 
@@ -221,7 +210,6 @@
             this.rbMedico.TabStop = true;
             this.rbMedico.Text = "Médico";
             this.rbMedico.UseVisualStyleBackColor = true;
-            this.rbMedico.CheckedChanged += new System.EventHandler(this.rbMedico_CheckedChanged);
             // 
             // chkTipoCancelacion
             // 
@@ -255,11 +243,19 @@
             this.chkEspecialidad.UseVisualStyleBackColor = true;
             this.chkEspecialidad.CheckedChanged += new System.EventHandler(this.chkEspecialidad_CheckedChanged);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(48, 12);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
+            this.dateTimePicker1.TabIndex = 15;
+            // 
             // frmEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 412);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.chkEspecialidad);
             this.Controls.Add(this.btnMostrarResultados);
             this.Controls.Add(this.chkTipoCancelacion);
@@ -269,7 +265,6 @@
             this.Controls.Add(this.cmbTipoListado);
             this.Controls.Add(this.cmbMes);
             this.Controls.Add(this.chkMes);
-            this.Controls.Add(this.cmbAnio);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
@@ -299,7 +294,6 @@
         private System.Windows.Forms.RadioButton rbSegundoSemestre;
         private System.Windows.Forms.RadioButton rbPrimerSemestre;
         private System.Windows.Forms.DataGridView dgvResultadosEstadisticas;
-        private System.Windows.Forms.ComboBox cmbAnio;
         private System.Windows.Forms.CheckBox chkMes;
         private System.Windows.Forms.ComboBox cmbMes;
         private System.Windows.Forms.ComboBox cmbTipoListado;
@@ -311,5 +305,6 @@
         private System.Windows.Forms.CheckBox chkTipoCancelacion;
         private System.Windows.Forms.Button btnMostrarResultados;
         private System.Windows.Forms.CheckBox chkEspecialidad;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -17,6 +17,13 @@ namespace CapaPresentacion
         public frmEstadisticas()
         {
             InitializeComponent();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy";
+            dateTimePicker1.ShowUpDown = true;
+
+
+
+
         }
 
         int anio;
@@ -25,6 +32,11 @@ namespace CapaPresentacion
         int mes;
         int especialidad;
         int tipoCancelacion;
+
+
+
+
+
 
 
 
@@ -39,11 +51,24 @@ namespace CapaPresentacion
         private DataTable MostrarResultados()
         {
             N14Estadisticas Obj = new N14Estadisticas();
-            //DataTable var = Obj.ListadoEstadistico(anio, semestre, mes, tipoListado, especialidad, tipoCancelacion);
-            DataTable var = Obj.ListadoEstadistico(anio, semestre, -2, tipoListado, -2, -2);
-           // DataTable var = Obj.ListadoEstadistico(2015, 2, 1000, 1, 1000, 1000);
+            DataTable var = Obj.ListadoEstadistico(anio, semestre, mes, tipoListado, especialidad, tipoCancelacion);
+            //DataTable var = Obj.ListadoEstadistico(anio, semestre, -2, tipoListado, -2, -2);
+            // DataTable var = Obj.ListadoEstadistico(2015, 2, 1000, 1, 1000, 1000);
             return (var);
         }
+
+        //private void llenarCmbMes()
+        //    {
+        //   if (rbPrimerSemestre.Checked == true)
+        //   {
+        //       cmbMes.DataSource = primerSemestre;
+        //   }
+
+        //   if (rbSegundoSemestre.Checked == true)
+        //   {
+        //       cmbMes.DataSource = segundoSemestre;
+        //   }
+        //    }
 
         private void frmEstadisticas_Load(object sender, EventArgs e)
         {
@@ -81,34 +106,59 @@ namespace CapaPresentacion
             cmbTipoListado.DataSource = dtTipoListado;
 
             cmbTipoListado.SelectedIndex = -1;
-            
+
 
 
             //cmb Mes
-            cmbMes.Items.Add("Enero");
-            cmbMes.Items.Add("Febrero");
-            cmbMes.Items.Add("Marzo");
-            cmbMes.Items.Add("Abril");
-            cmbMes.Items.Add("Mayo");
-            cmbMes.Items.Add("Junio");
-            cmbMes.Items.Add("Julio");
-            cmbMes.Items.Add("Agosto");
-            cmbMes.Items.Add("Septiembre");
-            cmbMes.Items.Add("Octubre");
-            cmbMes.Items.Add("Noviembre");
-            cmbMes.Items.Add("Diciembre");
-            cmbMes.SelectedIndex = -1;
-            cmbMes.ValueMember = Convert.ToString(cmbMes.SelectedIndex + 1);
+            //cmbMes.Items.Add("Enero");
+            //cmbMes.Items.Add("Febrero");
+            //cmbMes.Items.Add("Marzo");
+            //cmbMes.Items.Add("Abril");
+            //cmbMes.Items.Add("Mayo");
+            //cmbMes.Items.Add("Junio");
+            //cmbMes.Items.Add("Julio");
+            //cmbMes.Items.Add("Agosto");
+            //cmbMes.Items.Add("Septiembre");
+            //cmbMes.Items.Add("Octubre");
+            //cmbMes.Items.Add("Noviembre");
+            //cmbMes.Items.Add("Diciembre");
+            //cmbMes.SelectedIndex = -1;
 
-            //cmb Año
-            for (int i = 1990; i <= 2017; i++)
+            cmbMes.DisplayMember = "Mes";
+            cmbMes.ValueMember = "Valor";
+
+            var primerSemestre = new[]
+                {
+                new { Mes = "Enero", Valor = 1 },
+                new { Mes = "Febrero", Valor = 2 },
+                new { Mes = "Marzo", Valor = 3 },
+                new { Mes = "Abril", Valor = 4 },
+                new { Mes = "Mayo", Valor = 5 },
+                new { Mes = "Junio", Valor = 6 }
+                };
+
+            var segundoSemestre = new[]
+                {
+                new { Mes = "Julio", Valor = 7 },
+                new { Mes = "Agosto", Valor = 8 },
+                new { Mes = "Septiembre", Valor = 9 },
+                new { Mes = "Octubre", Valor = 10 },
+                new { Mes = "Noviembre", Valor = 11 },
+                new { Mes = "Diciembre", Valor = 12 }
+                };
+
+            if (rbPrimerSemestre.Checked == true)
             {
-                string[] numbers = { i.ToString() };
-                cmbAnio.Items.AddRange(numbers);
+                cmbMes.DataSource = primerSemestre;
             }
 
-            cmbAnio.SelectedIndex = -1;
-            cmbAnio.ValueMember = cmbMes.SelectedItem.ToString();
+            if (rbSegundoSemestre.Checked == true)
+            {
+                cmbMes.DataSource = segundoSemestre;
+            }
+
+
+
 
             //cmb Especialidades
             cmbEspecialidad.DataSource = MostrarEspecialidades();
@@ -130,20 +180,14 @@ namespace CapaPresentacion
 
             this.chkEspecialidad.Hide();
 
+            this.MostrarResultados();
+
         }
 
         private void btnMostrarResultados_Click(object sender, EventArgs e)
         {
-            //validación y asignación combobox anio
-            if (cmbAnio.SelectedItem != null)
-            {
-                anio = Convert.ToInt32(cmbAnio.SelectedValue);
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un año", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            //asignación combobox anio
+            anio = Convert.ToInt32(this.dateTimePicker1.Value.Date.Year);
 
             //validación y asignación combobox tipo listado
             if (cmbTipoListado.SelectedItem != null)
@@ -174,17 +218,18 @@ namespace CapaPresentacion
             }
 
             //asignar mes
-            if(cmbMes.SelectedText == "" || chkMes.Checked == false)
+
+            mes = Convert.ToInt32(this.cmbMes.SelectedValue);
+
+            if (cmbMes.SelectedIndex == -1 || chkMes.Checked == false)
             {
                 mes = -2;
             }
-            else
-            {
-             mes = Convert.ToInt32(this.cmbMes.SelectedValue);
-            }
+
+
 
             //asignar especialidad
-            if (cmbEspecialidad.SelectedText == "" || chkEspecialidad.Checked == false)
+            if (chkEspecialidad.Checked == false || cmbEspecialidad.SelectedIndex == -1)
             {
                 especialidad = -2;
             }
@@ -192,7 +237,7 @@ namespace CapaPresentacion
             {
                 especialidad = Convert.ToInt32(this.cmbEspecialidad.SelectedValue);
             }
-            
+
 
             //asignar tipoCancelacion
 
@@ -205,7 +250,7 @@ namespace CapaPresentacion
             {
                 tipoCancelacion = 1;
             }
-        
+
             if (rbPaciente.Checked == true)
             {
                 tipoCancelacion = 0;
@@ -213,42 +258,44 @@ namespace CapaPresentacion
 
 
             //cargar dataGridView con resultados
+
             this.dgvResultadosEstadisticas.DataSource = this.MostrarResultados();
 
+
         }
 
-        private void rbPrimerSemestre_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbPrimerSemestre.Checked == true)
-            {
-                semestre = 1;
-            }
-        }
 
-        private void rbSegundoSemestre_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbSegundoSemestre.Checked == true)
-            {
-                semestre = 2;
-            }
-        }
 
         private void cmbTipoListado_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Convert.ToInt32(cmbTipoListado.SelectedValue) == 1)
-                {
-                    this.chkTipoCancelacion.Show();
-                    this.label4.Hide();
-                    this.cmbEspecialidad.Hide();
-                    this.chkEspecialidad.Hide();
-                    this.especialidad = -2;
-                }
+            {
+                this.chkTipoCancelacion.Show();
+                this.label4.Hide();
+                this.cmbEspecialidad.Hide();
+                this.chkEspecialidad.Hide();
+                this.especialidad = -2;
+
+
+
+            }
 
             if (Convert.ToInt32(cmbTipoListado.SelectedValue) == 2 || Convert.ToInt32(cmbTipoListado.SelectedValue) == 3)
             {
                 this.chkTipoCancelacion.Hide();
                 this.chkEspecialidad.Show();
                 this.tipoCancelacion = -2;
+                if (chkEspecialidad.Checked == false || cmbEspecialidad.SelectedIndex == -1)
+                {
+                    especialidad = -2;
+                }
+                else
+                {
+                    especialidad = Convert.ToInt32(this.cmbEspecialidad.SelectedValue);
+                }
+
+
+
 
             }
 
@@ -260,6 +307,8 @@ namespace CapaPresentacion
                 this.chkEspecialidad.Hide();
                 this.especialidad = -2;
                 this.tipoCancelacion = -2;
+
+
 
             }
 
@@ -290,6 +339,39 @@ namespace CapaPresentacion
             {
                 this.label2.Show();
                 this.cmbMes.Show();
+
+                cmbMes.DisplayMember = "Mes";
+                cmbMes.ValueMember = "Valor";
+
+                var primerSemestre = new[]
+                {
+                new { Mes = "Enero", Valor = 1 },
+                new { Mes = "Febrero", Valor = 2 },
+                new { Mes = "Marzo", Valor = 3 },
+                new { Mes = "Abril", Valor = 4 },
+                new { Mes = "Mayo", Valor = 5 },
+                new { Mes = "Junio", Valor = 6 }
+                };
+
+                var segundoSemestre = new[]
+                {
+                new { Mes = "Julio", Valor = 7 },
+                new { Mes = "Agosto", Valor = 8 },
+                new { Mes = "Septiembre", Valor = 9 },
+                new { Mes = "Octubre", Valor = 10 },
+                new { Mes = "Noviembre", Valor = 11 },
+                new { Mes = "Diciembre", Valor = 12 }
+                };
+
+                if (rbPrimerSemestre.Checked == true)
+                {
+                    cmbMes.DataSource = primerSemestre;
+                }
+
+                if (rbSegundoSemestre.Checked == true)
+                {
+                    cmbMes.DataSource = segundoSemestre;
+                }
             }
             else
             {
@@ -305,28 +387,31 @@ namespace CapaPresentacion
             {
                 this.label4.Show();
                 this.cmbEspecialidad.Show();
+                especialidad = Convert.ToInt32(cmbEspecialidad.SelectedValue);
             }
             else
             {
                 this.label4.Hide();
                 this.cmbEspecialidad.Hide();
+                especialidad = -2;
             }
         }
 
-        private void rbMedico_CheckedChanged(object sender, EventArgs e)
+        private void cmbMes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (rbMedico.Checked == true)
+            if (cmbMes.SelectedIndex == -1 || chkMes.Checked == false)
             {
-                tipoCancelacion = 1;
+                mes = -2;
             }
+            else
+            {
+                mes = Convert.ToInt32(this.cmbMes.SelectedValue);
+            }
+
         }
 
-        private void rbPaciente_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbPaciente.Checked == true)
-            {
-                tipoCancelacion = 0;
-            }
-        }
+
+
+
     }
 }
