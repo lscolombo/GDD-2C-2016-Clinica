@@ -162,7 +162,7 @@ namespace CapaDatos
                 ParFechaApp.Value = Conexion.FechaSistema;
                 SqlCmd.Parameters.Add(ParFechaApp);
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se canceló el turno";
+                rpta = SqlCmd.ExecuteNonQuery() == 2 ? "OK" : "NO Se canceló el turno";
 
 
             }

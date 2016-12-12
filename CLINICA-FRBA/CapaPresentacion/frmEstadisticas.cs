@@ -285,7 +285,7 @@ namespace CapaPresentacion
                 this.chkTipoCancelacion.Hide();
                 this.chkEspecialidad.Show();
                 this.tipoCancelacion = -2;
-                if (chkEspecialidad.Checked == false || cmbEspecialidad.SelectedIndex == -1)
+                if (chkEspecialidad.Checked == false || cmbEspecialidad.SelectedIndex == -1 || cmbEspecialidad.SelectedText == "")
                 {
                     especialidad = -2;
                 }
