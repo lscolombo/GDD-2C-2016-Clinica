@@ -250,5 +250,14 @@ namespace CapaPresentacion
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void MnuAgenda_Click(object sender, EventArgs e)
+        {
+            frmAgendaProf frm = new frmAgendaProf();
+            frm.txtUserNameProf.Text = frmLogin.passingText;
+            //frm.MdiParent = this;
+            //frm.Show();
+            frm.Visible = true;
+        }
     }
 }

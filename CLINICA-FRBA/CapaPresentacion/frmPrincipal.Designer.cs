@@ -41,6 +41,8 @@
             this.MnuComprar = new System.Windows.Forms.ToolStripMenuItem();
             this.bonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuListados = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuEstadisticas = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuTurnos = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuSolicitarTurno = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuRegistrar = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,8 +69,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.MnuEstadisticas = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +171,20 @@
             this.MnuListados.Size = new System.Drawing.Size(62, 20);
             this.MnuListados.Text = "Listados";
             // 
+            // MnuEstadisticas
+            // 
+            this.MnuEstadisticas.Name = "MnuEstadisticas";
+            this.MnuEstadisticas.Size = new System.Drawing.Size(227, 22);
+            this.MnuEstadisticas.Text = "Estadistico";
+            this.MnuEstadisticas.Click += new System.EventHandler(this.MnuEstadisticas_Click);
+            // 
+            // MnuHistorial
+            // 
+            this.MnuHistorial.Name = "MnuHistorial";
+            this.MnuHistorial.Size = new System.Drawing.Size(227, 22);
+            this.MnuHistorial.Text = "Historial de cambios (planes)";
+            this.MnuHistorial.Click += new System.EventHandler(this.MnuHistorial_Click);
+            // 
             // MnuTurnos
             // 
             this.MnuTurnos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -182,7 +196,7 @@
             // MnuSolicitarTurno
             // 
             this.MnuSolicitarTurno.Name = "MnuSolicitarTurno";
-            this.MnuSolicitarTurno.Size = new System.Drawing.Size(152, 22);
+            this.MnuSolicitarTurno.Size = new System.Drawing.Size(148, 22);
             this.MnuSolicitarTurno.Text = "Solicitar turno";
             this.MnuSolicitarTurno.Click += new System.EventHandler(this.MnuSolicitarTurno_Click);
             // 
@@ -201,6 +215,7 @@
             this.MnuAgenda.Name = "MnuAgenda";
             this.MnuAgenda.Size = new System.Drawing.Size(177, 22);
             this.MnuAgenda.Text = "Agenda Profesional";
+            this.MnuAgenda.Click += new System.EventHandler(this.MnuAgenda_Click);
             // 
             // MnuLlegada
             // 
@@ -366,20 +381,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
-            // 
-            // MnuEstadisticas
-            // 
-            this.MnuEstadisticas.Name = "MnuEstadisticas";
-            this.MnuEstadisticas.Size = new System.Drawing.Size(227, 22);
-            this.MnuEstadisticas.Text = "Estadistico";
-            this.MnuEstadisticas.Click += new System.EventHandler(this.MnuEstadisticas_Click);
-            // 
-            // MnuHistorial
-            // 
-            this.MnuHistorial.Name = "MnuHistorial";
-            this.MnuHistorial.Size = new System.Drawing.Size(227, 22);
-            this.MnuHistorial.Text = "Historial de cambios (planes)";
-            this.MnuHistorial.Click += new System.EventHandler(this.MnuHistorial_Click);
             // 
             // frmPrincipal
             // 

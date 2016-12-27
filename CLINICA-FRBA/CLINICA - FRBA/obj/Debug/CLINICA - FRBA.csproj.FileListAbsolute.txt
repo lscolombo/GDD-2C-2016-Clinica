@@ -28,21 +28,6 @@ C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CLINICA - FRBA
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA___FRBA.Form1.resources
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA___FRBA.Properties.Resources.resources
 C:\Users\Jazel\Desktop\GDD-2C-2016-Clinica_ELMIOSOLO\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.csproj.GenerateResource.Cache
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.exe.config
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.exe
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.pdb
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaPresentacion.dll
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaNegocio.dll
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaDatos.dll
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaPresentacion.pdb
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaNegocio.pdb
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CapaDatos.pdb
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.csprojResolveAssemblyReference.cache
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA___FRBA.Form1.resources
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA___FRBA.Properties.Resources.resources
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.csproj.GenerateResource.Cache
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.exe
-C:\Users\julia\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.pdb
 C:\Users\G u z.Guz-PC\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\bin\Debug\CLINICA - FRBA.exe.config
 C:\Users\G u z.Guz-PC\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.exe
 C:\Users\G u z.Guz-PC\Documents\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CLINICA - FRBA\obj\Debug\CLINICA - FRBA.pdb
