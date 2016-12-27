@@ -54,6 +54,18 @@
     <Compile Include="frmABMRolInicio.Designer.cs">
       <DependentUpon>frmABMRolInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgendaProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendaProf.Designer.cs">
+      <DependentUpon>frmAgendaProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgendaProfLV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendaProfLV.Designer.cs">
+      <DependentUpon>frmAgendaProfLV.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmALTAafiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmABMRolInicio.resx">
       <DependentUpon>frmABMRolInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendaProf.resx">
+      <DependentUpon>frmAgendaProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendaProfLV.resx">
+      <DependentUpon>frmAgendaProfLV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmALTAafiliado.resx">
       <DependentUpon>frmALTAafiliado.cs</DependentUpon>

@@ -41,6 +41,7 @@
             this.lblNoConsultas = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtUserNameProf = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -187,11 +188,20 @@
             this.label2.Text = "Matricula";
             this.label2.Visible = false;
             // 
+            // txtUserNameProf
+            // 
+            this.txtUserNameProf.Location = new System.Drawing.Point(322, 5);
+            this.txtUserNameProf.Name = "txtUserNameProf";
+            this.txtUserNameProf.Size = new System.Drawing.Size(100, 20);
+            this.txtUserNameProf.TabIndex = 31;
+            this.txtUserNameProf.Visible = false;
+            // 
             // frmRegResultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 471);
+            this.Controls.Add(this.txtUserNameProf);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNoConsultas);
@@ -232,5 +242,6 @@
         private System.Windows.Forms.Label lblNoConsultas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtUserNameProf;
     }
 }

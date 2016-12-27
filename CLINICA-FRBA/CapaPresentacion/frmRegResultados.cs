@@ -25,6 +25,12 @@ namespace CapaPresentacion
 
         private void frmRegResultados_Load(object sender, EventArgs e)
         {
+            DataGridViewRow Fila;
+            dgvListado.DataSource = N8RegAgenda.BuscarLaMatricula(txtUserNameProf.Text);
+            Fila = dgvListado.Rows[0];
+            txtMatricula.Text = Fila.Cells["prof_matricula"].Value.ToString();
+            dgvListado.DataSource = null;
+
             this.CenterToScreen();
             BuscarLasConsultasParaReg();
             if (dgvListado.RowCount == 0)

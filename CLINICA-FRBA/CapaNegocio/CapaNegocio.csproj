@@ -49,6 +49,7 @@
     <Compile Include="N2Login.cs" />
     <Compile Include="N3Usuario.cs" />
     <Compile Include="N4abmAfiliado.cs" />
+    <Compile Include="N8RegAgenda.cs" />
     <Compile Include="N9CompraBono.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
