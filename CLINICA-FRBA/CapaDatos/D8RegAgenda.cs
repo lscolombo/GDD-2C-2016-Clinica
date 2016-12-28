@@ -83,7 +83,7 @@ namespace CapaDatos
                 ParFechaIni.SqlDbType = SqlDbType.DateTime;
                 //ParFechaIni.Size = 255; /*LA DIMENSION*/
                 ParFechaIni.Value = fechaIni;
-                SqlCmd.Parameters.Add(fechaIni);
+                SqlCmd.Parameters.Add(ParFechaIni);
 
                 /*ESPECIFICO CARACTERISTICAS DEL 3º PARAMETRO*/
                 SqlParameter ParFechaFin = new SqlParameter();
@@ -101,7 +101,7 @@ namespace CapaDatos
                 ParCargaHoraria.SqlDbType = SqlDbType.Decimal;
                 //ParCargaHoraria.Size = 255; /*LA DIMENSION*/
                 ParCargaHoraria.Value = cargaHoraria;
-                SqlCmd.Parameters.Add(ParMatricula);
+                SqlCmd.Parameters.Add(ParCargaHoraria);
 
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd); /*OBJETO ENCARGADO DE EJECUTAR EL COMANDO Q SE LE PASE*/

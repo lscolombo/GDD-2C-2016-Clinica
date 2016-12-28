@@ -854,12 +854,12 @@
             this.dgvListado.AllowUserToDeleteRows = false;
             this.dgvListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListado.Location = new System.Drawing.Point(552, 660);
+            this.dgvListado.Location = new System.Drawing.Point(535, 660);
             this.dgvListado.MultiSelect = false;
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.ReadOnly = true;
             this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListado.Size = new System.Drawing.Size(77, 33);
+            this.dgvListado.Size = new System.Drawing.Size(153, 86);
             this.dgvListado.TabIndex = 29;
             this.dgvListado.Visible = false;
             // 
