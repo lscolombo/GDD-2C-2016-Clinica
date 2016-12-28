@@ -157,6 +157,8 @@ namespace CapaPresentacion
         private void resultadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRegResultados frm = new frmRegResultados();
+            
+            frm.txtUserNameProf.Text = frmLogin.passingText;
             frm.MdiParent = this;
             frm.Show();
         }
