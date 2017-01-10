@@ -877,6 +877,7 @@
             // 
             // btnNewAgenda
             // 
+            this.btnNewAgenda.Enabled = false;
             this.btnNewAgenda.Location = new System.Drawing.Point(563, 612);
             this.btnNewAgenda.Name = "btnNewAgenda";
             this.btnNewAgenda.Size = new System.Drawing.Size(95, 23);
