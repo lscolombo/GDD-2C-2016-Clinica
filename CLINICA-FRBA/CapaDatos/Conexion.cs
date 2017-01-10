@@ -12,6 +12,6 @@ namespace CapaDatos
         public static string Cn = "Data Source=LOCALHOST\\SQLSERVER2012;Initial Catalog=GD2C2016;Integrated Security=True";
 
         /*FECHA DE SISTEMA*/
-        public static string FechaSistema = "1/12/2016";        
+        public static string FechaSistema = "15/2/2017";        
     }
 }

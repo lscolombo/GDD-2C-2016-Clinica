@@ -25,10 +25,10 @@ namespace CapaNegocio
             return Obj.InsertarAgenda(unaMatricula, fechaIni, fechaFin, cargaHoraria);
         }
 
-        public static DataTable BuscarIdEnAgenda(int unaMatricula)
+        public static DataTable BuscarIdEnAgenda(int unaMatricula, string fechaIni, string fechaFin)
         {
             D8RegAgenda Obj = new D8RegAgenda();
-            return Obj.BuscarIdAgenda(unaMatricula);
+            return Obj.BuscarIdAgenda(unaMatricula,fechaIni,fechaFin);
         }
 
         public static DataTable InsertarEnDisponibilidad(int unaAgenda, int unaMatricula, int unaEspecialidad, string unDia, string horaIni, string horaFin)
@@ -43,10 +43,22 @@ namespace CapaNegocio
             return Obj.BuscarMatricula(unUserName);
         }
 
-        public static DataTable RegistrarLosTurnos(int unaMatricula)
+        public static DataTable RegistrarLosTurnos(int unIdAgenda)
         {
             D8RegAgenda Obj = new D8RegAgenda();
-            return Obj.RegistrarTurnos(unaMatricula);
+            return Obj.RegistrarTurnos(unIdAgenda);
+        }
+
+        public static DataTable VerificarElRangoFechas(int unaMatricula, string fechaIni, string fechaFin)
+        {
+            D8RegAgenda Obj = new D8RegAgenda();
+            return Obj.VerificarRangoFechas(unaMatricula, fechaIni, fechaFin);
+        }
+
+        public static string GetFechaDeSistema()
+        {
+            D8RegAgenda Obj = new D8RegAgenda();
+            return Obj.GetFechaSistema();
         }
     }
 }

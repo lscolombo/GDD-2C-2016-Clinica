@@ -39,8 +39,12 @@ namespace CapaPresentacion
             Fila = dgvListado.Rows[0];
             txtMatricula.Text = Fila.Cells["prof_matricula"].Value.ToString();
 
-            ActualizarCargaHoraria();      
+            ActualizarCargaHoraria();
+
+            dtpFechaFin.Text = N8RegAgenda.GetFechaDeSistema();
+            dtpFechaIni.Text = N8RegAgenda.GetFechaDeSistema();
             
+            //dtpFechaFin.Value.AddDays(1);
         }
 
         public bool HorarioSuperpuesto(int Ini,int Fin,string Dia)
@@ -439,112 +443,177 @@ namespace CapaPresentacion
         {
             if (PuedeRegAgenda())
             {
-                DataGridViewRow Fila;
-                int IdAgenda;
-                int unaMatricula;
-                int unaEspecialidad;
-                string horaIni;
-                string horaFin;
-
-                N8RegAgenda.InsertarEnAgenda(Convert.ToInt32(txtMatricula.Text), dtpFechaIni.Value, dtpFechaFin.Value, Convert.ToDouble(txtCargaHoraria.Text));
-                dgvListado.DataSource = N8RegAgenda.BuscarIdEnAgenda(Convert.ToInt32(txtMatricula.Text));
-                Fila =dgvListado.Rows[0];
-                IdAgenda = Convert.ToInt32(Fila.Cells["agen_id"].Value);
-
-                if (grpLunes.Enabled)
+                dgvListado.DataSource = N8RegAgenda.VerificarElRangoFechas(Convert.ToInt32(txtMatricula.Text), dtpFechaIni.Value.ToString(), dtpFechaFin.Value.ToString());
+                
+                if (dgvListado.RowCount == 0)
                 {
-                    for (int i = 1; i <= dgvL.RowCount;i++)
+                    DataGridViewRow Fila;
+                    int IdAgenda;
+                    int unaMatricula;
+                    int unaEspecialidad;
+                    string horaIni;
+                    string horaFin;
+                    //MessageBox.Show("registra (break line)"); //
+                    N8RegAgenda.InsertarEnAgenda(Convert.ToInt32(txtMatricula.Text), dtpFechaIni.Value, dtpFechaFin.Value, Convert.ToDouble(txtCargaHoraria.Text));
+                    dgvListado.DataSource = N8RegAgenda.BuscarIdEnAgenda(Convert.ToInt32(txtMatricula.Text), dtpFechaIni.Value.ToString(), dtpFechaFin.Value.ToString());
+                    Fila = dgvListado.Rows[0];
+                    IdAgenda = Convert.ToInt32(Fila.Cells["agen_id"].Value);
+
+                    if (grpLunes.Enabled)
                     {
-                        Fila = dgvL.Rows[i - 1];
-                        unaMatricula = Convert.ToInt32(txtMatricula.Text);
-                        unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
-                        horaIni = Fila.Cells[2].Value.ToString();
-                        horaFin = Fila.Cells[3].Value.ToString();
+                        for (int i = 1; i <= dgvL.RowCount; i++)
+                        {
+                            Fila = dgvL.Rows[i - 1];
+                            unaMatricula = Convert.ToInt32(txtMatricula.Text);
+                            unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
+                            horaIni = Fila.Cells[2].Value.ToString();
+                            horaFin = Fila.Cells[3].Value.ToString();
 
-                        N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Lunes", horaIni, horaFin);
+                            N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Lunes", horaIni, horaFin);
+                        }
                     }
-                }
 
-                if (grpMartes.Enabled)
+                    if (grpMartes.Enabled)
+                    {
+                        for (int i = 1; i <= dgvM.RowCount; i++)
+                        {
+                            Fila = dgvM.Rows[i - 1];
+                            unaMatricula = Convert.ToInt32(txtMatricula.Text);
+                            unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
+                            horaIni = Fila.Cells[2].Value.ToString();
+                            horaFin = Fila.Cells[3].Value.ToString();
+
+                            N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Martes", horaIni, horaFin);
+                        }
+                    }
+
+                    if (grpMiercoles.Enabled)
+                    {
+                        for (int i = 1; i <= dgvX.RowCount; i++)
+                        {
+                            Fila = dgvX.Rows[i - 1];
+                            unaMatricula = Convert.ToInt32(txtMatricula.Text);
+                            unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
+                            horaIni = Fila.Cells[2].Value.ToString();
+                            horaFin = Fila.Cells[3].Value.ToString();
+
+                            N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Miércoles", horaIni, horaFin);
+                        }
+                    }
+
+                    if (grpJueves.Enabled)
+                    {
+                        for (int i = 1; i <= dgvJ.RowCount; i++)
+                        {
+                            Fila = dgvJ.Rows[i - 1];
+                            unaMatricula = Convert.ToInt32(txtMatricula.Text);
+                            unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
+                            horaIni = Fila.Cells[2].Value.ToString();
+                            horaFin = Fila.Cells[3].Value.ToString();
+
+                            N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Jueves", horaIni, horaFin);
+                        }
+                    }
+
+                    if (grpViernes.Enabled)
+                    {
+                        for (int i = 1; i <= dgvV.RowCount; i++)
+                        {
+                            Fila = dgvV.Rows[i - 1];
+                            unaMatricula = Convert.ToInt32(txtMatricula.Text);
+                            unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
+                            horaIni = Fila.Cells[2].Value.ToString();
+                            horaFin = Fila.Cells[3].Value.ToString();
+
+                            N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Viernes", horaIni, horaFin);
+                        }
+                    }
+
+                    if (grpSabado.Enabled)
+                    {
+                        for (int i = 1; i <= dgvS.RowCount; i++)
+                        {
+                            Fila = dgvS.Rows[i - 1];
+                            unaMatricula = Convert.ToInt32(txtMatricula.Text);
+                            unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
+                            horaIni = Fila.Cells[2].Value.ToString();
+                            horaFin = Fila.Cells[3].Value.ToString();
+
+                            N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Sábado", horaIni, horaFin);
+                        }
+                    }
+
+                    btnRegAgenda.Enabled = false;
+                    //N8RegAgenda.RegistrarLosTurnos(Convert.ToInt32(txtMatricula.Text)); //solo para una agendaXprof
+                    N8RegAgenda.RegistrarLosTurnos(IdAgenda);
+                    MessageBox.Show("Agenda del Profesional registrado, con sus respectivos turnos", "Registro de Agenda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnNewAgenda.Enabled = true;
+
+                }
+                else
                 {
-                    for (int i = 1; i <= dgvM.RowCount; i++)
-                    {
-                        Fila = dgvM.Rows[i - 1];
-                        unaMatricula = Convert.ToInt32(txtMatricula.Text);
-                        unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
-                        horaIni = Fila.Cells[2].Value.ToString();
-                        horaFin = Fila.Cells[3].Value.ToString();
-
-                        N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Martes", horaIni, horaFin);
-                    }
+                    MessageBox.Show("El rango de fechas se superpone con otra agenda del profesional", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                if (grpMiercoles.Enabled)
-                {
-                    for (int i = 1; i <= dgvX.RowCount; i++)
-                    {
-                        Fila = dgvX.Rows[i - 1];
-                        unaMatricula = Convert.ToInt32(txtMatricula.Text);
-                        unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
-                        horaIni = Fila.Cells[2].Value.ToString();
-                        horaFin = Fila.Cells[3].Value.ToString();
-
-                        N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Miércoles", horaIni, horaFin);
-                    }
-                }
-
-                if (grpJueves.Enabled)
-                {
-                    for (int i = 1; i <= dgvJ.RowCount; i++)
-                    {
-                        Fila = dgvJ.Rows[i - 1];
-                        unaMatricula = Convert.ToInt32(txtMatricula.Text);
-                        unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
-                        horaIni = Fila.Cells[2].Value.ToString();
-                        horaFin = Fila.Cells[3].Value.ToString();
-
-                        N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Jueves", horaIni, horaFin);
-                    }
-                }
-
-                if (grpViernes.Enabled)
-                {
-                    for (int i = 1; i <= dgvV.RowCount; i++)
-                    {
-                        Fila = dgvV.Rows[i - 1];
-                        unaMatricula = Convert.ToInt32(txtMatricula.Text);
-                        unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
-                        horaIni = Fila.Cells[2].Value.ToString();
-                        horaFin = Fila.Cells[3].Value.ToString();
-
-                        N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Viernes", horaIni, horaFin);
-                    }
-                }
-
-                if (grpSabado.Enabled)
-                {
-                    for (int i = 1; i <= dgvS.RowCount; i++)
-                    {
-                        Fila = dgvS.Rows[i - 1];
-                        unaMatricula = Convert.ToInt32(txtMatricula.Text);
-                        unaEspecialidad = Convert.ToInt32(Fila.Cells[0].Value);
-                        horaIni = Fila.Cells[2].Value.ToString();
-                        horaFin = Fila.Cells[3].Value.ToString();
-
-                        N8RegAgenda.InsertarEnDisponibilidad(IdAgenda, unaMatricula, unaEspecialidad, "Sábado", horaIni, horaFin);
-                    }
-                }
-
-                btnRegAgenda.Enabled = false;
-                N8RegAgenda.RegistrarLosTurnos(Convert.ToInt32(txtMatricula.Text));
-                MessageBox.Show("Agenda del Profesional registrado, con sus respectivos turnos", "Registro de Agenda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
             }
             else
             {
                 MessageBox.Show("Debe tener al menos un dia seleccionado con datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
+        }
+
+        private void dtpFechaIni_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpFechaIni.Value >= Convert.ToDateTime(N8RegAgenda.GetFechaDeSistema()))
+            {
+                dtpFechaFin.Enabled = true;
+                dtpFechaFin.Text = dtpFechaIni.Text;
+            }
+            else
+            {
+                //dtpFechaIni.Text = N8RegAgenda.GetFechaDeSistema();
+                dtpFechaFin.Enabled = false;
+                btnRegAgenda.Enabled = false;
+                MessageBox.Show("La fecha inicial debe ser posterior a la fecha de sistema", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }            
+        }
+
+        private void dtpFechaFin_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpFechaFin.Value < dtpFechaIni.Value)
+            {
+                btnRegAgenda.Enabled = false;
+                MessageBox.Show("La fecha final debe ser posterior a la fecha inicial", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                btnRegAgenda.Enabled = true;
+            }
+        }
+
+        private void btnNewAgenda_Click(object sender, EventArgs e)
+        {
+            dgvL.Rows.Clear();
+            dgvM.Rows.Clear();
+            dgvX.Rows.Clear();
+            dgvJ.Rows.Clear();
+            dgvV.Rows.Clear();
+            dgvS.Rows.Clear();
+
+            chkLunes.Checked = false;
+            chkMartes.Checked = false;
+            chkMiercoles.Checked = false;
+            chkJueves.Checked = false;
+            chkViernes.Checked = false;
+            chkSabado.Checked = false;
+
+            txtCHL.Text = "0";
+            txtCHM.Text = "0";
+            txtCHX.Text = "0";
+            txtCHJ.Text = "0";
+            txtCHV.Text = "0";
+            txtCHS.Text = "0";
+            btnNewAgenda.Enabled = false;
         }
     }
 }

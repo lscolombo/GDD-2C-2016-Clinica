@@ -116,7 +116,7 @@ namespace CapaDatos
             return DtResultado; /*EL METODO DEVUELVE EL RESULTADO EN "FORMATO" DATATABLE AL OBJETO Q LO INVOCO*/
         }
 
-        public DataTable BuscarIdAgenda(int unaMatricula)
+        public DataTable BuscarIdAgenda(int unaMatricula, string fechaIni, string fechaFin)
         {
             DataTable DtResultado = new DataTable(); /*VARIABLE DONDE GUARDO LO Q ME DEVUELVA SQL*/
             SqlConnection SqlCon = new SqlConnection(); /*VAR. ENCARGADA DE LA CONEXION*/
@@ -138,6 +138,24 @@ namespace CapaDatos
                 //ParMatricula.Size = 255; /*LA DIMENSION*/
                 ParMatricula.Value = unaMatricula; /*EL VALOR QUE RECIBE*/
                 SqlCmd.Parameters.Add(ParMatricula); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+
+                /*ESPECIFICO CARACTERISTICAS DEL 2º PARAMETRO*/
+                SqlParameter ParFechaIni = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+
+                ParFechaIni.ParameterName = "@fechaIni"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParFechaIni.SqlDbType = SqlDbType.DateTime; /*EL TIPO DE DATO Q ES*/
+                //ParFechaIni.Size = 255; /*LA DIMENSION*/
+                ParFechaIni.Value = fechaIni; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParFechaIni); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+
+                /*ESPECIFICO CARACTERISTICAS DEL 3º PARAMETRO*/
+                SqlParameter ParFechaFin = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+
+                ParFechaFin.ParameterName = "@fechaFin"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParFechaFin.SqlDbType = SqlDbType.DateTime; /*EL TIPO DE DATO Q ES*/
+                //ParFechaFin.Size = 255; /*LA DIMENSION*/
+                ParFechaFin.Value = fechaFin; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParFechaFin); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
 
                 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd); /*OBJETO ENCARGADO DE EJECUTAR EL COMANDO Q SE LE PASE*/
@@ -269,7 +287,7 @@ namespace CapaDatos
             return DtResultado; /*EL METODO DEVUELVE EL RESULTADO EN "FORMATO" DATATABLE AL OBJETO Q LO INVOCO*/
         }
 
-        public DataTable RegistrarTurnos(int unaMatricula)
+        public DataTable RegistrarTurnos(int unIdAgenda)
         {
             DataTable DtResultado = new DataTable(); /*VARIABLE DONDE GUARDO LO Q ME DEVUELVA SQL*/
             SqlConnection SqlCon = new SqlConnection(); /*VAR. ENCARGADA DE LA CONEXION*/
@@ -284,13 +302,13 @@ namespace CapaDatos
                 SqlCmd.CommandType = CommandType.StoredProcedure; /*ESPECIFICO Q TIPO DE OBJETO VOY A USAR EN SQL*/
 
                 /*ESPECIFICO CARACTERISTICAS DEL 1º PARAMETRO*/
-                SqlParameter ParMatricula = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+                SqlParameter ParIdAgenda = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
 
-                ParMatricula.ParameterName = "@matricula"; /*NOMBRE DEL PARAMETRO EN SQL*/
-                ParMatricula.SqlDbType = SqlDbType.Int; /*EL TIPO DE DATO Q ES*/
+                ParIdAgenda.ParameterName = "@idAgenda"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParIdAgenda.SqlDbType = SqlDbType.Int; /*EL TIPO DE DATO Q ES*/
                 //ParMatricula.Size = 255; /*LA DIMENSION*/
-                ParMatricula.Value = unaMatricula; /*EL VALOR QUE RECIBE*/
-                SqlCmd.Parameters.Add(ParMatricula); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+                ParIdAgenda.Value = unIdAgenda; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParIdAgenda); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
 
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd); /*OBJETO ENCARGADO DE EJECUTAR EL COMANDO Q SE LE PASE*/
@@ -303,6 +321,65 @@ namespace CapaDatos
             }
 
             return DtResultado; /*EL METODO DEVUELVE EL RESULTADO EN "FORMATO" DATATABLE AL OBJETO Q LO INVOCO*/
+        }
+
+        public DataTable VerificarRangoFechas(int unaMatricula, string fechaIni, string fechaFin)
+        {
+            DataTable DtResultado = new DataTable(); /*VARIABLE DONDE GUARDO LO Q ME DEVUELVA SQL*/
+            SqlConnection SqlCon = new SqlConnection(); /*VAR. ENCARGADA DE LA CONEXION*/
+
+            /*UTILIZO UN TRY/CATCH PARA POSIBLES ERRORES*/
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn; /*LE PASO LA RUTA DE CONEXION QUE TENGO EN LA CLASE CONEXION*/
+                SqlCommand SqlCmd = new SqlCommand(); /*OBJ ENCARGADO DE GUARDAR TODOS LOS DATOS PARA EJECUTAR UN DETERMINADO STORE POR EJEMPLO*/
+                SqlCmd.Connection = SqlCon; /*LE PASO LA CONEXION AL OBJETO DEL COMANDO*/
+                SqlCmd.CommandText = "p8VerificarRangoFechas"; /*LE INDICO EL NOMBRE DEL STORE/FUNCTION/VISTA/...*/
+                SqlCmd.CommandType = CommandType.StoredProcedure; /*ESPECIFICO Q TIPO DE OBJETO VOY A USAR EN SQL*/
+
+                /*ESPECIFICO CARACTERISTICAS DEL 1º PARAMETRO*/
+                SqlParameter ParMatricula = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+
+                ParMatricula.ParameterName = "@matriculaProf"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParMatricula.SqlDbType = SqlDbType.Int; /*EL TIPO DE DATO Q ES*/
+                //ParMatricula.Size = 255; /*LA DIMENSION*/
+                ParMatricula.Value = unaMatricula; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParMatricula); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+
+                /*ESPECIFICO CARACTERISTICAS DEL 2º PARAMETRO*/
+                SqlParameter ParFechaIni = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+
+                ParFechaIni.ParameterName = "@newFechaIni"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParFechaIni.SqlDbType = SqlDbType.DateTime; /*EL TIPO DE DATO Q ES*/
+                //ParFechaIni.Size = 255; /*LA DIMENSION*/
+                ParFechaIni.Value = fechaIni; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParFechaIni); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+
+                /*ESPECIFICO CARACTERISTICAS DEL 3º PARAMETRO*/
+                SqlParameter ParFechaFin = new SqlParameter(); /*OBJETO DONDE GUARDO CADA CARACTERISTICA*/
+
+                ParFechaFin.ParameterName = "@newFechaFin"; /*NOMBRE DEL PARAMETRO EN SQL*/
+                ParFechaFin.SqlDbType = SqlDbType.DateTime; /*EL TIPO DE DATO Q ES*/
+                //ParFechaFin.Size = 255; /*LA DIMENSION*/
+                ParFechaFin.Value = fechaFin; /*EL VALOR QUE RECIBE*/
+                SqlCmd.Parameters.Add(ParFechaFin); /*LE PASO TODO LO REFERIDO AL 1º PARAMETRO*/
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd); /*OBJETO ENCARGADO DE EJECUTAR EL COMANDO Q SE LE PASE*/
+                SqlDat.Fill(DtResultado); /*GUARDO EN LA VARIABLE DE TIPO DATATABLE EL RESULTADO DE LA EJECUCION DEL COMANDO*/
+            }
+
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+
+            return DtResultado; /*EL METODO DEVUELVE EL RESULTADO EN "FORMATO" DATATABLE AL OBJETO Q LO INVOCO*/
+        }
+
+        public string GetFechaSistema()
+        {
+            return Conexion.FechaSistema;
         }
     }
 

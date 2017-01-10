@@ -106,6 +106,7 @@
             this.dtpFechaIni = new System.Windows.Forms.DateTimePicker();
             this.dgvListado = new System.Windows.Forms.DataGridView();
             this.txtUserNameProf = new System.Windows.Forms.TextBox();
+            this.btnNewAgenda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvL)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpLunes.SuspendLayout();
@@ -151,9 +152,9 @@
             this.chkMiercoles.AutoSize = true;
             this.chkMiercoles.Location = new System.Drawing.Point(16, 81);
             this.chkMiercoles.Name = "chkMiercoles";
-            this.chkMiercoles.Size = new System.Drawing.Size(65, 17);
+            this.chkMiercoles.Size = new System.Drawing.Size(71, 17);
             this.chkMiercoles.TabIndex = 3;
-            this.chkMiercoles.Text = "Mircoles";
+            this.chkMiercoles.Text = "Miercoles";
             this.chkMiercoles.UseVisualStyleBackColor = true;
             this.chkMiercoles.CheckedChanged += new System.EventHandler(this.chkMiercoles_CheckedChanged);
             // 
@@ -829,6 +830,7 @@
             this.dtpFechaFin.Size = new System.Drawing.Size(98, 20);
             this.dtpFechaFin.TabIndex = 10;
             this.dtpFechaFin.Value = new System.DateTime(2016, 11, 22, 0, 0, 0, 0);
+            this.dtpFechaFin.ValueChanged += new System.EventHandler(this.dtpFechaFin_ValueChanged);
             // 
             // label1
             // 
@@ -847,6 +849,7 @@
             this.dtpFechaIni.Size = new System.Drawing.Size(98, 20);
             this.dtpFechaIni.TabIndex = 9;
             this.dtpFechaIni.Value = new System.DateTime(2016, 11, 22, 0, 0, 0, 0);
+            this.dtpFechaIni.ValueChanged += new System.EventHandler(this.dtpFechaIni_ValueChanged);
             // 
             // dgvListado
             // 
@@ -872,11 +875,22 @@
             this.txtUserNameProf.Text = "userNameProf";
             this.txtUserNameProf.Visible = false;
             // 
+            // btnNewAgenda
+            // 
+            this.btnNewAgenda.Location = new System.Drawing.Point(563, 612);
+            this.btnNewAgenda.Name = "btnNewAgenda";
+            this.btnNewAgenda.Size = new System.Drawing.Size(95, 23);
+            this.btnNewAgenda.TabIndex = 31;
+            this.btnNewAgenda.Text = "Nueva Agenda";
+            this.btnNewAgenda.UseVisualStyleBackColor = true;
+            this.btnNewAgenda.Click += new System.EventHandler(this.btnNewAgenda_Click);
+            // 
             // frmAgendaProf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 758);
+            this.Controls.Add(this.btnNewAgenda);
             this.Controls.Add(this.txtUserNameProf);
             this.Controls.Add(this.dgvListado);
             this.Controls.Add(this.groupBox3);
@@ -1004,5 +1018,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaIni;
         private System.Windows.Forms.DataGridView dgvListado;
         public System.Windows.Forms.TextBox txtUserNameProf;
+        private System.Windows.Forms.Button btnNewAgenda;
     }
 }
