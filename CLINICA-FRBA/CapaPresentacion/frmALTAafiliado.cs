@@ -136,6 +136,8 @@ namespace CapaPresentacion
                 frmALTAPareja.txtCantHijos.Enabled = false;
                 
                 frmALTAPareja.txtPrincipal.Text = txtPrincipal.Text;
+
+                frmALTAPareja.btnNuevaAlta.Visible = false;
             }
             
         }
@@ -277,6 +279,8 @@ namespace CapaPresentacion
                 frmALTAHijo.txtCantHijos.Enabled = false;
 
                 frmALTAHijo.txtPrincipal.Text = txtPrincipal.Text;
+
+                frmALTAHijo.btnNuevaAlta.Visible = false;
             }
             
         }

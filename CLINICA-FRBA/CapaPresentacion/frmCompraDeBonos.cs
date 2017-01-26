@@ -95,7 +95,7 @@ namespace CapaPresentacion
                 {
                     cantidadBonos = Convert.ToInt32(txtCantidad.Text);
 
-                    if (cantidadBonos < 0)
+                    if (cantidadBonos < 1)
                     {
                         MessageBox.Show("Ingrese una cantidad valida", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCantidad.Clear();

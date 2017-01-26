@@ -36,14 +36,21 @@ namespace CapaPresentacion
         {
             DataGridViewRow Fila;
             dgvListado.DataSource = N8RegAgenda.BuscarLaMatricula(txtUserNameProf.Text);
-            Fila = dgvListado.Rows[0];
-            txtMatricula.Text = Fila.Cells["prof_matricula"].Value.ToString();
+            if (dgvListado.RowCount == 0)
+            {
+                MessageBox.Show("El usuario logeado no es un profesional", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                Fila = dgvListado.Rows[0];
+                txtMatricula.Text = Fila.Cells["prof_matricula"].Value.ToString();
 
-            ActualizarCargaHoraria();
+                ActualizarCargaHoraria();
 
-            dtpFechaFin.Text = N8RegAgenda.GetFechaDeSistema();
-            dtpFechaIni.Text = N8RegAgenda.GetFechaDeSistema();
-            
+                dtpFechaFin.Text = N8RegAgenda.GetFechaDeSistema();
+                dtpFechaIni.Text = N8RegAgenda.GetFechaDeSistema();
+            }
             //dtpFechaFin.Value.AddDays(1);
         }
 

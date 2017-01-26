@@ -537,11 +537,11 @@
         private System.Windows.Forms.GroupBox grpAsociar;
         private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.Button btnInsertAlta;
-        private System.Windows.Forms.Button btnNuevaAlta;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPrincipal;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnNuevaAlta;
     }
 }
