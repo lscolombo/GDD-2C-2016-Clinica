@@ -23,6 +23,7 @@ namespace CapaPresentacion
         int precioTotal;
 
         string rtaCompra;
+        string rtaBono;
 
         public frmCompraDeBonos()
         {
@@ -53,7 +54,7 @@ namespace CapaPresentacion
                                     (planId).Rows[0][0]);
 
                 txtCantidad.ReadOnly = false;
-                button1.Enabled = true;
+                //button1.Enabled = true;
             }
         }
 
@@ -95,7 +96,7 @@ namespace CapaPresentacion
                 {
                     cantidadBonos = Convert.ToInt32(txtCantidad.Text);
 
-                    if (cantidadBonos < 1)
+                    if (cantidadBonos <= 0)
                     {
                         MessageBox.Show("Ingrese una cantidad valida", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCantidad.Clear();
@@ -127,10 +128,15 @@ namespace CapaPresentacion
                 MessageBox.Show("La compra de " + cantidadBonos + " bonos, por un total de $"
                     + precioTotal + " ha sido realizada con exito", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                for (int j = 0; j < cantidadBonos; j++)
+                    rtaBono = CapaNegocio.N9CompraBono.InsertarBonoConsulta
+                                (nroAfiliadoInt, planId);
                 // Fuerzo a valores no validos para tener que volver a ingresar algo
                 txtCantidad.Clear();
                 txtTotal.Clear();
                 button1.Enabled = false;
+
+
 
                 if (frmLogin.passingRol == "Administrador General")
                 {

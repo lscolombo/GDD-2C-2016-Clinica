@@ -102,5 +102,55 @@ namespace CapaDatos
 
             return rpta;
         }
+
+        public string InsertarBonoConsulta(int nroAfiliado, int planId)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.pInsertarBonoConsulta";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParAfiliadoId = new SqlParameter();
+                ParAfiliadoId.ParameterName = "@bono_afiliado";
+                ParAfiliadoId.SqlDbType = SqlDbType.Int;
+                ParAfiliadoId.Value = nroAfiliado;
+                SqlCmd.Parameters.Add(ParAfiliadoId);
+
+                SqlParameter ParPlanId = new SqlParameter();
+                ParPlanId.ParameterName = "@bono_plan";
+                ParPlanId.SqlDbType = SqlDbType.Int;
+                ParPlanId.Value = planId;
+                SqlCmd.Parameters.Add(ParPlanId);
+
+                SqlParameter ParFecha = new SqlParameter();
+                ParFecha.ParameterName = "@bono_fecha_impresion";
+                ParFecha.SqlDbType = SqlDbType.VarChar;
+                ParFecha.Size = 10;
+                ParFecha.Value = Conexion.FechaSistema;
+                SqlCmd.Parameters.Add(ParFecha);
+
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro, intente nuevamente";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                    SqlCon.Close();
+            }
+
+            return rpta;
+        }
+
     }
 }

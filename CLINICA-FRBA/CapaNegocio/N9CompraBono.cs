@@ -22,5 +22,11 @@ namespace CapaNegocio
             return new D9CompraBono().InsertarCompraBono(nroAfiliado, precioBono,
                                                             cantidadBonos, precioTotal);
         }
+
+        public static string InsertarBonoConsulta(int nroAfiliado, int planId)
+        {
+            return new D9CompraBono().InsertarBonoConsulta(nroAfiliado, planId);
+        }
+
     }
 }

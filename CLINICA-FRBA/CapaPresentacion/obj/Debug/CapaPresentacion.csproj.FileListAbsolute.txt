@@ -80,3 +80,5 @@ C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaP
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.dll
 C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgendaProf.resources
+C:\Users\germa\OneDrive\Documentos\GitHub\GDD-2C-2016-Clinica\CLINICA-FRBA\CapaPresentacion\obj\Debug\CapaPresentacion.frmAgendaProfLV.resources
