@@ -67,9 +67,10 @@
             this.grpNomApell.Controls.Add(this.label1);
             this.grpNomApell.Location = new System.Drawing.Point(9, 53);
             this.grpNomApell.Name = "grpNomApell";
-            this.grpNomApell.Size = new System.Drawing.Size(261, 88);
+            this.grpNomApell.Size = new System.Drawing.Size(254, 88);
             this.grpNomApell.TabIndex = 16;
             this.grpNomApell.TabStop = false;
+            this.grpNomApell.Text = "Datos";
             // 
             // txtNombre
             // 
@@ -80,7 +81,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(79, 16);
+            this.txtApellido.Location = new System.Drawing.Point(79, 26);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(165, 20);
             this.txtApellido.TabIndex = 2;
@@ -97,7 +98,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;

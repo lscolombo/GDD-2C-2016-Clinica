@@ -20,7 +20,7 @@ namespace CapaPresentacion
 
         private void frmHistorialCambioPlan_Load(object sender, EventArgs e)
         {
-            dgvListado.DataSource = N4abmAfiliado.FiltroDeHistorial(-1,"","");
+            //dgvListado.DataSource = N4abmAfiliado.FiltroDeHistorial(-1,"","");
             
         }
 
@@ -42,7 +42,14 @@ namespace CapaPresentacion
         {
             if (grpNomApell.Enabled)
             {
-                dgvListado.DataSource = N4abmAfiliado.FiltroDeHistorial(-1, txtApellido.Text, txtNombre.Text);
+                if (txtNombre.Text == "" && txtApellido.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar al menos un dato", "Ingreso de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dgvListado.DataSource = N4abmAfiliado.FiltroDeHistorial(-1, txtApellido.Text, txtNombre.Text);
+                }
             }
             else
             {
@@ -52,6 +59,11 @@ namespace CapaPresentacion
 
         private void btnMostrarTodo_Click(object sender, EventArgs e)
         {
+            txtIdAfiliado.Text = "";
+            txtApellido.Text = "";
+            txtNombre.Text = "";
+            dgvListado.DataSource = null;
+
             dgvListado.DataSource = N4abmAfiliado.FiltroDeHistorial(-1, "", "");
         }
 
