@@ -68,7 +68,7 @@ namespace CapaPresentacion
             txtProfesional.Clear();
             txtEleccion.Clear();
             dgvProfesionales.DataSource = null;
-            cbTurnos.DataSource = null;
+            //cbTurnos.DataSource = null; //
         }
 
         // Boton "Buscar profesionales"
