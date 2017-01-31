@@ -214,6 +214,7 @@
             this.dtpFecha.Size = new System.Drawing.Size(100, 20);
             this.dtpFecha.TabIndex = 9;
             this.dtpFecha.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // groupBox3
             // 

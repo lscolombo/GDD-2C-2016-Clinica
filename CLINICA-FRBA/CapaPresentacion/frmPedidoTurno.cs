@@ -79,7 +79,7 @@ namespace CapaPresentacion
             txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
 
             btnPedirTurno.Enabled = false;
-            cbTurnos.DataSource = null;
+            //cbTurnos.DataSource = null;
 
             // Guardo el codigo de la especialidad en un String
             especialidad = this.cbEspecialidades.SelectedValue.ToString();
@@ -94,7 +94,7 @@ namespace CapaPresentacion
             txtEleccion.Text = "Dr. " + nombreProf + " " + apellidoProf;
 
             btnTurno.Enabled = true;
-            cbTurnos.DataSource = null;
+            //cbTurnos.DataSource = null;
             // Guardo la matricula en un string
             matricula = (CapaNegocio.N10Turno.TraerMatricula(usuarioProf)).Rows[0][0].ToString();
             
@@ -144,14 +144,16 @@ namespace CapaPresentacion
 
                 if (rtaTurno == "OK")
                 {
-                    MessageBox.Show("El turno " + idTurno + "(" + cbTurnos.Text + ") ha sido reservado con exito",
+                    MessageBox.Show("El turno " + idTurno + " (" + cbTurnos.Text + ") ha sido reservado con exito",
                            "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtProfesional.Clear();
                     txtEleccion.Clear();
                     dgvProfesionales.DataSource = null;
-                    cbTurnos.DataSource = null;
+                    //cbTurnos.DataSource = null;
                     btnTurno.Enabled = false;
                     btnPedirTurno.Enabled = false;
+
+                    dgvProfesionales.Enabled = true;
                 }
                 else
                     MessageBox.Show(rtaTurno, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -167,6 +169,11 @@ namespace CapaPresentacion
         {
             idTurno = cbTurnos.SelectedValue.ToString();
             btnPedirTurno.Enabled = true;
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            btnPedirTurno.Enabled = false;
         }
 
 
