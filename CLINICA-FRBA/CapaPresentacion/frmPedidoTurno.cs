@@ -57,6 +57,8 @@ namespace CapaPresentacion
         {
             this.CenterToScreen();
             //this.dgvProfesionales.DataSource = CapaNegocio.N10Turno.MostrarProfesionales(especialidad);
+
+            dtpFecha.Text = N8RegAgenda.GetFechaDeSistema();
         }
 
         private void cbEspecialidades_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -68,7 +70,7 @@ namespace CapaPresentacion
             txtProfesional.Clear();
             txtEleccion.Clear();
             dgvProfesionales.DataSource = null;
-            //cbTurnos.DataSource = null; //
+            cbTurnos.DataSource = null; //
         }
 
         // Boton "Buscar profesionales"
@@ -79,7 +81,7 @@ namespace CapaPresentacion
             txtProfesional.Text = (CapaNegocio.N10Turno.TraerEspecialidad(especialidad)).Rows[0][0].ToString();
 
             btnPedirTurno.Enabled = false;
-            //cbTurnos.DataSource = null;
+            cbTurnos.DataSource = null;
 
             // Guardo el codigo de la especialidad en un String
             especialidad = this.cbEspecialidades.SelectedValue.ToString();
@@ -94,7 +96,7 @@ namespace CapaPresentacion
             txtEleccion.Text = "Dr. " + nombreProf + " " + apellidoProf;
 
             btnTurno.Enabled = true;
-            //cbTurnos.DataSource = null;
+            cbTurnos.DataSource = null;
             // Guardo la matricula en un string
             matricula = (CapaNegocio.N10Turno.TraerMatricula(usuarioProf)).Rows[0][0].ToString();
             
@@ -105,7 +107,8 @@ namespace CapaPresentacion
             fechaDeseada = dtpFecha.Value.ToString("yyyyMMdd");
             //textBox2.Text = fechaDeseada;
             this.llenarComboTurnos();
-            dgvProfesionales.Enabled = false;
+
+            //dgvProfesionales.Enabled = false;
             //btnPedirTurno.Enabled = true;
         }
 
@@ -167,13 +170,28 @@ namespace CapaPresentacion
 
         private void cbTurnos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idTurno = cbTurnos.SelectedValue.ToString();
-            btnPedirTurno.Enabled = true;
+            if (cbTurnos.DataSource != null)
+            {
+                idTurno = cbTurnos.SelectedValue.ToString();
+                btnPedirTurno.Enabled = true;
+            }
         }
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
             btnPedirTurno.Enabled = false;
+            cbTurnos.DataSource = null;
+            if (dtpFecha.Value < Convert.ToDateTime(N8RegAgenda.GetFechaDeSistema()))
+            {
+                //cbTurnos.DataSource = null;
+                dtpFecha.Text = N8RegAgenda.GetFechaDeSistema();
+                MessageBox.Show("La fecha debe ser posterior a la fecha de sistema", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
 
