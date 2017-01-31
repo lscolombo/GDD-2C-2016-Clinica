@@ -183,6 +183,8 @@
             this.cbTurnos.Name = "cbTurnos";
             this.cbTurnos.Size = new System.Drawing.Size(202, 21);
             this.cbTurnos.TabIndex = 11;
+            this.cbTurnos.SelectedIndexChanged += new System.EventHandler(this.cbTurnos_SelectedIndexChanged);
+            this.cbTurnos.SelectedValueChanged += new System.EventHandler(this.cbTurnos_SelectedValueChanged);
             // 
             // label3
             // 

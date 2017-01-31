@@ -97,6 +97,7 @@ namespace CapaPresentacion
             cbTurnos.DataSource = null;
             // Guardo la matricula en un string
             matricula = (CapaNegocio.N10Turno.TraerMatricula(usuarioProf)).Rows[0][0].ToString();
+            
         }
 
         private void btnTurno_Click(object sender, EventArgs e)
@@ -104,7 +105,8 @@ namespace CapaPresentacion
             fechaDeseada = dtpFecha.Value.ToString("yyyyMMdd");
             //textBox2.Text = fechaDeseada;
             this.llenarComboTurnos();
-            btnPedirTurno.Enabled = true;
+            dgvProfesionales.Enabled = false;
+            //btnPedirTurno.Enabled = true;
         }
 
         private void llenarComboTurnos()
@@ -114,7 +116,7 @@ namespace CapaPresentacion
             cbTurnos.DisplayMember = "turn_fecha";
 
             // Toma el id
-            idTurno = cbTurnos.SelectedValue.ToString();
+            //idTurno = cbTurnos.SelectedValue.ToString();
         }
 
         private void btnPedirTurno_Click(object sender, EventArgs e)
@@ -129,7 +131,7 @@ namespace CapaPresentacion
             if (frmLogin.passingRol == "Afiliado")
             {
                 matriculaAux = (CapaNegocio.N3Usuario.
-                        ProfesionalQueTambienEsAfiliado(nroAfiliado)).Rows[0][0].ToString();
+                        ProfesionalQueTambienEsAfiliado(nroAfiliado)).ToString();
             }
 
             if (frmLogin.passingRol == "Afiliado" && matriculaAux == matricula)
@@ -142,7 +144,7 @@ namespace CapaPresentacion
 
                 if (rtaTurno == "OK")
                 {
-                    MessageBox.Show("El turno " + idTurno + " ha sido reservado con exito",
+                    MessageBox.Show("El turno " + idTurno + "(" + cbTurnos.Text + ") ha sido reservado con exito",
                            "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtProfesional.Clear();
                     txtEleccion.Clear();
@@ -154,6 +156,17 @@ namespace CapaPresentacion
                 else
                     MessageBox.Show(rtaTurno, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cbTurnos_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //idTurno = cbTurnos.SelectedValue.ToString();            
+        }
+
+        private void cbTurnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idTurno = cbTurnos.SelectedValue.ToString();
+            btnPedirTurno.Enabled = true;
         }
 
 
