@@ -14,6 +14,8 @@ namespace CapaPresentacion
 {
     public partial class frmRegLlegadaTurnosBonos : Form
     {
+        public frmRegLlegadaTurnos frmPadre;
+
         public frmRegLlegadaTurnosBonos()
         {
             InitializeComponent();
@@ -119,10 +121,11 @@ namespace CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se genero la consulta del afiliado","Registro",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Se confirmo el turno y se genero la consulta del afiliado","Registro",MessageBoxButtons.OK,MessageBoxIcon.Information);
             InsertarLaConsulta();
-            this.Close();
-            frmRegLlegadaTurnos.ActiveForm.Close();
+
+            frmPadre.Close();
+            this.Close(); 
         }
     }
 }

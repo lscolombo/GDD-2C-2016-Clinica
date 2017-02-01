@@ -18,10 +18,10 @@ namespace CapaNegocio
             return Obj.BuscarPorApellEspec(unApellido,unaEspecialidad);
         }
 
-        public static DataTable BuscarTurnosDisponibles(int unaMatricula)
+        public static DataTable BuscarTurnosDisponibles(int unaMatricula,string unaEspecialidad)
         {
             D11RegLlegada Obj = new D11RegLlegada();
-            return Obj.BuscarTurnosDisponibles(unaMatricula);
+            return Obj.BuscarTurnosDisponibles(unaMatricula,unaEspecialidad);
         }
         public static DataTable BuscarBonosDisponibles(int unAfiliado)
         {

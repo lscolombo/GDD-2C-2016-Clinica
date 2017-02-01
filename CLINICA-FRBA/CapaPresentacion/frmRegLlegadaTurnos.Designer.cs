@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(305, 151);
+            this.btnSeleccionar.Location = new System.Drawing.Point(305, 142);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 8;
@@ -81,7 +82,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtAfiliado);
-            this.groupBox2.Location = new System.Drawing.Point(12, 134);
+            this.groupBox2.Location = new System.Drawing.Point(12, 125);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(274, 49);
             this.groupBox2.TabIndex = 9;
@@ -133,9 +134,10 @@
             // lblDateTime
             // 
             this.lblDateTime.AutoSize = true;
+            this.lblDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateTime.Location = new System.Drawing.Point(302, 60);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(37, 13);
+            this.lblDateTime.Size = new System.Drawing.Size(49, 18);
             this.lblDateTime.TabIndex = 12;
             this.lblDateTime.Text = "Fecha";
             // 
@@ -152,6 +154,7 @@
             this.lblDateTimeHora.Size = new System.Drawing.Size(30, 13);
             this.lblDateTimeHora.TabIndex = 13;
             this.lblDateTimeHora.Text = "Hora";
+            this.lblDateTimeHora.Visible = false;
             // 
             // txtElAfiliado
             // 
@@ -199,11 +202,21 @@
             this.label3.Text = "Matricula";
             this.label3.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Seleccione el turno del afiliado:";
+            // 
             // frmRegLlegadaTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 406);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -250,5 +263,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

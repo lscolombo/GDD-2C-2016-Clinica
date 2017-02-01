@@ -66,7 +66,7 @@ namespace CapaDatos
 
         /*IDEM CON "BuscarTurnosDisponibles" RESPECTO DE "BuscarPorApellEspec"*/
         /*RESPECTO A LA ESTRUCTURA DEL METODO*/
-        public DataTable BuscarTurnosDisponibles(int unaMatricula)
+        public DataTable BuscarTurnosDisponibles(int unaMatricula,string unaEspecialidad)
         {
             DataTable DtResultado = new DataTable();
             SqlConnection SqlCon = new SqlConnection();
@@ -89,6 +89,15 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(ParMatricula);
 
                 /*2º Parametro*/
+                SqlParameter ParEspecialidad = new SqlParameter();
+
+                ParEspecialidad.ParameterName = "@especialidad";
+                ParEspecialidad.SqlDbType = SqlDbType.NVarChar;
+                ParEspecialidad.Size = 255;
+                ParEspecialidad.Value = unaEspecialidad;
+                SqlCmd.Parameters.Add(ParEspecialidad);
+
+                /*3º Parametro*/
                 SqlParameter ParFechaSistema = new SqlParameter();
 
                 ParFechaSistema.ParameterName = "@fechaSistema";

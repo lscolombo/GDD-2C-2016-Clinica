@@ -23,7 +23,7 @@ namespace CapaPresentacion
         {
             /*lblDateTime.Text = DateTime.Now.ToString();*/
             this.CenterToScreen();
-            lblDateTime.Text = DateTime.Now.ToLongDateString();
+            lblDateTime.Text = "Fecha actual: " + N8RegAgenda.GetFechaDeSistema();
 
             BuscarLosTurnosDisponibles();
             if (dgvListado.RowCount == 0)
@@ -62,6 +62,8 @@ namespace CapaPresentacion
                 frmRegLlegadaTurnosBonos.setTxtAfiliado(txtElAfiliado.Text);
                 frmRegLlegadaTurnosBonos.setTxtNombAfiliado(txtAfiliado.Text);
                 frmRegLlegadaTurnosBonos.setTxtTurno(txtTurno.Text);
+
+                frmRegLlegadaTurnosBonos.frmPadre = this;
                 
                 frmRegLlegadaTurnosBonos.Visible = true;
                 
@@ -78,7 +80,7 @@ namespace CapaPresentacion
             int matricula = Convert.ToInt32(txtMatricula.Text);
             /*DateTime fecha = Convert.ToDateTime(DateTime.Now.ToString());*/
 
-            this.dgvListado.DataSource = N11RegLlegada.BuscarTurnosDisponibles(matricula);/*,fecha);*/
+            this.dgvListado.DataSource = N11RegLlegada.BuscarTurnosDisponibles(matricula,txtEspecialidad.Text);/*,fecha);*/
         }
 
         private void button1_Click(object sender, EventArgs e)
