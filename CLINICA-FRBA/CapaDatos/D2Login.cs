@@ -20,7 +20,7 @@ namespace CapaDatos
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "splogin";
+                SqlCmd.CommandText = "WINCHESTER.pLogin";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParUserName = new SqlParameter();
@@ -36,6 +36,37 @@ namespace CapaDatos
                 ParPassword.Size = 255;
                 ParPassword.Value = Usuario.User_password;
                 SqlCmd.Parameters.Add(ParPassword);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
+        public DataTable EstaHabilitado(string usuario)
+        {
+            DataTable DtResultado = new DataTable("WINCHESTER.Usuario");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "WINCHESTER.pEsUsuarioHabilitado";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParUserName = new SqlParameter();
+                ParUserName.ParameterName = "@usuario";
+                ParUserName.SqlDbType = SqlDbType.VarChar;
+                ParUserName.Size = 255;
+                ParUserName.Value = usuario;
+                SqlCmd.Parameters.Add(ParUserName);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);

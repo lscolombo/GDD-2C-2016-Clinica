@@ -37,33 +37,43 @@ namespace CapaPresentacion
 
             if (Datos.Rows.Count == 0)
             {
-                MessageBox.Show("NO Tiene Acceso al Sistema", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataTable Habilitado = CapaNegocio.N2Login.EstaHabilitado(this.TxtUsuario.Text);
+
+                if (Habilitado.Rows.Count != 0 && Habilitado.Rows[0][0].ToString() == "False")
+                    MessageBox.Show("Usuario inhabilitado, contacte a un administrador", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("NO Tiene Acceso al Sistema", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                passingText = TxtUsuario.Text;
-                cantRoles = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows.Count;
-
-                if (cantRoles <= 1)
-                {
-                    if (cantRoles == 1)
-                    {
-                        passingRol = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows[0][0].ToString();
-                        frmPrincipal frm = new frmPrincipal();
-                        frm.Show();
-                        this.Hide();
-                    }
-                    else 
-                    {
-                        MessageBox.Show("Acceso Denegado. Usted no posee roles asignados del sistema", "ClínicaFRBA",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    }
-                    
-                }
+                if (Datos.Rows[0][2].ToString() == "False")
+                    MessageBox.Show("Usuario inhabilitado, contacte a un administrador", "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);            
                 else
                 {
-                    frmRoles frm = new frmRoles();
-                    frm.Show();
-                    this.Hide();
+                    passingText = TxtUsuario.Text;
+                    cantRoles = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows.Count;
+
+                    if (cantRoles <= 1)
+                    {
+                        if (cantRoles == 1)
+                        {
+                            passingRol = CapaNegocio.N2Login.Mostrar(frmLogin.passingText).Rows[0][0].ToString();
+                            frmPrincipal frm = new frmPrincipal();
+                            frm.Show();
+                            this.Hide();
+                        }
+                        else 
+                        {
+                            MessageBox.Show("Acceso Denegado. Usted no posee roles asignados del sistema", "ClínicaFRBA",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                         }
+                    
+                    }
+                    else
+                    {
+                       frmRoles frm = new frmRoles();
+                       frm.Show();
+                        this.Hide();
+                    }
                 }
             }
         }

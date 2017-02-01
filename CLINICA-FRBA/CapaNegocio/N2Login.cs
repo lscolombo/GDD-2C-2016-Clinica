@@ -28,5 +28,10 @@ namespace CapaNegocio
         {
             return new D2Login().MostrarFuncionalidades(user_rol);
         }
+
+        public static DataTable EstaHabilitado(string usuario)
+        {
+            return new D2Login().EstaHabilitado(usuario);
+        }
     }
 }
