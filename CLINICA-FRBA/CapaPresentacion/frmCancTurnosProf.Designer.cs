@@ -94,6 +94,7 @@
             this.dTimeFechaFin.Name = "dTimeFechaFin";
             this.dTimeFechaFin.Size = new System.Drawing.Size(200, 20);
             this.dTimeFechaFin.TabIndex = 1;
+            this.dTimeFechaFin.ValueChanged += new System.EventHandler(this.dTimeFechaFin_ValueChanged);
             // 
             // dTimeFechaInicio
             // 

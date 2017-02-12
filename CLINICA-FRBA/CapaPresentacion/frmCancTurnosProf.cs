@@ -93,6 +93,21 @@ namespace CapaPresentacion
             {
                 this.dTimeFechaFin.Value = dTimeFechaInicio.Value;
             }
+
+            if (this.checkBox1.Checked == false)
+            {
+                if (dTimeFechaInicio.Value >= this.dTimeFechaFin.Value)
+                    this.dTimeFechaFin.Value = dTimeFechaInicio.Value;                    
+            }
+        }
+
+        private void dTimeFechaFin_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox1.Checked == false)
+            {
+                if (this.dTimeFechaFin.Value <= dTimeFechaInicio.Value)
+                    this.dTimeFechaInicio.Value = this.dTimeFechaFin.Value;
+            }
         }
     }
 }
