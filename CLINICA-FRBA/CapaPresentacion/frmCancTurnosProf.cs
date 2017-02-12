@@ -44,7 +44,8 @@ namespace CapaPresentacion
 
         private void frmCancTurnosProf_Load(object sender, EventArgs e)
         {
-
+            dTimeFechaInicio.Value = Convert.ToDateTime(N8RegAgenda.GetFechaDeSistema());
+            dTimeFechaFin.Value = Convert.ToDateTime(N8RegAgenda.GetFechaDeSistema());
         }
 
         private void btnMostrarTurnos_Click(object sender, EventArgs e)
@@ -89,6 +90,13 @@ namespace CapaPresentacion
 
         private void dTimeFechaInicio_ValueChanged(object sender, EventArgs e)
         {
+            if (dTimeFechaInicio.Value < Convert.ToDateTime(N8RegAgenda.GetFechaDeSistema()))
+            {
+                MessageBox.Show("La fecha inicial debe ser posterior a la fecha de sistema",
+                        "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dTimeFechaInicio.Value = Convert.ToDateTime(N8RegAgenda.GetFechaDeSistema());
+            }
+
             if (this.checkBox1.Checked == true)
             {
                 this.dTimeFechaFin.Value = dTimeFechaInicio.Value;
@@ -103,6 +111,13 @@ namespace CapaPresentacion
 
         private void dTimeFechaFin_ValueChanged(object sender, EventArgs e)
         {
+            if (dTimeFechaFin.Value < Convert.ToDateTime(N8RegAgenda.GetFechaDeSistema()))
+            {
+                MessageBox.Show("La fecha final debe ser posterior a la fecha de sistema",
+                        "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dTimeFechaFin.Value = Convert.ToDateTime(N8RegAgenda.GetFechaDeSistema());
+            }
+
             if (this.checkBox1.Checked == false)
             {
                 if (this.dTimeFechaFin.Value <= dTimeFechaInicio.Value)
