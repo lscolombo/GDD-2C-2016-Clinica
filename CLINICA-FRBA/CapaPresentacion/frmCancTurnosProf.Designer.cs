@@ -120,6 +120,7 @@
             this.dgvTurnosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnosPendientes.Location = new System.Drawing.Point(6, 20);
             this.dgvTurnosPendientes.Name = "dgvTurnosPendientes";
+            this.dgvTurnosPendientes.ReadOnly = true;
             this.dgvTurnosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTurnosPendientes.Size = new System.Drawing.Size(428, 174);
             this.dgvTurnosPendientes.TabIndex = 0;
