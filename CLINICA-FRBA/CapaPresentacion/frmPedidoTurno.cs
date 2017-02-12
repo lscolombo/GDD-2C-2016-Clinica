@@ -157,6 +157,7 @@ namespace CapaPresentacion
                     btnPedirTurno.Enabled = false;
 
                     dgvProfesionales.Enabled = true;
+                    cbTurnos.DataSource = null;
                 }
                 else
                     MessageBox.Show(rtaTurno, "Clinica FRBA", MessageBoxButtons.OK, MessageBoxIcon.Error);
