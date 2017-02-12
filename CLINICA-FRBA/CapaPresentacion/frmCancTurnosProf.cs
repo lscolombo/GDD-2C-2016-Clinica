@@ -86,5 +86,13 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void dTimeFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox1.Checked == true)
+            {
+                this.dTimeFechaFin.Value = dTimeFechaInicio.Value;
+            }
+        }
     }
 }

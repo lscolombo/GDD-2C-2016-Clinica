@@ -101,6 +101,7 @@
             this.dTimeFechaInicio.Name = "dTimeFechaInicio";
             this.dTimeFechaInicio.Size = new System.Drawing.Size(200, 20);
             this.dTimeFechaInicio.TabIndex = 0;
+            this.dTimeFechaInicio.ValueChanged += new System.EventHandler(this.dTimeFechaInicio_ValueChanged);
             // 
             // groupBox2
             // 
