@@ -60,9 +60,15 @@ namespace CapaPresentacion
                 MessageBox.Show("No posee turnos pendientes para cancelar", "ClínicaFRBA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            this.cancelarTurnosProf();
+
+            if (dgvTurnosPendientes.Rows.Count > 0)
+            {
+                this.cancelarTurnosProf();
+            }
+
             this.txtMotivoCancelacion.Text = "";
-            this.cargarDataGridView();
+            dgvTurnosPendientes.DataSource = null;
+            //this.cargarDataGridView();
            
          }
 
@@ -107,6 +113,8 @@ namespace CapaPresentacion
                 if (dTimeFechaInicio.Value >= this.dTimeFechaFin.Value)
                     this.dTimeFechaFin.Value = dTimeFechaInicio.Value;                    
             }
+
+            dgvTurnosPendientes.DataSource = null;
         }
 
         private void dTimeFechaFin_ValueChanged(object sender, EventArgs e)
@@ -123,6 +131,8 @@ namespace CapaPresentacion
                 if (this.dTimeFechaFin.Value <= dTimeFechaInicio.Value)
                     this.dTimeFechaInicio.Value = this.dTimeFechaFin.Value;
             }
+
+            dgvTurnosPendientes.DataSource = null;
         }
     }
 }
