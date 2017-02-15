@@ -193,7 +193,7 @@
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(541, 12);
+            this.txtMatricula.Location = new System.Drawing.Point(1095, 12);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(100, 20);
             this.txtMatricula.TabIndex = 7;
@@ -282,7 +282,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtCargaHoraria);
-            this.groupBox1.Location = new System.Drawing.Point(541, 267);
+            this.groupBox1.Location = new System.Drawing.Point(1095, 267);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(136, 47);
             this.groupBox1.TabIndex = 21;
@@ -504,7 +504,7 @@
             this.grpJueves.Controls.Add(this.txtCHJ);
             this.grpJueves.Controls.Add(this.btnAddEspecialidadJ);
             this.grpJueves.Enabled = false;
-            this.grpJueves.Location = new System.Drawing.Point(12, 391);
+            this.grpJueves.Location = new System.Drawing.Point(555, 18);
             this.grpJueves.Name = "grpJueves";
             this.grpJueves.Size = new System.Drawing.Size(517, 119);
             this.grpJueves.TabIndex = 24;
@@ -596,7 +596,7 @@
             this.grpViernes.Controls.Add(this.txtCHV);
             this.grpViernes.Controls.Add(this.btnAddEspecialidadV);
             this.grpViernes.Enabled = false;
-            this.grpViernes.Location = new System.Drawing.Point(12, 516);
+            this.grpViernes.Location = new System.Drawing.Point(555, 142);
             this.grpViernes.Name = "grpViernes";
             this.grpViernes.Size = new System.Drawing.Size(517, 119);
             this.grpViernes.TabIndex = 25;
@@ -688,7 +688,7 @@
             this.grpSabado.Controls.Add(this.txtCHS);
             this.grpSabado.Controls.Add(this.btnAddEspecialidadS);
             this.grpSabado.Enabled = false;
-            this.grpSabado.Location = new System.Drawing.Point(12, 641);
+            this.grpSabado.Location = new System.Drawing.Point(555, 267);
             this.grpSabado.Name = "grpSabado";
             this.grpSabado.Size = new System.Drawing.Size(517, 119);
             this.grpSabado.TabIndex = 26;
@@ -782,7 +782,7 @@
             this.groupBox2.Controls.Add(this.chkJueves);
             this.groupBox2.Controls.Add(this.chkViernes);
             this.groupBox2.Controls.Add(this.chkSabado);
-            this.groupBox2.Location = new System.Drawing.Point(547, 66);
+            this.groupBox2.Location = new System.Drawing.Point(1101, 66);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(111, 179);
             this.groupBox2.TabIndex = 27;
@@ -791,8 +791,8 @@
             // 
             // btnRegAgenda
             // 
-            this.btnRegAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegAgenda.Location = new System.Drawing.Point(552, 516);
+            this.btnRegAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegAgenda.Location = new System.Drawing.Point(404, 423);
             this.btnRegAgenda.Name = "btnRegAgenda";
             this.btnRegAgenda.Size = new System.Drawing.Size(125, 65);
             this.btnRegAgenda.TabIndex = 7;
@@ -806,7 +806,7 @@
             this.groupBox3.Controls.Add(this.dtpFechaFin);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.dtpFechaIni);
-            this.groupBox3.Location = new System.Drawing.Point(541, 341);
+            this.groupBox3.Location = new System.Drawing.Point(1095, 341);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(136, 137);
             this.groupBox3.TabIndex = 28;
@@ -857,7 +857,7 @@
             this.dgvListado.AllowUserToDeleteRows = false;
             this.dgvListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListado.Location = new System.Drawing.Point(535, 660);
+            this.dgvListado.Location = new System.Drawing.Point(714, 419);
             this.dgvListado.MultiSelect = false;
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.ReadOnly = true;
@@ -878,9 +878,10 @@
             // btnNewAgenda
             // 
             this.btnNewAgenda.Enabled = false;
-            this.btnNewAgenda.Location = new System.Drawing.Point(563, 612);
+            this.btnNewAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewAgenda.Location = new System.Drawing.Point(555, 423);
             this.btnNewAgenda.Name = "btnNewAgenda";
-            this.btnNewAgenda.Size = new System.Drawing.Size(95, 23);
+            this.btnNewAgenda.Size = new System.Drawing.Size(122, 65);
             this.btnNewAgenda.TabIndex = 31;
             this.btnNewAgenda.Text = "Nueva Agenda";
             this.btnNewAgenda.UseVisualStyleBackColor = true;
@@ -890,7 +891,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 758);
+            this.ClientSize = new System.Drawing.Size(1294, 517);
             this.Controls.Add(this.btnNewAgenda);
             this.Controls.Add(this.txtUserNameProf);
             this.Controls.Add(this.dgvListado);
