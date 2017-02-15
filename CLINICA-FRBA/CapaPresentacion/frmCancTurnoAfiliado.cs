@@ -47,8 +47,8 @@ namespace CapaPresentacion
         private void frmCancTurnoAfiliado_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            N13CancAtencion var = new N13CancAtencion();
-            dgvTurnosDisponibles.DataSource = var.TurnosPedidos(frmLogin.passingText);
+            dgvTurnosDisponibles.DataSource = new N13CancAtencion()
+                                            .TurnosPedidos(frmLogin.passingText);
            
             if (dgvTurnosDisponibles.Rows.Count == 0)
             {
@@ -70,8 +70,8 @@ namespace CapaPresentacion
 
         private void dgvTurnosDisponibles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            this.txtTurnoSeleccionado.Text = Convert.ToString(this.dgvTurnosDisponibles.CurrentRow.Cells["turn_id"].Value);
+
+            this.txtTurnoSeleccionado.Text = Convert.ToString(this.dgvTurnosDisponibles.CurrentRow.Cells["Turno ID"].Value);
             this.btnCancelarTurno.Enabled = true;
             this.textBox1.Enabled = true;
         }

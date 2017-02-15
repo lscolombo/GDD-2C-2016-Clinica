@@ -19,9 +19,7 @@ namespace CapaNegocio
 
         public DataTable TurnosPedidos(string afilID)
         {
-            D13CancAtencion Obj = new D13CancAtencion();
-            Obj.afilID = afilID;
-            return Obj.TurnosPedidos(Obj);
+            return new D13CancAtencion().TurnosPedidos(afilID);
         }
 
         public string CancelarTurnoAf(int codTurno, string detalle)

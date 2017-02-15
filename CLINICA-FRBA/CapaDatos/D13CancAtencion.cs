@@ -78,14 +78,16 @@ namespace CapaDatos
         }
 
         //Método mostrar todos los turnos disponibles pedidos por un afiliado
-        public DataTable TurnosPedidos(D13CancAtencion CancAtencion)
+        public DataTable TurnosPedidos(string afiliadoID)
         {
 
-            DataTable DtResultado = new DataTable();
+            DataTable DtResultado = new DataTable("WINCHESTER.Turno");
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "WINCHESTER.turnosPedidos";
@@ -94,12 +96,12 @@ namespace CapaDatos
                 /*ESPECIFICO CARACTERISTICAS DEL 1º PARAMETRO*/
                 SqlParameter ParAfilID = new SqlParameter();
 
-                ParAfilID.ParameterName = "@afilID";
+                ParAfilID.ParameterName = "@afil_usuario";
                 ParAfilID.SqlDbType = SqlDbType.VarChar;
                 ParAfilID.Size = 255;
-                ParAfilID.Value = afilID;
+                ParAfilID.Value = afiliadoID;
                 SqlCmd.Parameters.Add(ParAfilID);
-
+                
                 SqlParameter ParFechaApp = new SqlParameter();
 
                 ParFechaApp.ParameterName = "@fechaApp";
@@ -107,7 +109,7 @@ namespace CapaDatos
                 ParFechaApp.Size = 10;
                 ParFechaApp.Value = Conexion.FechaSistema;
                 SqlCmd.Parameters.Add(ParFechaApp);
-
+                
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);
 
@@ -116,8 +118,14 @@ namespace CapaDatos
             {
                 DtResultado = null;
             }
-            return DtResultado;
 
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                    SqlCon.Close();
+            }
+
+            return DtResultado;
         }
 
         
@@ -171,6 +179,11 @@ namespace CapaDatos
                 rpta = ex.Message;
             }
 
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                    SqlCon.Close();
+            }
             return rpta;
         }
 
